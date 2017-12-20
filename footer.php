@@ -31,7 +31,8 @@
 					<svg class="icon">
 						<use xlink:href="#mail"></use>
 					</svg>
-					<a href="mailto<?=get_field('email', 'option');?>" class="footer-info__mail"><?=get_field('email', 'option');?></a>
+					<a href="mailto:<?=get_field('email', 'option');?>" class="footer-info__mail"><?=get_field('email', 'option');?></a>
+
 				</div>
 			</div>
 		</div>

@@ -98,7 +98,7 @@
         <?php endif ?>
         <!-- for page service city list -->
 
-        <?php if (is_single( '11' ) ): ?>
+        <?php if (is_single( 'ПРАЙС-ЛИСТ' ) ): ?>
           <div class="city-title">Популярные населенные пункты:</div>
              <div class="city-wrap">
              <?

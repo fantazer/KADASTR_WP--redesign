@@ -49,7 +49,7 @@
 		<div class="towns-list">
 				 <?
 				 	$args = array(
-					  'cat'=> 11,
+					  'cat'=> array(11,19),
 					  'order' => 'ASC'
 				 	);
 				 ?>

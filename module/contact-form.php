@@ -70,7 +70,7 @@
 											<use xlink:href="#metro"></use>
 										</svg>
 									</div>
-									<a class="contact-text contact-text--link" href="kontakty/">Как к нам проехать</a>
+									<a class="contact-text contact-text--link" href="/kontakty/">Как к нам проехать</a>
 								</div>
 					</div>
 				</div>

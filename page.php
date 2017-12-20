@@ -20,8 +20,31 @@ Template Name: service
 			?>
 		</div>
 	</div>
-</div>
 
+<?
+		$current_id = get_the_ID();
+		if ( $current_id == 2129 ): ?>
+          <div class="city-title">Популярные населенные пункты:</div>
+             <div class="city-wrap">
+             <?
+                $args = array(
+                'cat'=> 15,
+                'order' => 'ASC'
+                );
+                query_posts($args);
+                while (have_posts()) : the_post();
+                printf('
+                        <div class="city-el">
+                            <a href="%s">%s</a>
+                        </div>
+                ',get_permalink(),CFS()->get('namecity'));
+                 endwhile;
+                 wp_reset_query();
+             ?>
+             </div>
+        <?php endif ?>
+	</div>
+</div>
 <?
 	//echo get_the_ID();
 ?>
