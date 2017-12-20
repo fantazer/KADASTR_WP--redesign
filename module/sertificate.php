@@ -1,5 +1,5 @@
 <!--slider certificate-->
-<div class="section section--certificate wow fadeIn" data-wow-duration="2s" data-wow-delay=".75s">
+<div class="section section--certificate wow fadeIn" data-wow-duration="2s" data-wow-delay=".75s" id="cert">
 	<div class="filter"></div>
 	<div class="section-title">Наши сертификаты</div>
 	<div class="main-cont">

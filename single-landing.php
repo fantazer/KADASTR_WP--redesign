@@ -5,7 +5,7 @@
  */
 ?>
 
-<? get_header(); ?>
+<? get_header('lp'); ?>
 
 		<!--block header end-->
 		<div class="lp-baner">
@@ -45,7 +45,7 @@
 		</div>
 
 		<!--from begin-->
-		<div class="section section--start" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/lp-5.jpg');">
+		<div class="section section--start" id="important" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/lp-5.jpg');">
 			<div class="main-cont">
 				<div class="section-wrap">
 					<div class="section-call section-call--img"></div>
@@ -68,7 +68,7 @@
 		</div>
 
 			<!--price-->
-		<div class="section section--price wow fadeIn" data-wow-duration="2s" data-wow-delay=".75s">
+		<div class="section section--price wow fadeIn" data-wow-duration="2s" data-wow-delay=".75s" id="price">
 			<div class="main-cont">
 				<div class="section-title">Стоимость наших работ</div>
 				<!--<div class="section-title-sub">Подача в Росреестр – плюс 3 000 руб. к стоимости работ </div>-->
@@ -118,7 +118,7 @@
 		</div>
 
 		<!--need doc-->
-		<div class="section section--doc">
+		<div class="section section--doc" id="inpay">
 			<div class="main-cont">
 				<div class="section-title">Что войдет в стоимость работ ?</div>
 				<div class="section-title-sub">Все работы будут выполнены не более чем за десять дней.</div>
@@ -165,7 +165,7 @@
 		</div>
 
 		<!--need doc-->
-		<div class="section section--doc">
+		<div class="section section--doc" id="need-doc">
 			<div class="main-cont">
 				<div class="section-title">Какие нужны документы?</div>
 				<div class="section-title-sub">Максимальный перечень необходимых документов</div>
