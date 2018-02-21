@@ -54,7 +54,7 @@
 									<use xlink:href="#phone-call"></use>
 								</svg>
 							</div>
-							<div class="contact-text">+7 (495) 514-84-13</div>
+							<div class="contact-text ct_phone">+7 (495) 514-84-13</div>
 						</div>
 						<div class="contact-row">
 							<div class="contact-icon">

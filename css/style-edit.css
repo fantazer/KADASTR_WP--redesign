@@ -40,6 +40,9 @@
   margin: 40px 0;
   text-align: center;
 }
+.news__el {
+  width: 31%;
+}
 @media only screen and (max-width: 1024px) {
   .top-line-info {
     width: 75%;

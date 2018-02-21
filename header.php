@@ -18,9 +18,22 @@
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/vendor.css">
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/style.css">
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/style-edit.css">
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-TJWDBCS');</script>
+		<!-- End Google Tag Manager -->
+
+
 	</head>
 	<?php wp_head(); ?>
 	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJWDBCS"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
 		<!--block header-->
 		<div class="head-container">
 			<!--header-->
@@ -77,7 +90,7 @@
 									</div>
 									<div class="nav-phone">
 										<!--<a class="nav-phone-el" href="tel:<?/*=get_field('phone-1', 'option');*/?>"><?/*=get_field('phone-1', 'option');*/?></a>-->
-										<a class="nav-phone-el" href="tel:<?=get_field('phone-2', 'option');?>"><?=get_field('phone-1', 'option');?></a>
+										<div class="nav-phone-el ct_phone""><? //get_field('phone-1', 'option');?></div>
 									</div>
 								</div>
 							</div>

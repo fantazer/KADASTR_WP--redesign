@@ -524,7 +524,7 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 
 	console.log(detectIE());
 
-	if (detectIE() <= 14 && detectIE()) {
+	if (detectIE() <= 10 && detectIE()) {
 
 		$('body').empty();
 
@@ -544,7 +544,7 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 
 	//for init SVG 
 
-	svg4everybody();
+
 
 	// ==== clear storage =====
 

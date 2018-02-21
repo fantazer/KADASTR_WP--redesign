@@ -8,7 +8,7 @@
 			<?php foreach( $imgJub as $image ): ?>
 				<div class="slider__el">
 					<a class="fancybox" href="<?php echo $image['url']; ?>" rel="group-elemen">
-						<img src="<?php echo $image['url']; ?>" alt=""/>
+						<img src="<?php echo $image['sizes']['medium']; ?>" alt=""/>
 					</a>
 				</div>
 			<?php endforeach; ?>

@@ -9,10 +9,11 @@
 							<use xlink:href="#close"></use>
 						</svg>
 					</div>
-					<div class="modal-title">Бесплатная консультация</div>
-					<div class="modal-text">Обращаетесь к нам впервые?
-						<br> Оформите обращение с помощью этой формы, мы перезвоним Вам и проконсультируем по любому Вашему вопросу
+					<div class="modal-title">Заявка</div>
+					<div class="modal-text">
+						Оформите обращение с помощью этой формы, мы перезвоним Вам и проконсультируем по любому Вашему вопросу
 						совершенно бесплатно!
+
 					</div>
 					<form class="validate-form" action="javascript:void(null);">
 						<div class="input-row">
