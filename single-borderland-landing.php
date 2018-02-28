@@ -8,8 +8,8 @@
 <? get_header('lp'); ?>
 
 <!--block header end-->
-<div class="lp-baner">
-	<div class="lp-baner__img lp-baner__img--borderland"></div>
+<div class="lp-baner lp-baner--borderland">
+	<div class="lp-baner__img lp-baner__img--borderland" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/sosed.png');"></div>
 	<div class="lp-baner-filter lp-baner-filter--light"></div>
 	<div class="main-cont">
 		<div class="lp-baner__wrap">
@@ -25,9 +25,7 @@
 					<div class="header__btn header__btn-get modal-get" data-modal="order">Заказать</div>
 				</div>
 			</div>
-			<div class="lp-baner__image" >
-				<div class="lp-baner__image-el" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/lp-item-5.jpg');"></div>
-			</div>
+
 		</div>
 	</div>
 </div>
@@ -103,13 +101,19 @@
 			<input class="calc-range" type="range" placeholder=""/>
 			<div class="calc-range__wrap">
 				<div class="calc-range-val">
-					<div class="calc-range-numb">10 000</div>
+					<div class="calc-range-numb">14 000</div>
 					<div class="calc-range-pay">руб</div>
 				</div>
+			</div>
+			<div class="calc-text calc-text--attansion">
+				<span>свыше 2000 кв.м. цена определяется индивидуально</span>
 			</div>
 			<div class="calc-text">Цена услуги за один участок</div>
 		</div>
 		<div class="cost-inform cost-inform--calc">Указанные здесь цены являются окончательными и зависят только от площади земельного участка. Если Вы не хотите тратить свое время на подачу и получение документов из Росреестра, мы выполним это за Вас. Такая услуга «под ключ» будет стоить 5000 руб. В этом случае от Вас дополнительно потребуется нотариальная доверенность (форму доверенности Вам предоставит наш кадастровый инженер).
+		</div>
+		<div class="get-sale-row">
+			<div class="get-sale__btn modal-get" data-modal="sale--border">Нажми и узнай, как сэкономить!</div>
 		</div>
 	</div>
 </div>
