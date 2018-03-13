@@ -81,8 +81,8 @@
 								<div class="modal-sale__el-text">Технический план строения до 100 кв.м. (14 000 руб.) и межевой план
 									земельного участка до 8 соток (14 000 руб.)
 									<div class="modal-sale__el-text-sub">Общая стоимость
-										<span class="main-service__price--false">24 000</span>
-										<span class="main-service__price--true">20 000 руб.</span>- Скидка 4000 руб.
+										<span class="main-service__price--false">28 000</span>
+										<span class="main-service__price--true">24 000 руб.</span>- Скидка 4000 руб.
 									</div>
 								</div>
 							</div>
