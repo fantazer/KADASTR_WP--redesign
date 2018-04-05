@@ -14,8 +14,8 @@
 	<div class="main-cont">
 		<div class="lp-baner__wrap">
 			<div class="lp-baner__content">
-				<div class="lp-baner__title">Уточнение
-					<br>границ земельного участка
+				<div class="lp-baner__title">
+					Межевание (уточнение границ)<br> земельного участка Уточнение
 				</div>
 				<div class="lp-baner__title-sub">Установите точные границы участка на местности как можно скорее, и Вы
 					избавитесь от возможных проблем в будущем!

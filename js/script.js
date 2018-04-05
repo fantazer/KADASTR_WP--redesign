@@ -80,6 +80,41 @@ $(document).ready(function(){
  	});
 	//range slider===end
 
+	//range slider
+  $(".calc-range--topograf").ionRangeSlider({
+ 		values: [
+ 			"600 кв.м.",
+ 			"800 кв.м.",
+ 			"1000 кв.м.",
+ 			"1400 кв.м.",
+ 			"1600 кв.м.",
+ 			"2000 кв.м."
+ 		],
+ 		grid: true,
+ 		onChange: function (data) {
+ 				if(data.from_value == "0 кв.м."){
+ 					$('.calc-range-numb').text('0');
+ 				}
+ 				if(data.from_value == "600 кв.м."){
+ 					$('.calc-range-numb').text('10 000 ');
+ 				}
+ 				if(data.from_value == "800 кв.м."){
+ 					$('.calc-range-numb').text('10 000 ');
+ 				}
+ 				if(data.from_value == "1000 кв.м."){
+ 					$('.calc-range-numb').text('15 000 ');
+ 				}
+ 				if(data.from_value == "1400 кв.м."){
+ 					$('.calc-range-numb').text('15 000 ');
+ 				}
+ 				if(data.from_value == "2000 кв.м."){
+ 					$('.calc-text--attansion').show();
+ 				} else {
+ 					$('.calc-text--attansion').hide();
+ 				}
+    }
+ 	});
+	//range slider===end
 
 	//drop menu
 	var hideToggle = function(targetClick,toggleEl) {

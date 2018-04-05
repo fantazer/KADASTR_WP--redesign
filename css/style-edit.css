@@ -49,6 +49,9 @@ li {
 .cost-inform--calc {
   margin-bottom: 30px;
 }
+.lp-baner-filter {
+  background: rgba(255,255,255,0.9);
+}
 @media only screen and (max-width: 1024px) {
   .top-line-info {
     width: 75%;
@@ -60,6 +63,10 @@ li {
   }
 }
 @media only screen and (max-width: 640px) {
+  .lp-baner__title-status {
+    width: 100%;
+    text-align: center;
+  }
   .advance--single .advance-text {
     font-size: 12px;
   }
