@@ -8,7 +8,7 @@
 <? get_header('lp'); ?>
 
   <div class="lp-baner lp-baner--borderland">
-    <div class="lp-baner__img lp-baner__img--borderland" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/main-baner-2.png');"></div>
+    <div class="lp-baner__img" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/main-baner-2.png');"></div>
     <div class="lp-baner-filter lp-baner-filter--light"></div>
     <div class="main-cont">
       <div class="lp-baner__wrap">
@@ -16,7 +16,7 @@
           <div class="lp-baner__title">Топографическая съёмка земельного участка</div>
           <div class="lp-baner__title-sub">Выполнение работ как на частных земельных участках (для физических лиц), так и на участках большой площади (для юридических лиц).</div>
           <div class="lp-baner__title-status">Нами выполнено более 1000 объектов общей площадью
-            <br> более 50 000 000 кв.м.( 5 000 га).</div>
+            <br> более 50 000 000 кв.м. (5 000 га).</div>
           <div class="header__get">
             <a class="header__btn header__btn-more" href="#why">Подробнее</a>
             <div class="header__btn header__btn-get modal-get" data-modal="order">Заказать</div>
@@ -27,7 +27,7 @@
     </div>
   </div>
   <!--why you need this-->
-  <div class="section section--why" id="why">
+  <div class="section section--why section--why-topograf" id="why" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/carplace-baner-8.png');">
     <div class="main-cont">
       <div class="section-wrap">
         <div class="section-call section-call--mid">
@@ -38,14 +38,14 @@
             <p>Топографический план земельного участка отражает текущее состояние местности и позволяет определить с точностью до сантиметров такие параметры, как: размеры объектов на участке, расстояния между объектами, перепад высот рельефа.</p>
           </div>
         </div>
-        <div class="section-call section-call--img">
-          <img class="img-worker" src="<?php echo get_template_directory_uri(); ?>/img/instr.jpg" alt="" />
-        </div>
+        <!--<div class="section-call section-call--img">
+          <img class="img-worker" src="<?php /*echo get_template_directory_uri(); */?>/img/instr.jpg" alt="" />
+        </div>-->
       </div>
     </div>
   </div>
   <!--from begin-->
-  <div class="section section--start section--start-lg section--left-bg" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/lp-item-11.jpg');">
+  <div class="section section--start section--start-lg section--left-bg" id="important" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/lp-item-11.jpg');">
     <div class="main-cont">
       <div class="section-wrap">
         <div class="section-call section-call--img"></div>
@@ -64,7 +64,7 @@
     </div>
   </div>
   <!--service-->
-  <div class="section section--calc section--calc--topograf">
+  <div class="section section--calc section--calc--topograf" id="price">
     <div class="main-cont">
       <div class="section-title">Стоимость наших работ</div>
       <div class="section-title-sub">Работаем в Москве и во всех районах Московской области.</div>

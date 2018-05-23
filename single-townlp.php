@@ -1,21 +1,75 @@
 <?
 /*
- * Template Name: landing
+ * Template Name: list-town-texplan
  * Template Post Type: post, page, product
  */
 ?>
+<? get_header(); ?>
 
-<? get_header('lp'); ?>
+
+<?
+	//town after
+	function porstAfter($a,$order){
+		if( in_category($a) ){
+          global $post;
+          $idPost = get_the_id();
+          $PostArray = array();
+          if($order){
+            $args = array(
+	            'cat'=> $a,
+	            //'orderby'=> 'title',
+	            'order' => 'ASC'
+            );
+          } else {
+            $args = array(
+	            'cat'=> $a,
+            );
+          }
+          query_posts($args);
+          while (have_posts()) : the_post();
+            $name = get_the_id();
+            array_push($PostArray, $name);
+          endwhile;
+          wp_reset_query();
+          $key = array_search($idPost, $PostArray);
+          $output = array_slice($PostArray, $key+1,3 );
+          $LastPost = array_pop($PostArray);
+          $postEl = array( 'include' =>$output,'post__not_in'=>$LastPost ,'order' => 'ASC');
+          $myposts = get_posts($postEl);
+          foreach( $myposts as $post ){
+            setup_postdata($post);
+            ?>
+            <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+            <?
+          }
+          wp_reset_postdata();
+          $needPost =  3 - (count($PostArray) - $key);
+          //echo $needPost;
+          if ($needPost < 4 && $needPost > 0 ) {
+            $postEl = array( 'cat'=> $a,'order' => 'ASC','posts_per_page' => $needPost);
+            $myposts = get_posts($postEl);
+            foreach( $myposts as $post ){
+              setup_postdata($post);
+              ?>
+              <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+              <?
+            }
+          }
+
+			}
+	}
+
+
+?>
 
 		<!--block header end-->
 		<div class="lp-baner">
-			<div class="lp-baner__img lp-baner--contain" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/baner-9.png');"></div>
-
+			<div class="lp-baner__img" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/lp-2.jpg');"></div>
 			<div class="main-cont">
 				<div class="lp-baner__content">
 					<div class="lp-baner__title">Оформление
 						<br> технического плана дома</div>
-					<div class="lp-baner__title-sub">Закажите технический план и забудьте о проблемах связанных с незарегистрированной постройкой!</div>
+					<div class="lp-baner__title-sub">Если границы Вашего земельного участка не установлены, либо установлены, но с точностью ниже нормативной – изготавливается межевой план по уточнению границ</div>
 					<div class="header__get">
 						<a class="header__btn header__btn-more" href="#why">Подробнее</a>
 						<div class="header__btn header__btn-get modal-get" data-modal="order">Заказать</div>
@@ -25,42 +79,39 @@
 		</div>
 
 		<!--why you need this-->
-		<div class="section section--why section--why-borderland" id="why" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/baner-10.png');">
+		<div class="section section--why" id="why">
 			<div class="main-cont">
 				<div class="section-wrap">
 					<div class="section-call">
 						<div class="section-title section-title--left">Что это такое ?</div>
 						<div class="box">
-							<p>Технический план дома – это подготовленный кадастровым инженером документ, на основании которого сведения о Вашей постройке вносятся в Единый государственный реестр недвижимости (ЕГРН).</p>
+							<p>Технический план дома – это подготовленный кадастровым инженером документ, на основании, которого сведения о Вашей постройке вносятся в Единый государственный реестр недвижимости (ЕГРН).</p>
 							<p>До 2017 года все постройки на садовых и дачных участках (в СНТ и ДНТ) можно было зарегистрировать по декларации. С 2017 для их регистрации в Ростреестре необходим технический план.</p>
 							<p>Технический план подается в Росреестр (можно через МФЦ). По итогам проверки Росреестром технического плана собственнику выдаётся выписка ЕГРН на здание, подтверждающая право собственности на постройку. С этого момента постройка считается официально
 								зарегистрированной.</p>
 						</div>
 					</div>
-					<!--<div class="section-call section-call--img">
-						<img src="<?php /*echo get_template_directory_uri(); */?>/img/lp-4.jpg" alt="" />
-					</div>-->
+					<div class="section-call section-call--img">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/lp-4.jpg" alt="" />
+					</div>
 				</div>
 			</div>
 		</div>
 
 		<!--from begin-->
-		<div class="section section--start" id="important" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/baner-11.png');">
+		<div class="section section--start" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/lp-5.jpg');">
 			<div class="main-cont">
 				<div class="section-wrap">
 					<div class="section-call section-call--img"></div>
 					<div class="section-call">
 						<div class="section-title section-title--left">Это нужно знать!</div>
 						<div class="box">
-							<p>С 01.01.2017 г. владельцу земельного участка с незарегистрированной постройкой грозят штрафы в размере 20% от неуплаченной налоговой суммы. То есть, если инспекторы Федеральной налоговой службы обнаружат у Вас на участке незарегистрированные
-								постройки (в т.ч. бани, гаражи, хозяйственные строения площадью свыше 50 кв.м), за которые не платятся налоги, то они вправе взыскать с Вас долги сразу за три последних года, дополнительно выписав штраф в размере 20% от неоплаченной суммы.</p>
-							<p>Также с 01.07.2017 года любая незарегистрированная постройка властями признается самовольной постройкой – «самострой» - и требует сноса.</p>
-							<p class="attanintion">
-								<b>ВАЖНО:</b> с 01.01.2018 г. невозможно будет провести регистрационные действия по купле-продаже, наследованию, дарению и т.д. в отношении неоформленных и незарегистрированных домов.</p>
-							<p>Если Вы решили построить жилой дом на земельном участке с видом разрешенного использования ИЖС (индивидуальное жилищное строительство) или ЛПХ (личное подсобное хозяйство), то предварительно Вам необходимо получить разрешение на строительство.</p>
-							<p class="attanintion">
-								<b>ВАЖНО:</b> В связи с продлением дачной амнистии до 01.03.2020 г. получение разрешения на ввод постройки ИЖС и ЛПХ в эксплуатацию не требуется. Также не требуется получения разрешения на строительство домов, расположенные на землях под дачное
-								строительство, садоводство и огородничество.</p>
+              <?
+                while( have_posts() ) : the_post();
+									the_content(); // выводим контент
+								endwhile;
+               ?>
+               <? porstAfter(30,true);?>
 						</div>
 					</div>
 				</div>
@@ -68,10 +119,10 @@
 		</div>
 
 			<!--price-->
-		<div class="section section--price wow fadeIn" data-wow-duration="2s" data-wow-delay=".75s" id="price">
+		<div class="section section--price wow fadeIn" data-wow-duration="2s" data-wow-delay=".75s">
 			<div class="main-cont">
 				<div class="section-title">Стоимость наших работ</div>
-				<div class="section-title-sub">Работаем в Москве и во всех районах Московской области. </div>
+				<div class="section-title-sub">Указанные здесь цены являются окончательными и зависят только от площади объекта. Единственный платёж, который Вам придётся уплатить, это гос. пошлина в размере 350 руб., взимаемая Росреестром при подаче технического плана.</div>
 				<div class="cost">
 					<div class="cost__el">
 						<div class="cost__el-img" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/house-size-1.png');"></div>
@@ -110,22 +161,15 @@
 						<div class="service__btn service__btn-get modal-get" data-modal="order">Заказать</div>
 					</div>
 				</div>
-				<div class="get-sale-row">
-					<div class="get-sale__btn modal-get" data-modal="sale">Нажми и узнай, как сэкономить!</div>
-				</div>
-				<div class="cost-inform">
-				Указанные здесь цены являются окончательными и зависят только от площади объекта. Единственный платёж, который Вам придётся уплатить, это гос. пошлина в размере 350 руб., взимаемая Росреестром при подаче технического плана.<br>
-				Если  Вы не хотите тратить свое время на подачу и получение документов из  Росреестра, мы выполним это за Вас. Такая услуга «под ключ» будет стоить 5000 руб. В этом случае от Вас дополнительно потребуется нотариальная доверенность (форму доверенности Вам предоставит наш кадастровый инженер).
-				</div>
+				<div class="cost-inform">Подача в Росреестр – плюс 3 000 руб. к стоимости работ </div>
 			</div>
-
 		</div>
 
 		<!--need doc-->
-		<div class="section section--doc" id="inpay">
+		<div class="section section--doc">
 			<div class="main-cont">
 				<div class="section-title">Что войдет в стоимость работ ?</div>
-				<div class="section-title-sub">Все работы будут выполнены не более чем за десять дней.</div>
+				<div class="section-title-sub">Все выполняемые нами работы.</div>
 				<div class="doc">
 					<div class="doc__el">
 						<div class="doc__icon">
@@ -169,7 +213,7 @@
 		</div>
 
 		<!--need doc-->
-		<div class="section section--doc" id="need-doc">
+		<div class="section section--doc">
 			<div class="main-cont">
 				<div class="section-title">Какие нужны документы?</div>
 				<div class="section-title-sub">Максимальный перечень необходимых документов</div>
@@ -180,8 +224,8 @@
 								<use xlink:href="#attest"></use>
 							</svg>
 						</div>
-						<div class="doc__title">Свидетельство о праве собственности на земельный участок (выписка ЕГРН)</div>
-						<div class="doc__text">Необходимо для подтверждения права собственности на земельный участок.</div>
+						<div class="doc__title">Свидетельство о праве собственности на земельный участок</div>
+						<div class="doc__text">Необходимо для подтверждения права собственности на земельный участок</div>
 					</div>
 					<div class="doc__el">
 						<div class="doc__icon">
@@ -189,8 +233,8 @@
 								<use xlink:href="#doc"></use>
 							</svg>
 						</div>
-						<div class="doc__title">Разрешение на строительство <br>(для жилых домов)</div>
-						<div class="doc__text">Необходимо для регистрации домов на землях населенных пунктов для ИЖС, ЛПХ, а также для регистрации жилых домов на дачных участках.</div>
+						<div class="doc__title">Разрешение на строительство</div>
+						<div class="doc__text">Необходимо для подтверждения соответствия проектной документации для домов на землях ИЖС, ЛПХ, а также для жилых домов на дачных участках</div>
 					</div>
 					<div class="doc__el">
 						<div class="doc__icon">
@@ -198,7 +242,7 @@
 								<use xlink:href="#plan"></use>
 							</svg>
 						</div>
-						<div class="doc__title">Проектная документация на дом (при наличии)</div>
+						<div class="doc__title">Проектная документация на дом</div>
 						<div class="doc__text">Содержит текстовые и графические материалы и определяет архитектурные, функционально-технологические, конструктивные и инженерно-технические решения.</div>
 					</div>
 					<div class="doc__el">
@@ -207,14 +251,12 @@
 								<use xlink:href="#case"></use>
 							</svg>
 						</div>
-						<div class="doc__title">Паспортные данные собственника земельного участка (СНИЛС)</div>
-						<div class="doc__text">Документы, необходимые для подтверждения Вашей личности.</div>
+						<div class="doc__title">Паспортные данные собственника земельного участка</div>
+						<div class="doc__text">Пакет документов который необходим для подтверждения Вашей личности.</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<?include('module/step.php');?>
 
 		<?include('module/advant.php');?>
 
@@ -224,33 +266,7 @@
 		<!--slider certificate-->
 		<?include('module/sertificate.php');?>
 
-		<?include('module/contact-form.php');?>
-
-		<!--questions-->
-		<div class="section section--news wow fadeIn" data-wow-duration="2s" data-wow-delay=".75s">
-			<div class="section-title">Часто задаваемые вопросы</div>
-			<div class="section-title-sub">Просто о сложном</div>
-			<div class="main-cont">
-				<div class="questions">
-					<div class="questions-slider owl-carousel">
-		          <? while( have_rows('questions') ): the_row(); ?>
-								<div class="questions__el">
-									<div class="questions__el-wrap">
-										<div class="questions__name"><? the_sub_field('name_questions'); ?></div>
-										<div class="questions__text">
-						            <? the_sub_field('text_questions'); ?>
-										</div>
-									</div>
-								</div>
-						  <? endwhile; ?>
-					</div>
-				</div>
-			</div>
-		</div>
 
 
-<?get_footer();?>
-
-
-
-
+<?include('module/contact-form.php');?>
+<? get_footer(); ?>

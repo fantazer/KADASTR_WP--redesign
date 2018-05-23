@@ -15,7 +15,7 @@
 		<div class="lp-baner__wrap">
 			<div class="lp-baner__content">
 				<div class="lp-baner__title">
-					Межевание (уточнение границ)<br> земельного участка Уточнение
+					Межевание (уточнение границ)<br> земельного участка 
 				</div>
 				<div class="lp-baner__title-sub">Установите точные границы участка на местности как можно скорее, и Вы
 					избавитесь от возможных проблем в будущем!
@@ -31,7 +31,7 @@
 </div>
 
 <!--why you need this-->
-<div class="section section--why" id="why">
+<div class="section section--why section--why-borderland" id="why" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/house-megevanie.png');">
 	<div class="main-cont">
 		<div class="section-wrap">
 			<div class="section-call section-call--mid">
@@ -45,9 +45,9 @@
 						Единый государственный реестр недвижимости (ЕГРН).</p>
 				</div>
 			</div>
-			<div class="section-call section-call--img">
-				<img class="img-worker" src="<?php echo get_template_directory_uri(); ?>/img/worker.jpg" alt=""/>
-			</div>
+	<!--		<div class="section-call section-call--img">
+				<img class="img-worker" src="<?php /*echo get_template_directory_uri(); */?>/img/worker.jpg" alt=""/>
+			</div>-->
 		</div>
 	</div>
 </div>

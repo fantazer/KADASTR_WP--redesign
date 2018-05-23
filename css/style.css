@@ -1777,6 +1777,11 @@ body {
     padding: 30px 0;
   }
 }
+@media only screen and (max-width: 640px) {
+  .section {
+    padding-bottom: 0;
+  }
+}
 .title,
 .about-cont__title,
 .city-title {
@@ -3672,6 +3677,14 @@ body {
     font-size: 20px;
   }
 }
+.calc-range-val--lg {
+  font-size: 52px;
+}
+@media only screen and (max-width: 768px) {
+  .calc-range-val--lg {
+    font-size: 20px;
+  }
+}
 .calc-range__wrap {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5147,6 +5160,10 @@ section--calc {
 .section--left-bg {
   background-position: 30%;
 }
+.section--left-contain {
+  background-size: contain;
+  background-position: left center;
+}
 .section--start-sm .section-title {
   margin-bottom: 30px;
 }
@@ -5169,6 +5186,7 @@ section--calc {
 }
 .lp-baner__img--borderland {
   background-position: right;
+  background-size: cover;
 }
 @media only screen and (max-width: 480px) {
   .lp-baner__img--borderland {
@@ -5433,6 +5451,11 @@ section--calc {
   font-weight: bold;
   display: inline-block;
 }
+@media only screen and (max-width: 640px) {
+  .lp-baner__title-status {
+    text-align: center;
+  }
+}
 .section-title--add {
   text-align: center;
 }
@@ -5469,13 +5492,15 @@ section--calc {
   margin-bottom: 20px;
 }
 .cost-inform--calc {
-  background: #fff;
   padding: 10px;
   -webkit-border-radius: 10px;
           border-radius: 10px;
   background: #faeaa8;
-  margin-top: 20px;
+  margin: 20px auto;
   color: #111;
+}
+.cost-inform--calc-gray {
+  background: #f1f1f1;
 }
 .calc-ur-pay {
   width: 70%;
@@ -5534,6 +5559,48 @@ section--calc {
 @media only screen and (max-width: 768px) {
   .calc-ur-cont .calc-ur-pay {
     width: 100%;
+  }
+}
+.lp-baner__title--think {
+  text-transform: none;
+  font-weight: bold;
+  font-size: 58px;
+}
+@media only screen and (max-width: 768px) {
+  .lp-baner__title--think {
+    font-size: 32px;
+  }
+}
+.section--why-topograf {
+  padding: 200px 0;
+  background-position: right;
+  background-size: cover;
+}
+@media only screen and (max-width: 768px) {
+  .section--why-topograf {
+    padding: 50px 0;
+    background-position: -20% 0;
+    background-color: #ebebf3;
+  }
+}
+.section--why-borderland {
+  padding: 200px 0;
+  background-position: right;
+  background-size: contain;
+}
+@media only screen and (max-width: 768px) {
+  .section--why-borderland {
+    background-image: none !important;
+    padding: 50px 0;
+  }
+}
+.lp-baner--contain {
+  background-size: contain;
+  background-position: right;
+}
+@media only screen and (max-width: 768px) {
+  .lp-baner--contain {
+    background-image: none !important;
   }
 }
 @-webkit-keyframes slideInDown {

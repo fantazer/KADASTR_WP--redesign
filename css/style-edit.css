@@ -52,6 +52,23 @@ li {
 .lp-baner-filter {
   background: rgba(255,255,255,0.9);
 }
+.list-items {
+  list-style: none;
+  padding-left: 0;
+}
+.list-items span {
+  font-weight: bold;
+}
+.footer-info-wrap {
+  width: 25%;
+}
+#vk_groups {
+  margin-top: 20px;
+  width: 100%;
+}
+.footer-container {
+  align-items: flex-start;
+}
 @media only screen and (max-width: 1024px) {
   .top-line-info {
     width: 75%;
@@ -72,5 +89,8 @@ li {
   }
   .footer-mail {
     justify-content: center;
+  }
+  .footer-info-wrap {
+    width: 100%;
   }
 }

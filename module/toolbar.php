@@ -34,4 +34,15 @@
     <? endwhile; ?>
     <? wp_reset_query();?>
 	</div>
+
+
+
+	<!-- VK Widget -->
+
+
+<!-- VK Widget -->
+<!--<div id="vk_groups"></div>
+<script type="text/javascript">
+VK.Widgets.Group("vk_groups", {mode: 3, no_cover: 1, width: "auto", color2: '443783'}, 154622563);
+</script>-->
 </div>

@@ -18,12 +18,15 @@
 			 	'posts_per_page' => 100,
 			 	);
 			 ?>
-			 <ul>
+			 <ul class="list-items">
                  <? query_posts($args);?>
                  <? while (have_posts()) : the_post(); ?>
                         <!-- can write -->
                      <a href="<?=get_permalink(); ?>">
-                        <li><?=get_the_title(); ?></li>
+                        <li>
+                          <span><?=get_the_date('j F Y'); ?></span>
+                           <?=get_the_title(); ?>
+                        </li>
                     </a>
                  <? endwhile; ?>
                  <? wp_reset_query();?>

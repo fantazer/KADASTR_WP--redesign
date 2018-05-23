@@ -29,6 +29,11 @@
 					<a href="mailto:<?= get_field('email', 'option'); ?>"
 					   class="footer-info__mail"><?= get_field('email', 'option'); ?></a>
 				</div>
+				<div id="vk_groups"></div>
+					<script type="text/javascript" src="//vk.com/js/api/openapi.js?154"></script>
+					<script type="text/javascript" >
+					VK.Widgets.Group("vk_groups", {mode: 3, no_cover: 1, width: "auto", color2: '443783'}, 154622563);
+					</script>
 			</div>
 		</div>
 	</div>
