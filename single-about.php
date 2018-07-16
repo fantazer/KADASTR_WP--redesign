@@ -24,6 +24,38 @@
 	</div>
 </div>
 
+<div class="personal-content">
+	<div class="main-cont">
+		<div class="section-title">Наши сотрудники</div>
+		<div class="personal">
+			 <?
+			 	$args = array(
+			 	'cat'=> 31,
+			 	'orderby' => 'menu_order',
+			 	'order' => 'ASC'
+			 	);
+			 ?>
+			 <? query_posts($args);?>
+			 <? while (have_posts()) : the_post(); ?>
+					<div class="personal__el">
+						<div class="personal__el-img-wrap">
+							<div class="personal__el-img" style="background-image:url(<?=get_field('logo');?>);"></div>
+						</div>
+						<div class="personal__el-info">
+							<div class="personal__el-title"><?=get_the_title(); ?></div>
+							<div class="personal__el-position"><?=get_field('staff');?></div>
+							<div class="personal__el-text">
+								<?=get_the_content();?>
+							</div>
+						</div>
+					</div>
+			 <? endwhile; ?>
+			 <? wp_reset_query();?>
+		</div>
+
+	</div>
+</div>
+
 <div class="section section--certificate wow fadeIn" data-wow-duration="2s" data-wow-delay=".75s">
 	<div class="filter"></div>
 	<div class="section-title">Отзывы о нас</div>

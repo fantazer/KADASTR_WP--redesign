@@ -97,7 +97,7 @@
 							<span>от 101 до 200 кв.м</span>
 						</div>
 						<div class="cost__el-text">(индивидуальный жилой дом)</div>
-						<div class="cost__el-price">20 000 руб.</div>
+						<div class="cost__el-price">18 000 руб.</div>
 						<div class="service__btn service__btn-get modal-get" data-modal="order">Заказать</div>
 					</div>
 					<div class="cost__el">
@@ -106,19 +106,19 @@
 							<span>от 201 кв.м</span>
 						</div>
 						<div class="cost__el-text">(загородный дом, коттедж)</div>
-						<div class="cost__el-price">25 000 руб.</div>
+						<div class="cost__el-price">22 000 руб.</div>
 						<div class="service__btn service__btn-get modal-get" data-modal="order">Заказать</div>
 					</div>
 				</div>
 				<div class="get-sale-row">
 					<div class="get-sale__btn modal-get" data-modal="sale">Нажми и узнай, как сэкономить!</div>
 				</div>
-				<div class="cost-inform">
+				<div class="get-sale__add-text">Минимальный заказ 14000 рублей</div>
+				<div class="cost-inform">Указанные здесь цены являются окончательными и зависят только от площади объекта. Единственный платёж, который Вам придётс
 				Указанные здесь цены являются окончательными и зависят только от площади объекта. Единственный платёж, который Вам придётся уплатить, это гос. пошлина в размере 350 руб., взимаемая Росреестром при подаче технического плана.<br>
 				Если  Вы не хотите тратить свое время на подачу и получение документов из  Росреестра, мы выполним это за Вас. Такая услуга «под ключ» будет стоить 5000 руб. В этом случае от Вас дополнительно потребуется нотариальная доверенность (форму доверенности Вам предоставит наш кадастровый инженер).
 				</div>
 			</div>
-
 		</div>
 
 		<!--need doc-->

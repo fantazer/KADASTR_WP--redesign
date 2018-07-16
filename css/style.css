@@ -5603,6 +5603,122 @@ section--calc {
     background-image: none !important;
   }
 }
+.personal {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+@media only screen and (max-width: 640px) {
+  .personal {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.personal__el {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 40px;
+}
+@media only screen and (max-width: 640px) {
+  .personal__el {
+    -webkit-flex-flow: column;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+}
+.personal__el-img-wrap {
+  width: 32%;
+}
+@media only screen and (max-width: 640px) {
+  .personal__el-img-wrap {
+    width: 100%;
+  }
+}
+.personal__el-img {
+  padding: 60% 30%;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-position: top center;
+}
+@media only screen and (max-width: 1024px) {
+  .personal__el-img {
+    height: auto;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .personal__el-img {
+    background-size: cover;
+  }
+}
+.personal__el-info {
+  width: 65%;
+  padding: 40px;
+  background: #fff;
+}
+@media only screen and (max-width: 640px) {
+  .personal__el-info {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .personal__el-info {
+    padding: 20px;
+  }
+}
+.personal__el-title {
+  font-size: 24px;
+  color: #111;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 640px) {
+  .personal__el-title {
+    font-size: 18px;
+  }
+}
+.personal__el-position {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.personal__el-text ul {
+  padding-left: 20px;
+}
+.personal__el-text ul li {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.personal-content {
+  background: #f1f1f1;
+  padding: 60px 0;
+}
+@media only screen and (max-width: 640px) {
+  .personal-content {
+    padding: 20px 0;
+  }
+}
 @-webkit-keyframes slideInDown {
   from {
     -webkit-transform: translate3d(0, -100%, 0);
