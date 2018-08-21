@@ -74,6 +74,12 @@ li {
   margin-bottom: 30px;
   margin-top: -20px;
 }
+.footer-list__menu li {
+  font-size: 14px;
+}
+.section-title-sub {
+  margin-top: -20px;
+}
 @media only screen and (max-width: 1024px) {
   .top-line-info {
     width: 75%;
@@ -82,6 +88,9 @@ li {
 @media only screen and (max-width: 960px) {
   .top-line-info {
     width: auto;
+  }
+  .advance {
+    margin-top: 20px;
   }
 }
 @media only screen and (max-width: 640px) {

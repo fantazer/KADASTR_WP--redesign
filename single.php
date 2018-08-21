@@ -43,7 +43,7 @@
 			            endwhile;
 			            wp_reset_query();
 			            $key = array_search($idPost, $PostArray);
-			            $output = array_slice($PostArray, $key+1,3 );
+			            $output = array_slice($PostArray, $key+1,5 );
 			            $LastPost = array_pop($PostArray);
 			            $postEl = array( 'include' =>$output,'post__not_in'=>$LastPost ,'order' => 'ASC');
 			            $myposts = get_posts($postEl);
@@ -54,9 +54,9 @@
 			              <?
 			            }
 			            wp_reset_postdata();
-			            $needPost =  3 - (count($PostArray) - $key);
+			            $needPost =  5 - (count($PostArray) - $key);
 			            //echo $needPost;
-			            if ($needPost < 4 && $needPost > 0 ) {
+			            if ($needPost < 6 && $needPost > 0 ) {
 			              $postEl = array( 'cat'=> $a,'order' => 'ASC','posts_per_page' => $needPost);
 			              $myposts = get_posts($postEl);
 			              foreach( $myposts as $post ){

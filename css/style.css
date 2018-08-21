@@ -440,14 +440,16 @@ h4 {
 .type--main,
 h3,
 p,
-body {
+body,
+ol li {
   font-size: 14px;
 }
 @media only screen and (max-width: 768px) {
   .type--main,
   h3,
   p,
-  body {
+  body,
+  ol li {
     font-size: 12px;
   }
 }
@@ -2903,7 +2905,7 @@ body {
 }
 .section-title {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   font-size: 40px;
   color: #111;
   text-transform: uppercase;
@@ -3410,13 +3412,26 @@ body {
   width: 100%;
   height: 100%;
 }
-.lp-baner-filter {
+.lp-baner-filter--green {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255,255,255,0.729);
+  background: rgba(93,160,107,0.7);
+}
+.lp-baner-filter--dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(25,46,29,0.7);
+}
+@media only screen and (min-width: 769px) {
+  .lp-baner-filter--dark {
+    display: none;
+  }
 }
 .lp-baner__img {
   background-size: cover;
@@ -3427,6 +3442,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+}
+.lp-baner__img--top {
+  background-position: center top;
 }
 .lp-baner__content {
   margin-top: -30px;
@@ -3842,6 +3860,9 @@ body {
 @media only screen and (max-width: 768px) {
   .cost__el-img {
     margin-bottom: 0;
+    width: 150px;
+    height: 150px;
+    padding: 25%;
   }
 }
 .cost__el-title {
@@ -3876,6 +3897,11 @@ body {
   margin-bottom: 40px;
   font-weight: bold;
 }
+@media only screen and (max-width: 640px) {
+  .cost__el-price {
+    margin-bottom: 20px;
+  }
+}
 .cost-inform {
   width: 70%;
   margin: 0 auto;
@@ -3897,6 +3923,11 @@ body {
 .section--price {
   padding-top: 100px;
   padding-bottom: 0;
+}
+@media only screen and (max-width: 640px) {
+  .section--price {
+    padding: 30px 0;
+  }
 }
 .section-contact {
   background: #efefef;
@@ -5120,6 +5151,36 @@ body {
     width: 100%;
   }
 }
+.doc--two {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+.doc--two .doc__el {
+  width: 32%;
+  margin: 0 10px;
+}
+@media only screen and (max-width: 768px) {
+  .doc--two .doc__el {
+    width: 46%;
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .doc--two .doc__el {
+    width: 100%;
+    max-width: 380px;
+  }
+}
 .section-call--mid {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5571,6 +5632,10 @@ section--calc {
     font-size: 32px;
   }
 }
+.lp-baner__title--fat {
+  font-weight: bold;
+  line-height: 1.4;
+}
 .section--why-topograf {
   padding: 200px 0;
   background-position: right;
@@ -5600,6 +5665,15 @@ section--calc {
 }
 @media only screen and (max-width: 768px) {
   .lp-baner--contain {
+    background-image: none !important;
+  }
+}
+.lp-baner--cover {
+  background-size: cover;
+  background-position: right;
+}
+@media only screen and (max-width: 768px) {
+  .lp-baner--cover {
     background-image: none !important;
   }
 }
@@ -5717,6 +5791,156 @@ section--calc {
 @media only screen and (max-width: 640px) {
   .personal-content {
     padding: 20px 0;
+  }
+}
+.lp-baner__title--sm {
+  font-size: 40px;
+}
+@media only screen and (max-width: 768px) {
+  .lp-baner__title--sm {
+    font-size: 26px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .lp-baner__title--sm {
+    font-size: 24px;
+  }
+}
+ol li {
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #111;
+  font-size: 16px;
+}
+.section--contain {
+  background-size: contain;
+}
+.lp-baner--dark .lp-baner__title {
+  color: #fff;
+  font-weight: bold;
+}
+.lp-baner--dark .lp-baner__title-sub {
+  color: #fff;
+}
+.header__btn-get--yellow {
+  background: #ffdf6d;
+  color: #111;
+}
+.section-call--full {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.section--bg {
+  position: relative;
+  color: #fff;
+}
+.section--bg .lp-baner-filter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #ff4136;
+}
+.cost__el-text--mark {
+  padding: 5px 10px;
+  background: #fff0b3;
+  color: #111;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+}
+.cost--three .cost__el {
+  width: 32%;
+}
+@media only screen and (max-width: 640px) {
+  .cost--three .cost__el {
+    width: 100%;
+    max-width: 380px;
+  }
+}
+.cost--two {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.cost--two .cost__el {
+  width: 32%;
+  margin: 0 10px;
+}
+@media only screen and (max-width: 768px) {
+  .cost--two .cost__el {
+    width: 46%;
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .cost--two .cost__el {
+    width: 100%;
+    max-width: 380px;
+  }
+}
+.section--mobile {
+  background-position: right;
+  padding: 200px 0;
+}
+@media only screen and (max-width: 640px) {
+  .section--mobile {
+    background: #f7f7f7 !important;
+    padding: 30px 0;
+  }
+}
+.section--survey {
+  background-position: 0%;
+}
+@media only screen and (max-width: 1400px) {
+  .section--survey {
+    background-position: 15%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .section--survey {
+    background-position: 20%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .lp-baner__mobile .lp-baner__img {
+    background-image: url("../img/kadastr.jpg") !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .lp-baner__mobile .lp-baner__title {
+    color: #fff;
+  }
+  .lp-baner__mobile .lp-baner__title-sub {
+    color: #fff;
+    opacity: 0.7;
+  }
+}
+ul li,
+ol li {
+  line-height: 1.6;
+  color: #111;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+@media only screen and (max-width: 768px) {
+  ul li,
+  ol li {
+    font-size: 14px;
   }
 }
 @-webkit-keyframes slideInDown {
