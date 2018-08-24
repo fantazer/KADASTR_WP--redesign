@@ -1,26 +1,12 @@
-<?get_header();?>
+
 
 <!--display errors-->
 <? ini_set('display_errors','off'); ?>
 
 
 
-<? include('module/bread.php'); ?>
-
-<div class="main-cont">
-			<div class="content">
-
-				<? include('module/toolbar.php');?>
-
-				<div class="content__info">
-					<?
-						the_title('<h1>', '</h1>');
-						if(in_category(12) ){
-							the_date();
-						}
-						the_content();
-
-						function porstAfter($a,$order){
+<?
+	function porstAfter($a,$order){
 						if( in_category($a) ){
 			            global $post;
 			            $idPost = get_the_id();
@@ -69,6 +55,33 @@
 
 							}
 					}
+?>
+
+
+<?
+	$post = $wp_query->post;
+ /*if (in_category(array(11,15,19,29,30))) {*/ //ID категории
+ if (in_category(array(9999))) { //ID категории
+      include('single-town-list.php');
+  } else {
+?>
+<?get_header();?>
+<? include('module/bread.php'); ?>
+
+<div class="main-cont">
+			<div class="content">
+
+				<? include('module/toolbar.php');?>
+
+				<div class="content__info">
+					<?
+						the_title('<h1>', '</h1>');
+						if(in_category(12) ){
+							the_date();
+						}
+						the_content();
+
+
 
 						porstAfter(11,true);
 						porstAfter(14,true);
@@ -170,6 +183,7 @@
 		</div>
 </div>
 
+<? }?>
 <? include('module/sertificate.php');?>
 <? include('module/customers.php');?>
 <?include('module/contact-form.php');?>
