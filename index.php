@@ -12,6 +12,7 @@
 					<div class="main-service__col">
 
 						<div class="main-service__title">Кадастровые работы</div>
+							<div class="main-service__col-wrap">
 							<?php
 								$the_query = new WP_Query(array(
 									'meta_key'			=> 'order',
@@ -43,12 +44,13 @@
 								</div>
 								<?php endwhile; ?>
 							<?php endif; ?>
-
+						</div>
 						<a class="main-service__el-get" href="kadastrovy-e-raboty/">Eще услуги</a>
 					</div>
 
 					<div class="main-service__col">
 						<div class="main-service__title">Геодезические работы</div>
+						<div class="main-service__col-wrap">
 						<?php
 								$the_query = new WP_Query(array(
 									'tag'=> 'main-service--geo',
@@ -80,6 +82,7 @@
 								</div>
 								<?php endwhile; ?>
 							<?php endif; ?>
+						</div>
 						<a class="main-service__el-get" href="geodezicheskie-raboty/">Eще услуги</a>
 					</div>
 				</div>

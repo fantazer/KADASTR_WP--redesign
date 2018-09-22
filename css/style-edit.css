@@ -80,6 +80,22 @@ li {
 .section-title-sub {
   margin-top: -20px;
 }
+.main-service__col-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.main-service__col-wrap .main-service__el {
+  width: 49%;
+}
+.main-service__col {
+  width: 100%;
+  margin-bottom: 30px;
+  border: 0 !important;
+}
+.menu-wrap li {
+  margin-bottom: 0;
+}
 @media only screen and (max-width: 1024px) {
   .top-line-info {
     width: 75%;
@@ -92,8 +108,15 @@ li {
   .advance {
     margin-top: 20px;
   }
+  .section--union {
+    background-image: url("/wp-content/themes/CGIKU/img/house-megevanie.png") !important;
+    background-position: center center;
+  }
 }
 @media only screen and (max-width: 640px) {
+  .main-service__col-wrap .main-service__el {
+    width: 100%;
+  }
   .lp-baner__title-status {
     width: 100%;
     text-align: center;

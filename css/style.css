@@ -2901,12 +2901,12 @@ body {
 }
 .section-step {
   position: relative;
-  background: #efefef;
+  background: #f9f9f9;
 }
 .section-title {
   text-align: center;
   margin-bottom: 40px;
-  font-size: 40px;
+  font-size: 32px;
   color: #111;
   text-transform: uppercase;
   font-weight: 700;
@@ -3418,7 +3418,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(93,160,107,0.7);
+  background: rgba(20,60,28,0.7);
 }
 .lp-baner-filter--dark {
   position: absolute;
@@ -3471,7 +3471,7 @@ body {
 }
 .lp-baner__title {
   text-transform: uppercase;
-  font-size: 48px;
+  font-size: 42px;
   color: #111;
   margin-bottom: 30px;
   line-height: 1.4;
@@ -5181,6 +5181,57 @@ body {
     max-width: 380px;
   }
 }
+.doc--line {
+  display: block;
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.doc__el--line {
+  width: 100%;
+  margin-bottom: 20px;
+  -webkit-flex-flow: row;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media only screen and (max-width: 640px) {
+  .doc__el--line {
+    -webkit-flex-flow: column;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+}
+.doc__el--line .doc__icon {
+  margin-right: 30px;
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 640px) {
+  .doc__el--line .doc__icon {
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+}
+.doc__el--line .doc__title {
+  text-align: left;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 640px) {
+  .doc__el--line .doc__title {
+    text-align: center;
+  }
+}
+.doc__el--line .doc__text {
+  text-align: left;
+}
+@media only screen and (max-width: 640px) {
+  .doc__el--line .doc__text {
+    text-align: center;
+  }
+}
 .section-call--mid {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5622,6 +5673,18 @@ section--calc {
     width: 100%;
   }
 }
+.calc-ur-cont--mark .calc-ur-pay {
+  -webkit-box-shadow: 0px 3px 8px #e3e3e3;
+          box-shadow: 0px 3px 8px #e3e3e3;
+  padding-bottom: 0;
+  margin-top: 0;
+}
+.calc-ur-cont--mark .calc-ur-pay-text {
+  text-align: center;
+}
+.calc-ur-cont--mark .cost-inform--calc {
+  text-align: center;
+}
 .lp-baner__title--think {
   text-transform: none;
   font-weight: bold;
@@ -5941,6 +6004,110 @@ ol li {
   ul li,
   ol li {
     font-size: 14px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .section--union {
+    background-position: 15% right;
+  }
+}
+.section--clear-bottom {
+  padding-bottom: 0;
+}
+.solution {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media only screen and (max-width: 768px) {
+  .solution {
+    margin-bottom: 0px;
+  }
+}
+.solution__el {
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  width: 49%;
+  padding: 30px;
+  background: #fff;
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 640px) {
+  .solution__el {
+    width: 100%;
+  }
+}
+.solution__el-icon .icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 30px;
+  fill: #5da06b;
+}
+.solution__el-title {
+  line-height: 1.6;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 20px;
+}
+.solution__el-text {
+  line-height: 1.6;
+}
+.section--lg {
+  padding: 150px 0;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+@media only screen and (max-width: 768px) {
+  .section--lg {
+    padding: 50px 0;
+  }
+}
+.section--kadast-eng {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-position: center right;
+  padding: 150px 0;
+}
+@media only screen and (max-width: 1024px) {
+  .section--kadast-eng {
+    padding: 30px 0;
+    background: none;
+  }
+}
+.section {
+  position: relative;
+}
+.section-call {
+  z-index: 2;
+}
+.section-wrap__img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: right;
+}
+@media only screen and (max-width: 1400px) {
+  .section-wrap__img {
+    background-position: 70%;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .section-wrap__img {
+    display: none;
   }
 }
 @-webkit-keyframes slideInDown {

@@ -61,7 +61,7 @@
 <?
 	$post = $wp_query->post;
  /*if (in_category(array(11,15,19,29,30))) {*/ //ID категории
- if (in_category(array(9999))) { //ID категории
+ if (in_category(array(11,15,19,29))) { //ID категории
       include('single-town-list.php');
   } else {
 ?>
