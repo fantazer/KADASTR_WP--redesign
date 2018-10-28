@@ -1,95 +1,153 @@
 <?
 
+function porstAfter($a, $order)
+{
+  if (in_category($a)) {
+    global $post;
+    $idPost = get_the_id();
+    $PostArray = array();
+    if ($order) {
+      $args = array(
+        'cat' => $a,
+        //'orderby'=> 'title',
+        'order' => 'ASC'
+      );
+    } else {
+      $args = array(
+        'cat' => $a,
+      );
+    }
+    query_posts($args);
+    while (have_posts()) : the_post();
+      $name = get_the_id();
+      array_push($PostArray, $name);
+    endwhile;
+    wp_reset_query();
+    $key = array_search($idPost, $PostArray);
+    $output = array_slice($PostArray, $key + 1, 5);
+    $LastPost = array_pop($PostArray);
+    $postEl = array('include' => $output, 'post__not_in' => $LastPost, 'order' => 'ASC');
+    $myposts = get_posts($postEl);
+    foreach ($myposts as $post) {
+      setup_postdata($post);
+      ?>
+			<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+      <?
+    }
+    wp_reset_postdata();
+    $needPost = 5 - (count($PostArray) - $key);
+    //echo $needPost;
+    if ($needPost < 6 && $needPost > 0) {
+      $postEl = array('cat' => $a, 'order' => 'ASC', 'posts_per_page' => $needPost);
+      $myposts = get_posts($postEl);
+      foreach ($myposts as $post) {
+        setup_postdata($post);
+        ?>
+				<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+        <?
+      }
+    }
+
+  }
+}
+
 add_filter('single_template', create_function(
-  '$the_template',
-  'foreach( (array) get_the_category() as $cat ) {
+    '$the_template',
+    'foreach( (array) get_the_category() as $cat ) {
     if ( file_exists(TEMPLATEPATH . "/single-{$cat->slug}.php") )
       return TEMPLATEPATH . "/single-{$cat->slug}.php"; }
-    return $the_template;' )
+    return $the_template;')
 );
 
-if( function_exists('acf_add_options_page') ) {
+if (function_exists('acf_add_options_page')) {
 
-	acf_add_options_page();
+  acf_add_options_page();
 
 }
 
 
 add_filter('navigation_markup_template', 'my_navigation_markup_template');
-function my_navigation_markup_template() {
-     return '
+function my_navigation_markup_template()
+{
+  return '
      <nav class="navigation %1$s" role="navigation">
          <div class="nav-links">%3$s</div>
      </nav>';
 }
 
-remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+remove_action('wp_head', 'wp_oembed_add_discovery_links');
+remove_action('wp_head', 'wp_oembed_add_host_js');
 
 // Отключаем сам REST API
 add_filter('rest_enabled', '__return_false');
 
 // Отключаем фильтры REST API
-remove_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
-remove_action( 'wp_head', 'rest_output_link_wp_head', 10, 0 );
-remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
-remove_action( 'auth_cookie_malformed', 'rest_cookie_collect_status' );
-remove_action( 'auth_cookie_expired', 'rest_cookie_collect_status' );
-remove_action( 'auth_cookie_bad_username', 'rest_cookie_collect_status' );
-remove_action( 'auth_cookie_bad_hash', 'rest_cookie_collect_status' );
-remove_action( 'auth_cookie_valid', 'rest_cookie_collect_status' );
-remove_filter( 'rest_authentication_errors', 'rest_cookie_check_errors', 100 );
+remove_action('xmlrpc_rsd_apis', 'rest_output_rsd');
+remove_action('wp_head', 'rest_output_link_wp_head', 10, 0);
+remove_action('template_redirect', 'rest_output_link_header', 11, 0);
+remove_action('auth_cookie_malformed', 'rest_cookie_collect_status');
+remove_action('auth_cookie_expired', 'rest_cookie_collect_status');
+remove_action('auth_cookie_bad_username', 'rest_cookie_collect_status');
+remove_action('auth_cookie_bad_hash', 'rest_cookie_collect_status');
+remove_action('auth_cookie_valid', 'rest_cookie_collect_status');
+remove_filter('rest_authentication_errors', 'rest_cookie_check_errors', 100);
 
 // Отключаем события REST API
-remove_action( 'init', 'rest_api_init' );
-remove_action( 'rest_api_init', 'rest_api_default_filters', 10, 1 );
-remove_action( 'parse_request', 'rest_api_loaded' );
+remove_action('init', 'rest_api_init');
+remove_action('rest_api_init', 'rest_api_default_filters', 10, 1);
+remove_action('parse_request', 'rest_api_loaded');
 
 // Отключаем Embeds связанные с REST API
-remove_action( 'rest_api_init', 'wp_oembed_register_route');
-remove_filter( 'rest_pre_serve_request', '_oembed_rest_pre_serve_request', 10, 4 );
+remove_action('rest_api_init', 'wp_oembed_register_route');
+remove_filter('rest_pre_serve_request', '_oembed_rest_pre_serve_request', 10, 4);
 
-remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+remove_action('wp_head', 'wp_oembed_add_discovery_links');
 
 
-function my_deregister_scripts(){
- wp_deregister_script( 'wp-embed' );
+function my_deregister_scripts()
+{
+  wp_deregister_script('wp-embed');
 }
-add_action( 'wp_footer', 'my_deregister_scripts' );
 
-function my_scripts_method() {
-    wp_deregister_script('thickbox');
-    //wp_enqueue_script( 'jquery' );
+add_action('wp_footer', 'my_deregister_scripts');
+
+function my_scripts_method()
+{
+  wp_deregister_script('thickbox');
+  //wp_enqueue_script( 'jquery' );
 }
 
 add_action('wp_enqueue_scripts', 'my_scripts_method');
-remove_action('wp_head','adjacent_posts_rel_link_wp_head');
-remove_action('wp_head','adjacent_posts_rel_link_wp_head');
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
 
 
-function my_deregister_styles()    {
-   wp_deregister_style( 'dashicons' );
+function my_deregister_styles()
+{
+  wp_deregister_style('dashicons');
 }
 
 
 if (function_exists('add_theme_support')) { //Включаем меню
-add_theme_support('menus');
+  add_theme_support('menus');
 }
 
-function remove_styles () {
-	wp_deregister_style ('contact-form-7');
-	wp_deregister_style ('postratings');
+function remove_styles()
+{
+  wp_deregister_style('contact-form-7');
+  wp_deregister_style('postratings');
 
 }
-add_action ('wp_print_styles','remove_styles',100);
 
-add_theme_support( 'post-thumbnails', array( 'post' ) ); // Включаем миниатюры
+add_action('wp_print_styles', 'remove_styles', 100);
 
-add_filter( 'jpeg_quality', create_function( '', 'return 80;' ) );
+add_theme_support('post-thumbnails', array('post')); // Включаем миниатюры
 
-if(!is_admin()){
+add_filter('jpeg_quality', create_function('', 'return 80;'));
+
+if (!is_admin()) {
   remove_action('wp_head', 'wp_print_scripts');
   remove_action('wp_head', 'wp_print_head_scripts', 9);
   remove_action('wp_head', 'wp_enqueue_scripts', 1);
@@ -115,347 +173,337 @@ if(!is_admin()){
  *
  * version 2.3
  */
-function kama_breadcrumbs( $sep = '', $l10n = array(), $args = array() ){
-	global $post, $wp_query, $wp_post_types;
+function kama_breadcrumbs($sep = '', $l10n = array(), $args = array())
+{
+  global $post, $wp_query, $wp_post_types;
 
-	// Локализация
-	$def_l10n = array(
-		'home'       => 'Главная',
-		'paged'      => 'Страница %d',
-		'_404'       => 'Ошибка 404',
-		'search'     => 'Результаты поиска по запросу - <b>%s</b>',
-		'author'     => 'Архив автора: <b>%s</b>',
-		'year'       => 'Архив за <b>%d</b> год',
-		'month'      => 'Архив за: <b>%s</b>',
-		'day'        => '',
-		'attachment' => 'Медиа: %s',
-		'tag'        => 'Записи по метке: <b>%s</b>',
-		'tax_tag'    => '%1$s из "%2$s" по тегу: <b>%3$s</b>',
-		// tax_tag выведет: 'тип_записи из "название_таксы" по тегу: имя_термина'.
-		// Если нужны отдельные холдеры, например только имя термина, пишем так: 'записи по тегу: %3$s'
-	);
+  // Локализация
+  $def_l10n = array(
+    'home' => 'Главная',
+    'paged' => 'Страница %d',
+    '_404' => 'Ошибка 404',
+    'search' => 'Результаты поиска по запросу - <b>%s</b>',
+    'author' => 'Архив автора: <b>%s</b>',
+    'year' => 'Архив за <b>%d</b> год',
+    'month' => 'Архив за: <b>%s</b>',
+    'day' => '',
+    'attachment' => 'Медиа: %s',
+    'tag' => 'Записи по метке: <b>%s</b>',
+    'tax_tag' => '%1$s из "%2$s" по тегу: <b>%3$s</b>',
+    // tax_tag выведет: 'тип_записи из "название_таксы" по тегу: имя_термина'.
+    // Если нужны отдельные холдеры, например только имя термина, пишем так: 'записи по тегу: %3$s'
+  );
 
-	// Параметры по умолчанию
-	$def_args = array(
-		'on_front_page'   => true,  // выводить крошки на главной странице
-		'show_post_title' => true,  // показывать ли название записи в конце (последний элемент). Для записей, страниц, вложений
-		// можно указать строку вида <span>%s</span>, когда нужно обернуть заголовок в html
-		'sep'             => ' » ', // разделитель
-		'markup'          => 'schema.org',
-		// 'markup' - микроразметка. Может быть: 'rdf.data-vocabulary.org', 'schema.org', '' - без микроразметки
-		// или можно указать свой массив разметки:
-		// array( 'wrap'=>'<div class="kama_breadcrumbs">',   'wrap_close'=>'</div>', 'linkpatt'=>'<a href="%s">%s</a>', 'sep_after'=>'', )
-		'priority_tax'    => array('category'), // приоритетные таксономии, нужно когда запись в нескольких таксах
-		'priority_terms'  => array(),
-		// 'priority_terms' - приоритетные элементы таксономий, когда запись находится в нескольких элементах одной таксы одновременно.
-		// Например: array( 'category'=>array(45,'term_name'), 'tax_name'=>array(1,2,'name') )
-		// 'category' - такса для которой указываются приор. элементы: 45 - ID термина и 'term_name' - ярлык.
-		// порядок 45 и 'term_name' имеет значение: чем раньше тем важнее. Все указанные термины важнее неуказанных...
-		'nofollow' => false, // добавлять rel=nofollow к ссылкам?
-	);
+  // Параметры по умолчанию
+  $def_args = array(
+    'on_front_page' => true,  // выводить крошки на главной странице
+    'show_post_title' => true,  // показывать ли название записи в конце (последний элемент). Для записей, страниц, вложений
+    // можно указать строку вида <span>%s</span>, когда нужно обернуть заголовок в html
+    'sep' => ' » ', // разделитель
+    'markup' => 'schema.org',
+    // 'markup' - микроразметка. Может быть: 'rdf.data-vocabulary.org', 'schema.org', '' - без микроразметки
+    // или можно указать свой массив разметки:
+    // array( 'wrap'=>'<div class="kama_breadcrumbs">',   'wrap_close'=>'</div>', 'linkpatt'=>'<a href="%s">%s</a>', 'sep_after'=>'', )
+    'priority_tax' => array('category'), // приоритетные таксономии, нужно когда запись в нескольких таксах
+    'priority_terms' => array(),
+    // 'priority_terms' - приоритетные элементы таксономий, когда запись находится в нескольких элементах одной таксы одновременно.
+    // Например: array( 'category'=>array(45,'term_name'), 'tax_name'=>array(1,2,'name') )
+    // 'category' - такса для которой указываются приор. элементы: 45 - ID термина и 'term_name' - ярлык.
+    // порядок 45 и 'term_name' имеет значение: чем раньше тем важнее. Все указанные термины важнее неуказанных...
+    'nofollow' => false, // добавлять rel=nofollow к ссылкам?
+  );
 
-	// Фильтрует аргументы по умолчанию
-	$loc  = (object) array_merge( apply_filters('kama_breadcrumbs_default_loc', $def_l10n ), $l10n );
-	$args = (object) array_merge( apply_filters('kama_breadcrumbs_default_args', $def_args ), $args );
+  // Фильтрует аргументы по умолчанию
+  $loc = (object)array_merge(apply_filters('kama_breadcrumbs_default_loc', $def_l10n), $l10n);
+  $args = (object)array_merge(apply_filters('kama_breadcrumbs_default_args', $def_args), $args);
 
-	if( ! $sep ) $sep = $args->sep;
+  if (!$sep) $sep = $args->sep;
 
-	// микроразметка ---
-	if(1){
-		$mrk = & $args->markup;
+  // микроразметка ---
+  if (1) {
+    $mrk = &$args->markup;
 
-		// Разметка по умолчанию default
-		if( ! $mrk ){
-			$mrk = array(
-				'wrap'       => '<div class="kama_breadcrumbs">',
-				'wrap_close' => '</div>',
-				'linkpatt'   => '<a href="%s">%s</a>',
-				'sep_after'  => '',
-			);
-		}
-		if( $mrk == 'rdf.data-vocabulary.org' ){
-			$mrk = array(
-				'wrap'       => '<div class="kama_breadcrumbs" prefix="v: http://rdf.data-vocabulary.org/#">',
-				'wrap_close' => '</div>',
-				'linkpatt'   => '<span typeof="v:Breadcrumb"><a href="%s" rel="v:url" property="v:title">%s</a>',
-				'sep_after'  => '</span>', // закрываем span после разделителя!
-			);
-		}
-		// schema.org
-		elseif( $mrk == 'schema.org' ){
-			$mrk = array(
-				'wrap'       => '<div class="kama_breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">',
-				'wrap_close' => '</div>',
-				'linkpatt'   => '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="%s" itemprop="item"><span itemprop="name">%s</span></a></span>',
-				'sep_after'  => '', // закрываем span после разделителя!
-			);
-		}
-		elseif( ! is_array($mrk) )
-			die( __FUNCTION__ .': "markup" parameter must be array...');
+    // Разметка по умолчанию default
+    if (!$mrk) {
+      $mrk = array(
+        'wrap' => '<div class="kama_breadcrumbs">',
+        'wrap_close' => '</div>',
+        'linkpatt' => '<a href="%s">%s</a>',
+        'sep_after' => '',
+      );
+    }
+    if ($mrk == 'rdf.data-vocabulary.org') {
+      $mrk = array(
+        'wrap' => '<div class="kama_breadcrumbs" prefix="v: http://rdf.data-vocabulary.org/#">',
+        'wrap_close' => '</div>',
+        'linkpatt' => '<span typeof="v:Breadcrumb"><a href="%s" rel="v:url" property="v:title">%s</a>',
+        'sep_after' => '</span>', // закрываем span после разделителя!
+      );
+    } // schema.org
+		elseif ($mrk == 'schema.org') {
+      $mrk = array(
+        'wrap' => '<div class="kama_breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">',
+        'wrap_close' => '</div>',
+        'linkpatt' => '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="%s" itemprop="item"><span itemprop="name">%s</span></a></span>',
+        'sep_after' => '', // закрываем span после разделителя!
+      );
+    } elseif (!is_array($mrk))
+      die(__FUNCTION__ . ': "markup" parameter must be array...');
 
-		$wrap       = $mrk['wrap']."\n";
-		$wrap_close = $mrk['wrap_close']."\n";
-		$linkpatt   = $args->nofollow ? str_replace('<a ','<a rel="nofollow"', $mrk['linkpatt']) : $mrk['linkpatt'];
-		$sep       .= $mrk['sep_after']."\n";
-	}
+    $wrap = $mrk['wrap'] . "\n";
+    $wrap_close = $mrk['wrap_close'] . "\n";
+    $linkpatt = $args->nofollow ? str_replace('<a ', '<a rel="nofollow"', $mrk['linkpatt']) : $mrk['linkpatt'];
+    $sep .= $mrk['sep_after'] . "\n";
+  }
 
-	// может это архив пустой таксы
-	if( empty($post) )
-		$ptype = & $wp_post_types[ get_taxonomy( get_queried_object()->taxonomy )->object_type[0] ];
-	else
-		$ptype = & $wp_post_types[ $post->post_type ];
+  // может это архив пустой таксы
+  if (empty($post))
+    $ptype = &$wp_post_types[get_taxonomy(get_queried_object()->taxonomy)->object_type[0]];
+  else
+    $ptype = &$wp_post_types[$post->post_type];
 
-	// paged
-	$pg_end = '';
-	if( $paged_num = $wp_query->query_vars['paged'] ){
-		$pg_end  = /*'</a>'.*/ $sep . sprintf( $loc->paged, (int) $paged_num );
-	}
+  // paged
+  $pg_end = '';
+  if ($paged_num = $wp_query->query_vars['paged']) {
+    $pg_end = /*'</a>'.*/
+      $sep . sprintf($loc->paged, (int)$paged_num);
+  }
 
-	// OUT
-	$out = '';
+  // OUT
+  $out = '';
 
-	// front page
-	if( is_front_page() ){
-		return $args->on_front_page ? ( print $wrap .( $paged_num ? sprintf($linkpatt, get_home_url(), $loc->home) . $pg_end : $loc->home ). $wrap_close ) : '';
-	}
-	// страница записей, когда для главной установлена отдлеьаная старница.
-	elseif( is_home() ) {
-		$q_obj = & $wp_query->queried_object;
-		$out = $paged_num ? ( sprintf( $linkpatt, get_permalink($q_obj->ID), $q_obj->post_title ) . $pg_end ) : $q_obj->post_title;
-	}
-	elseif( is_404() ){
-		$out = $loc->_404;
-	}
-	elseif( is_search() ){
-		$out = sprintf( $loc->search, esc_html( $GLOBALS['s'] ) );
-	}
-	elseif( is_author() ){
-		$q_obj = & $wp_query->queried_object;
-		$tit = sprintf( $loc->author, esc_html($q_obj->display_name) );
-		$out = ( $paged_num ? sprintf( $linkpatt, get_author_posts_url( $q_obj->ID, $q_obj->user_nicename ) . $pg_end, $tit ) : $tit );
-	}
-	elseif( is_year() || is_month() || is_day() ){
-		$y_url  = get_year_link( $year = get_the_time('Y') );
+  // front page
+  if (is_front_page()) {
+    return $args->on_front_page ? (print $wrap . ($paged_num ? sprintf($linkpatt, get_home_url(), $loc->home) . $pg_end : $loc->home) . $wrap_close) : '';
+  } // страница записей, когда для главной установлена отдлеьаная старница.
+	elseif (is_home()) {
+    $q_obj = &$wp_query->queried_object;
+    $out = $paged_num ? (sprintf($linkpatt, get_permalink($q_obj->ID), $q_obj->post_title) . $pg_end) : $q_obj->post_title;
+  } elseif (is_404()) {
+    $out = $loc->_404;
+  } elseif (is_search()) {
+    $out = sprintf($loc->search, esc_html($GLOBALS['s']));
+  } elseif (is_author()) {
+    $q_obj = &$wp_query->queried_object;
+    $tit = sprintf($loc->author, esc_html($q_obj->display_name));
+    $out = ($paged_num ? sprintf($linkpatt, get_author_posts_url($q_obj->ID, $q_obj->user_nicename) . $pg_end, $tit) : $tit);
+  } elseif (is_year() || is_month() || is_day()) {
+    $y_url = get_year_link($year = get_the_time('Y'));
 
-		if( is_year() ){
-			$tit = sprintf( $loc->year, $year );
-			$out = ( $paged_num ? sprintf($linkpatt, $y_url, $tit) . $pg_end : $tit );
-		}
-		// month day
-		else {
-			$y_link = sprintf( $linkpatt, $y_url, $year);
-			$m_url  = get_month_link( $year, get_the_time('m') );
+    if (is_year()) {
+      $tit = sprintf($loc->year, $year);
+      $out = ($paged_num ? sprintf($linkpatt, $y_url, $tit) . $pg_end : $tit);
+    } // month day
+    else {
+      $y_link = sprintf($linkpatt, $y_url, $year);
+      $m_url = get_month_link($year, get_the_time('m'));
 
-			if( is_month() ){
-				$tit = sprintf( $loc->month, get_the_time('F') );
-				$out = $y_link . $sep . ( $paged_num ? sprintf( $linkpatt, $m_url, $tit ) . $pg_end : $tit );
-			}
-			elseif( is_day() ){
-				$m_link = sprintf( $linkpatt, $m_url, get_the_time('F'));
-				$out = $y_link . $sep . $m_link . $sep . get_the_time('l');
-			}
-		}
-	}
-	// Древовидные записи
-	elseif( is_singular() && $ptype->hierarchical ){
-		$out = __hierarchical_posts( $args, $sep, $linkpatt, $post );
-	}
-	// Таксы, вложения и не древовидные записи
-	else {
-		$term = false;
+      if (is_month()) {
+        $tit = sprintf($loc->month, get_the_time('F'));
+        $out = $y_link . $sep . ($paged_num ? sprintf($linkpatt, $m_url, $tit) . $pg_end : $tit);
+      } elseif (is_day()) {
+        $m_link = sprintf($linkpatt, $m_url, get_the_time('F'));
+        $out = $y_link . $sep . $m_link . $sep . get_the_time('l');
+      }
+    }
+  } // Древовидные записи
+	elseif (is_singular() && $ptype->hierarchical) {
+    $out = __hierarchical_posts($args, $sep, $linkpatt, $post);
+  } // Таксы, вложения и не древовидные записи
+  else {
+    $term = false;
 
-		// определяем термин для записей (включая вложения attachments)
-		if( is_singular() ){
-			// Чтобы определить термин для вложения
-			if( is_attachment() && $post->post_parent ){
-				$save_post = $post;
-				$post = get_post( $post->post_parent );
+    // определяем термин для записей (включая вложения attachments)
+    if (is_singular()) {
+      // Чтобы определить термин для вложения
+      if (is_attachment() && $post->post_parent) {
+        $save_post = $post;
+        $post = get_post($post->post_parent);
 
-				if( is_post_type_hierarchical( $post->post_type ) ){
-					$hierarchical_post_attach_out = __hierarchical_posts( $args, $sep, $linkpatt, $post );
-				}
-			}
+        if (is_post_type_hierarchical($post->post_type)) {
+          $hierarchical_post_attach_out = __hierarchical_posts($args, $sep, $linkpatt, $post);
+        }
+      }
 
-			// учитывает если вложения прикрепляются к таксам древовидным - все бывает :)
-			$taxonomies = get_object_taxonomies( $post->post_type );
-			// оставим только древовидные и публичные, мало ли...
-			$taxonomies = array_intersect( $taxonomies, get_taxonomies( array('hierarchical' => true, 'public' => true) ) );
+      // учитывает если вложения прикрепляются к таксам древовидным - все бывает :)
+      $taxonomies = get_object_taxonomies($post->post_type);
+      // оставим только древовидные и публичные, мало ли...
+      $taxonomies = array_intersect($taxonomies, get_taxonomies(array('hierarchical' => true, 'public' => true)));
 
-			if( $taxonomies ){
-				// сортируем по приоритету
-				if( ! empty($args->priority_tax) ){
-					usort( $taxonomies, function($a,$b)use($args){
-						$a_index = array_search($a, $args->priority_tax);
-						if( $a_index === false ) $a_index = 9999999;
+      if ($taxonomies) {
+        // сортируем по приоритету
+        if (!empty($args->priority_tax)) {
+          usort($taxonomies, function ($a, $b) use ($args) {
+            $a_index = array_search($a, $args->priority_tax);
+            if ($a_index === false) $a_index = 9999999;
 
-						$b_index = array_search($b, $args->priority_tax);
-						if( $b_index === false ) $b_index = 9999999;
+            $b_index = array_search($b, $args->priority_tax);
+            if ($b_index === false) $b_index = 9999999;
 
-						return ( $b_index === $a_index ) ? 0 : ( $b_index < $a_index ? 1 : -1 ); // меньше индекс - выше
-					} );
-				}
+            return ($b_index === $a_index) ? 0 : ($b_index < $a_index ? 1 : -1); // меньше индекс - выше
+          });
+        }
 
-				// пробуем получить термины, в порядке приоритета такс
-				foreach( $taxonomies as $taxname ){
-					if( $terms = get_the_terms( $post->ID, $taxname ) ){
-						// проверим приоритетные термины для таксы
-						$prior_terms = & $args->priority_terms[ $taxname ];
-						if( $prior_terms && count($terms) > 2 ){
-							foreach( (array) $prior_terms as $term_id ){
-								$filter_field = is_numeric($term_id) ? 'term_id' : 'slug';
-								$_terms = wp_list_filter( $terms, array($filter_field=>$term_id) );
+        // пробуем получить термины, в порядке приоритета такс
+        foreach ($taxonomies as $taxname) {
+          if ($terms = get_the_terms($post->ID, $taxname)) {
+            // проверим приоритетные термины для таксы
+            $prior_terms = &$args->priority_terms[$taxname];
+            if ($prior_terms && count($terms) > 2) {
+              foreach ((array)$prior_terms as $term_id) {
+                $filter_field = is_numeric($term_id) ? 'term_id' : 'slug';
+                $_terms = wp_list_filter($terms, array($filter_field => $term_id));
 
-								if( $_terms ){
-									$term = array_shift( $_terms );
-									break;
-								}
-							}
-						}
-						else
-							$term = array_shift( $terms );
+                if ($_terms) {
+                  $term = array_shift($_terms);
+                  break;
+                }
+              }
+            } else
+              $term = array_shift($terms);
 
-						break;
-					}
-				}
-			}
+            break;
+          }
+        }
+      }
 
-			if( isset($save_post) ) $post = $save_post; // вернем обратно (для вложений)
-		}
-		// таксономии
-		else
-			$term = get_queried_object();
+      if (isset($save_post)) $post = $save_post; // вернем обратно (для вложений)
+    } // таксономии
+    else
+      $term = get_queried_object();
 
-		// строим вывод ---
+    // строим вывод ---
 
-		//if( ! $term && ! is_attachment() ) return print "Error: Taxonomy is not defined!";
+    //if( ! $term && ! is_attachment() ) return print "Error: Taxonomy is not defined!";
 
-		// вложение древовидного типа записи
-		if( isset($hierarchical_post_attach_out) ){
-			$out = $hierarchical_post_attach_out . sprintf( $linkpatt, get_permalink( $post->post_parent ), get_the_title( $post->post_parent ) ) . $sep . __show_post_title( $args->show_post_title, $post->post_title );
-		}
-		// если есть термин
-		elseif( $term && isset($term->term_id) ){
-			$term = apply_filters('kama_breadcrumbs_term', $term );
+    // вложение древовидного типа записи
+    if (isset($hierarchical_post_attach_out)) {
+      $out = $hierarchical_post_attach_out . sprintf($linkpatt, get_permalink($post->post_parent), get_the_title($post->post_parent)) . $sep . __show_post_title($args->show_post_title, $post->post_title);
+    } // если есть термин
+		elseif ($term && isset($term->term_id)) {
+      $term = apply_filters('kama_breadcrumbs_term', $term);
 
-			$term_tit_patt = '';
-			if( $term->term_id )
-				$term_tit_patt = $paged_num ? sprintf( $linkpatt, get_term_link($term->term_id, $term->taxonomy), '{title}' ) . $pg_end : '{title}';
+      $term_tit_patt = '';
+      if ($term->term_id)
+        $term_tit_patt = $paged_num ? sprintf($linkpatt, get_term_link($term->term_id, $term->taxonomy), '{title}') . $pg_end : '{title}';
 
-			// attachment
-			if( is_attachment() ){
-				if( ! $post->post_parent )
-					$out = sprintf( $loc->attachment, esc_html($post->post_title) );
-				else{
-					$tit = sprintf( $linkpatt, get_permalink($post->post_parent), get_the_title($post->post_parent) ) . $sep . __show_post_title( $args->show_post_title, $post->post_title );
-					$out = __crumbs_tax( $term->term_id, $term->taxonomy, $sep, $linkpatt ) . $tit;
-				}
-			}
-			// single
-			elseif( is_single() ){
-				$out = __crumbs_tax( $term->parent, $term->taxonomy, $sep, $linkpatt ) . sprintf( $linkpatt, get_term_link( $term->term_id, $term->taxonomy ), $term->name ). $sep . __show_post_title( $args->show_post_title, $post->post_title );
-				// Метки, архивная страница типа записи, произвольные одноуровневые таксономии
-			}
-			// taxonomy не древовидная
-			elseif( ! is_taxonomy_hierarchical( $term->taxonomy ) ){
-				// метка
-				if( is_tag() )
-					$out = str_replace('{title}', sprintf( $loc->tag, $term->name ), $term_tit_patt );
-				// таксономия
-				elseif( is_tax() ){
-					$post_label = $ptype->labels->name;
-					$tax_label = $GLOBALS['wp_taxonomies'][ $term->taxonomy ]->labels->name;
-					$out = str_replace('{title}', sprintf( $loc->tax_tag, $post_label, $tax_label, $term->name ), $term_tit_patt );
-				}
-			}
-			// Рубрики и таксономии
-			else{
-				//die( $term->taxonomy );
-				$out = __crumbs_tax( $term->parent, $term->taxonomy, $sep, $linkpatt ) . str_replace('{title}', $term->name, $term_tit_patt );
-			}
-		}
-		// если это запись, и у нее нет ни одного термина
-		elseif( is_singular() )
-			$out = __show_post_title( $args->show_post_title, $post->post_title );
-	}
+      // attachment
+      if (is_attachment()) {
+        if (!$post->post_parent)
+          $out = sprintf($loc->attachment, esc_html($post->post_title));
+        else {
+          $tit = sprintf($linkpatt, get_permalink($post->post_parent), get_the_title($post->post_parent)) . $sep . __show_post_title($args->show_post_title, $post->post_title);
+          $out = __crumbs_tax($term->term_id, $term->taxonomy, $sep, $linkpatt) . $tit;
+        }
+      } // single
+			elseif (is_single()) {
+        $out = __crumbs_tax($term->parent, $term->taxonomy, $sep, $linkpatt) . sprintf($linkpatt, get_term_link($term->term_id, $term->taxonomy), $term->name) . $sep . __show_post_title($args->show_post_title, $post->post_title);
+        // Метки, архивная страница типа записи, произвольные одноуровневые таксономии
+      } // taxonomy не древовидная
+			elseif (!is_taxonomy_hierarchical($term->taxonomy)) {
+        // метка
+        if (is_tag())
+          $out = str_replace('{title}', sprintf($loc->tag, $term->name), $term_tit_patt);
+        // таксономия
+				elseif (is_tax()) {
+          $post_label = $ptype->labels->name;
+          $tax_label = $GLOBALS['wp_taxonomies'][$term->taxonomy]->labels->name;
+          $out = str_replace('{title}', sprintf($loc->tax_tag, $post_label, $tax_label, $term->name), $term_tit_patt);
+        }
+      } // Рубрики и таксономии
+      else {
+        //die( $term->taxonomy );
+        $out = __crumbs_tax($term->parent, $term->taxonomy, $sep, $linkpatt) . str_replace('{title}', $term->name, $term_tit_patt);
+      }
+    } // если это запись, и у нее нет ни одного термина
+		elseif (is_singular())
+      $out = __show_post_title($args->show_post_title, $post->post_title);
+  }
 
-	$home_after = '';
+  $home_after = '';
 
-	// замена ссылки на архивную страницу для типа записи
-	$home_after = apply_filters('kama_breadcrumbs_home_after', false, $linkpatt, $sep, $ptype );
+  // замена ссылки на архивную страницу для типа записи
+  $home_after = apply_filters('kama_breadcrumbs_home_after', false, $linkpatt, $sep, $ptype);
 
-	if( false === $home_after ){
-		// Ссылка на архивную страницу произвольно типа поста: для отдельных страниц этого типа; для архива этого типа; для таксономий связанных с этим типом.
-		if( $ptype->has_archive && ! in_array( $ptype->name, array('post','page','attachment') )
-			&& ( is_post_type_archive() || is_singular() || (is_tax() && in_array($term->taxonomy, $ptype->taxonomies)) )
-		){
-			$pt_title = $ptype->labels->name;
+  if (false === $home_after) {
+    // Ссылка на архивную страницу произвольно типа поста: для отдельных страниц этого типа; для архива этого типа; для таксономий связанных с этим типом.
+    if ($ptype->has_archive && !in_array($ptype->name, array('post', 'page', 'attachment'))
+      && (is_post_type_archive() || is_singular() || (is_tax() && in_array($term->taxonomy, $ptype->taxonomies)))
+    ) {
+      $pt_title = $ptype->labels->name;
 
-			// первая страница архива типа записи
-			if( is_post_type_archive() && ! $paged_num )
-				$home_after = $pt_title;
-			// singular, paged post_type_archive, tax
-			else{
-				$home_after = sprintf( $linkpatt, get_post_type_archive_link($ptype->name), $pt_title );
+      // первая страница архива типа записи
+      if (is_post_type_archive() && !$paged_num)
+        $home_after = $pt_title;
+      // singular, paged post_type_archive, tax
+      else {
+        $home_after = sprintf($linkpatt, get_post_type_archive_link($ptype->name), $pt_title);
 
-				$home_after .= ( ($paged_num && ! is_tax()) ? $pg_end : $sep ); // пагинация
-			}
-		}
-	}
-	//current_user_can('administrator') && print_r($ptype);
+        $home_after .= (($paged_num && !is_tax()) ? $pg_end : $sep); // пагинация
+      }
+    }
+  }
+  //current_user_can('administrator') && print_r($ptype);
 
-	$home = sprintf( $linkpatt, home_url(), $loc->home ). $sep . $home_after;
+  $home = sprintf($linkpatt, home_url(), $loc->home) . $sep . $home_after;
 
-	$out = apply_filters('kama_breadcrumbs_pre_out', $out, $sep, $loc, $args );
+  $out = apply_filters('kama_breadcrumbs_pre_out', $out, $sep, $loc, $args);
 
-	$out = $wrap. $home . $out . $wrap_close;
+  $out = $wrap . $home . $out . $wrap_close;
 
-	return print apply_filters('kama_breadcrumbs', $out, $sep, $loc, $args );
+  return print apply_filters('kama_breadcrumbs', $out, $sep, $loc, $args);
 }
-function __hierarchical_posts( $args, $sep, $linkpatt, $post ){
-	$parent = $post->post_parent;
 
-	$crumbs = array();
-	while( $parent ){
-		$page = get_post( $parent );
-		$crumbs[] = sprintf( $linkpatt, get_permalink( $page->ID ), $page->post_title );
-		$parent = $page->post_parent;
-	}
-	$crumbs = array_reverse( $crumbs );
+function __hierarchical_posts($args, $sep, $linkpatt, $post)
+{
+  $parent = $post->post_parent;
 
-	$out = '';
-	foreach( $crumbs as $crumb )
-		$out .= $crumb . $sep;
+  $crumbs = array();
+  while ($parent) {
+    $page = get_post($parent);
+    $crumbs[] = sprintf($linkpatt, get_permalink($page->ID), $page->post_title);
+    $parent = $page->post_parent;
+  }
+  $crumbs = array_reverse($crumbs);
 
-	return $out . __show_post_title( $args->show_post_title, $post->post_title );
+  $out = '';
+  foreach ($crumbs as $crumb)
+    $out .= $crumb . $sep;
+
+  return $out . __show_post_title($args->show_post_title, $post->post_title);
 }
-function __show_post_title( $is_show, $title ){
-	return $is_show ? ( is_string($is_show) ? sprintf( $is_show, esc_html($title) ) : esc_html($title) ) : '';
+
+function __show_post_title($is_show, $title)
+{
+  return $is_show ? (is_string($is_show) ? sprintf($is_show, esc_html($title)) : esc_html($title)) : '';
 }
-function __crumbs_tax( $term_id, $tax, $sep, $linkpatt ){
-	$termlink = array();
-	while( $term_id ){
-		$term2      = get_term( $term_id, $tax );
-		$termlink[] = sprintf( $linkpatt, get_term_link( $term2->term_id, $term2->taxonomy ), esc_html($term2->name) ). $sep;
-		$term_id    = $term2->parent;
-	}
 
-	$termlinks = array_reverse( $termlink );
+function __crumbs_tax($term_id, $tax, $sep, $linkpatt)
+{
+  $termlink = array();
+  while ($term_id) {
+    $term2 = get_term($term_id, $tax);
+    $termlink[] = sprintf($linkpatt, get_term_link($term2->term_id, $term2->taxonomy), esc_html($term2->name)) . $sep;
+    $term_id = $term2->parent;
+  }
 
-	return implode('', $termlinks );
+  $termlinks = array_reverse($termlink);
+
+  return implode('', $termlinks);
 }
 
 if (function_exists('add_theme_support')) { //Включаем меню
 
-add_theme_support('menus');
+  add_theme_support('menus');
 
 }
 
-add_theme_support( 'post-thumbnails', array( 'post' ) ); // Включаем миниатюры
-if(!is_admin()){
+add_theme_support('post-thumbnails', array('post')); // Включаем миниатюры
+if (!is_admin()) {
   remove_action('wp_head', 'wp_print_scripts');
   remove_action('wp_head', 'wp_print_head_scripts', 9);
   remove_action('wp_head', 'wp_enqueue_scripts', 1);
-  
+
   add_action('wp_footer', 'wp_print_scripts', 5);
   add_action('wp_footer', 'wp_enqueue_scripts', 5);
   add_action('wp_footer', 'wp_print_head_scripts', 5);
@@ -464,39 +512,41 @@ if(!is_admin()){
   wp_enqueue_script('jquery');
 }
 
-function getLastInfo(){
-			if( in_category(6) ){
-							$idPost = get_the_id();
-							$PostArray = array();
-							$args = array(
-							'cat'=> 6,
-							);
-							query_posts($args);
-							while (have_posts()) : the_post(); 
-								$name = get_the_id();
-								array_push($PostArray, $name);
-						  endwhile; 
-						  wp_reset_query();
-						  
-						  $key = array_search($idPost, $PostArray);
-						  $output = array_slice($PostArray, $key+1,3 );
-						  $LastPost = array_pop($PostArray);
+function getLastInfo()
+{
+  if (in_category(6)) {
+    $idPost = get_the_id();
+    $PostArray = array();
+    $args = array(
+      'cat' => 6,
+    );
+    query_posts($args);
+    while (have_posts()) : the_post();
+      $name = get_the_id();
+      array_push($PostArray, $name);
+    endwhile;
+    wp_reset_query();
 
-						  $arg = array( 'include' =>$output,'post__not_in'=>$LastPost ,'order' => 'DESC');
+    $key = array_search($idPost, $PostArray);
+    $output = array_slice($PostArray, $key + 1, 3);
+    $LastPost = array_pop($PostArray);
 
-							$myposts = get_posts( $arg );
-							foreach( $myposts as $post ){ 
-								setup_postdata($post);
-								?>
-								<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-								<?
-							}
-							wp_reset_postdata();
+    $arg = array('include' => $output, 'post__not_in' => $LastPost, 'order' => 'DESC');
 
-						}
+    $myposts = get_posts($arg);
+    foreach ($myposts as $post) {
+      setup_postdata($post);
+      ?>
+			<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+      <?
+    }
+    wp_reset_postdata();
+
+  }
 }
 
-function search_only_title_toster_q411859($search, &$wp_query) {
+function search_only_title_toster_q411859($search, &$wp_query)
+{
   global $wpdb;
   if (empty($search)) {
     return $search;
@@ -506,7 +556,7 @@ function search_only_title_toster_q411859($search, &$wp_query) {
   $n = !empty($q['exact']) ? '' : '%';
   $search =
   $searchand = '';
-  foreach ((array) $q['search_terms'] as $term) {
+  foreach ((array)$q['search_terms'] as $term) {
     $term = esc_sql(like_escape($term));
     $search .= "{$searchand}($wpdb->posts.post_title LIKE '{$n}{$term}{$n}')";
     $searchand = ' AND ';
@@ -520,6 +570,7 @@ function search_only_title_toster_q411859($search, &$wp_query) {
   }
   return $search;
 }
+
 add_filter('posts_search', 'search_only_title_toster_q411859', 500, 2);
 
 ?>

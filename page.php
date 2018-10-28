@@ -23,6 +23,7 @@ Template Name: service
 
 <?
 		$current_id = get_the_ID();
+		//echo get_the_ID();
 		if ( $current_id == 2129 ): ?>
           <div class="city-title">Популярные населенные пункты:</div>
              <div class="city-wrap">
@@ -41,8 +42,29 @@ Template Name: service
                  endwhile;
                  wp_reset_query();
              ?>
-             </div>
         <?php endif ?>
+    <?
+      //вывод списка Города-инженер-II для страницы /aktsii-i-skidki/
+      if ( $current_id == 2139 ): ?>
+          <div class="city-title">Услуги в других городах:</div>
+             <div class="city-wrap">
+             <?
+                $args = array(
+                'cat'=> 34,
+                'order' => 'ASC'
+                );
+                query_posts($args);
+                while (have_posts()) : the_post();
+                printf('
+                        <div class="city-el">
+                            <a href="%s">%s</a>
+                        </div>
+                ',get_permalink(),CFS()->get('namecity'));
+                 endwhile;
+                 wp_reset_query();
+             ?>
+        <?php endif ?>
+	</div>
 	</div>
 </div>
 <?

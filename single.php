@@ -1,192 +1,91 @@
-
-
 <!--display errors-->
-<? ini_set('display_errors','off'); ?>
-
-
-
-<?
-	function porstAfter($a,$order){
-						if( in_category($a) ){
-			            global $post;
-			            $idPost = get_the_id();
-			            $PostArray = array();
-			            if($order){
-			              $args = array(
-					            'cat'=> $a,
-					            //'orderby'=> 'title',
-					            'order' => 'ASC'
-			              );
-			            } else {
-			              $args = array(
-					            'cat'=> $a,
-			              );
-			            }
-			            query_posts($args);
-			            while (have_posts()) : the_post();
-			              $name = get_the_id();
-			              array_push($PostArray, $name);
-			            endwhile;
-			            wp_reset_query();
-			            $key = array_search($idPost, $PostArray);
-			            $output = array_slice($PostArray, $key+1,5 );
-			            $LastPost = array_pop($PostArray);
-			            $postEl = array( 'include' =>$output,'post__not_in'=>$LastPost ,'order' => 'ASC');
-			            $myposts = get_posts($postEl);
-			            foreach( $myposts as $post ){
-			              setup_postdata($post);
-			              ?>
-			              <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-			              <?
-			            }
-			            wp_reset_postdata();
-			            $needPost =  5 - (count($PostArray) - $key);
-			            //echo $needPost;
-			            if ($needPost < 6 && $needPost > 0 ) {
-			              $postEl = array( 'cat'=> $a,'order' => 'ASC','posts_per_page' => $needPost);
-			              $myposts = get_posts($postEl);
-			              foreach( $myposts as $post ){
-			                setup_postdata($post);
-			                ?>
-			                <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-			                <?
-			              }
-			            }
-
-							}
-					}
-?>
-
+<? ini_set('display_errors', 'off'); ?>
 
 <?
 	$post = $wp_query->post;
- /*if (in_category(array(11,15,19,29,30))) {*/ //ID категории
- if (in_category(array(11,15,19,29))) { //ID категории
-      include('single-town-list.php');
-  } else {
+	if(in_category(array(11, 15, 19, 29))) { //ID категории
+		include('single-town-list.php');
+	}
+	elseif (in_category(array(33,34))) {
+		include('single-kadastral-enginer--list.php');
+	} else {
+
+	get_header();
+	include('module/bread.php');
 ?>
-<?get_header();?>
-<? include('module/bread.php'); ?>
 
-<div class="main-cont">
-			<div class="content">
-
-				<? include('module/toolbar.php');?>
-
-				<div class="content__info">
-					<?
-						the_title('<h1>', '</h1>');
-						if(in_category(12) ){
-							the_date();
-						}
-						the_content();
-
-
-
-						porstAfter(11,true);
-						porstAfter(14,true);
-						porstAfter(15,true);
-				?>
+	<div class="main-cont">
+		<div class="content">
+      <? include('module/toolbar.php'); ?>
+			<div class="content__info">
+        <?
+	        the_title('<h1>', '</h1>');
+	        if (in_category(12)){
+	            the_date();
+	        }
+	        the_content();
+	        porstAfter(11, true);
+	        porstAfter(14, true);
+	        porstAfter(15, true);
+        ?>
 
 				<!-- for page service city list -->
-        <?php if (is_single( '193' ) ): ?>
-          <div class="city-title">Услуги в других городах</div>
-             <div class="city-wrap">
-             <?
-                $args = array(
-                'cat'=> 11,
-                'order' => 'ASC'
-                );
-                query_posts($args);
-                while (have_posts()) : the_post();
-                printf('
-                        <div class="city-el">
-                            <a href="%s">%s</a>
-                        </div>
-                ',get_permalink(),CFS()->get('namecity'));
-                 endwhile;
-                 wp_reset_query();
-             ?>
-             </div>
+        <?php if (is_single('193')): ?>
+					<? $_GET['catTown'] = 11; ?>
+					<? include('module/town-list.php')?>
         <?php endif ?>
-        <!-- for page service city list -->
+				<!-- for page service city list -->
 
-        <?php if (is_single( 'ПРАЙС-ЛИСТ' ) ): ?>
-          <div class="city-title">Популярные населенные пункты:</div>
-             <div class="city-wrap">
-             <?
-                $args = array(
-                'cat'=> 15,
-                'order' => 'ASC'
-                );
-                query_posts($args);
-                while (have_posts()) : the_post();
-                printf('
-                        <div class="city-el">
-                            <a href="%s">%s</a>
-                        </div>
-                ',get_permalink(),CFS()->get('namecity'));
-                 endwhile;
-                 wp_reset_query();
-             ?>
-             </div>
+        <?php if (is_single('ПРАЙС-ЛИСТ')): ?>
+					<? $_GET['catTown'] = 15; ?>
+					<? include('module/town-list.php')?>
         <?php endif ?>
 
-        <!-- for page about -->
-	        <?php if (is_single('9') ): ?>
-	          <div class="city-title">Услуги в других городах</div>
-               <div class="city-wrap">
-                 <?
-                    $args = array(
-                    'cat'=> 19,
-                    'order' => 'ASC'
-                    );
-                    query_posts($args);
-                    while (have_posts()) : the_post();
-                    printf('
-                          <div class="city-el">
-                              <a href="%s">%s</a>
-                          </div>
-                    
-                    ',get_permalink(),CFS()->get('namecity'));
-                     endwhile;
-                     wp_reset_query();
-                 ?>
-               </div>
-	        <?php endif ?>
-        <!-- for page about -->
+				<!-- Страница примеры работ -->
+        <?php if (is_single('174')): ?>
+					<? $_GET['catTown'] = 33; ?>
+					<? include('module/town-list.php')?>
+        <?php endif ?>
+				<!-- Страница примеры работ === end -->
 
-        <? if(CFS()->get('seo_text')){ ?>
-					<?include('module/advant--small.php');?>
-				<? } ?>
+				<!-- for page about -->
+        <?php if (is_single('9')): ?>
+					<? $_GET['catTown'] = 19; ?>
+					<? include('module/town-list.php')?>
+        <?php endif ?>
+				<!-- for page about -->
 
-        <div class="seo_text">
-         <?php echo CFS()->get('seo_text'); ?>
-        </div>
+        <? if (CFS()->get('seo_text')) { ?>
+          <? include('module/advant--small.php'); ?>
+        <? } ?>
 
-	       <?
-					//for cat cadastr
-			       porstAfter(6,true);
-					//for cat geodez
-			       porstAfter(7,true);
-					//for Megavanie
-			       porstAfter(8,true);
-					//for razdel-pereraspredelenie
-			       porstAfter(9,true);
-					//for kadastrovy-e-raboty
-			       porstAfter(16,true);
-					//for kadastrovy-e-raboty town
-			       porstAfter(19,true);
-			       porstAfter(29,true);
-				?>
+				<div class="seo_text">
+          <?php echo CFS()->get('seo_text'); ?>
+				</div>
+
+        <?
+        //for cat cadastr
+        porstAfter(6, true);
+        //for cat geodez
+        porstAfter(7, true);
+        //for Megavanie
+        porstAfter(8, true);
+        //for razdel-pereraspredelenie
+        porstAfter(9, true);
+        //for kadastrovy-e-raboty
+        porstAfter(16, true);
+        //for kadastrovy-e-raboty town
+        porstAfter(19, true);
+        porstAfter(29, true);
+        ?>
 			</div>
 		</div>
-</div>
+	</div>
 
-<? }?>
-<? include('module/sertificate.php');?>
-<? include('module/customers.php');?>
-<?include('module/contact-form.php');?>
+<? } ?>
+<? include('module/sertificate.php'); ?>
+<? include('module/customers.php'); ?>
+<? include('module/contact-form.php'); ?>
 
-<?get_footer();?>
+<? get_footer(); ?>
 

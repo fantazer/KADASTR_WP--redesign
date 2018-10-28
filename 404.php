@@ -1,12 +1,9 @@
 <? get_header(); ?>
 
-<?
-include('module/bread.php');
-?>
-
+<? include('module/bread.php'); ?>
 <div class="main-cont">
 	<div class="content">
-      <? include('module/toolbar.php'); ?>
+    <? include('module/toolbar.php'); ?>
 		<div class="content__info">
 			<h1>Страница не найдена</h1>
 			<p>К сожалению страница не найдена</p>
@@ -15,7 +12,6 @@ include('module/bread.php');
 		</div>
 	</div>
 </div>
-
 <? include('module/sertificate.php'); ?>
 <? include('module/customers.php'); ?>
 <? get_footer(); ?>

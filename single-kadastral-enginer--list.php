@@ -4,12 +4,7 @@
  * Template Post Type: post, page, product
  */
 ?>
-<?
-/*	NOTE!
-	Шаблон страницы: Услуги кадастрового инженера
-	URL страницы : /uslugi-kadastrovogo-inzhenera/
-*/
-?>
+
 <? get_header('lp'); ?>
 
 <div class="lp-baner lp-baner--borderland lp-baner--dark">
@@ -19,7 +14,7 @@
 	<div class="main-cont">
 		<div class="lp-baner__wrap">
 			<div class="lp-baner__content">
-				<div class="lp-baner__title lp-baner__title--sm">Услуги кадастрового инженера</div>
+				<div class="lp-baner__title lp-baner__title--sm"><?= the_title(); ?></div>
 				<div class="lp-baner__title-sub">Понадобились услуги кадастрового инженера? Мы с удовольствием ответим на все
 					Ваши вопросы.
 				</div>
@@ -40,12 +35,16 @@
 			<div class="section-call section-call--mid">
 				<div class="section-title section-title--left">Кто такой кадастровый инженер?</div>
 				<div class="box">
+					<? if(CFS()->get('add_text')){
+							echo CFS()->get('add_text');
+					 } else { ?>
 					<p>Кадастровый инженер – это специалист, обладающий техническими и юридическими знаниями, получивший
 						квалификационный аттестат на право заниматься кадастровой деятельностью.</p>
 					<p>Деятельность кадастрового инженера можно сравнить с деятельностью нотариуса. Кадастровый инженер
 						подготавливает документы для внесения изменений в Единый государственный реестр недвижимости (ЕГРН), и
 						свидетельствует о достоверности данных и сведений
 						в этих документах.</p>
+					<? } ?>
 				</div>
 			</div>
 		</div>
@@ -150,8 +149,19 @@
 						электронная почта).</p>
 					<p class="attanintion">Консультации по телефону бесплатны, выездная консультация на объекте Заказчика стоит 5
 						000 руб. Стоимость и сроки на наиболее популярные стандартные услуги Вы можете посмотреть в нашем
-						<a href="/prajs-list/" class="link--mark">Прайс-листе</a>  (около 30 позиций).</p>
+						<a href="/prajs-list/" class="link--mark">Прайс-листе</a> (около 30 позиций).</p>
 					<p>За дополнительную плату возможно срочное выполнение работ.</p>
+
+					<?
+						$categories = get_the_category();
+						$category_id = $categories[0]->cat_ID;
+						if($category_id==33){
+              porstAfter(33,true);
+						}
+						if($category_id==34){
+              porstAfter(34,true);
+						}
+					?>
 				</div>
 			</div>
 		</div>
@@ -255,10 +265,28 @@
 	</div>
 </div>
 
-<? include('module/advant.php'); ?>
-<? include('module/customers.php'); ?>
-<? include('module/sertificate.php'); ?>
-<? include('module/contact-form.php'); ?>
-<? include('module/questions-lp.php'); ?>
 
-<? get_footer(); ?>
+<!--slider certificate-->
+
+<!--questions-->
+<div class="section section--news ">
+	<div class="section-title">Часто задаваемые вопросы</div>
+	<div class="section-title-sub">Просто о сложном</div>
+	<div class="main-cont">
+		<div class="questions">
+			<div class="questions-slider owl-carousel">
+        <? while (have_rows('questions')): the_row(); ?>
+					<div class="questions__el">
+						<div class="questions__el-wrap">
+							<div class="questions__name"><? the_sub_field('name_questions'); ?></div>
+							<div class="questions__text">
+                <? the_sub_field('text_questions'); ?>
+							</div>
+						</div>
+					</div>
+        <? endwhile; ?>
+			</div>
+		</div>
+	</div>
+</div>
+

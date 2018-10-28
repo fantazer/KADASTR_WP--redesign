@@ -88,17 +88,10 @@
 				</div>
 			</div>
 		</div>
-
 		<?include('module/advant.php');?>
-
 		<?include('module/customers.php');?>
-
 		<?include('module/sertificate.php');?>
-
 		<?include('module/contact-form.php');?>
-
 		<?include('module/news-list.php');?>
-
 		<?include('module/questions.php');?>
-
 <?get_footer();?>

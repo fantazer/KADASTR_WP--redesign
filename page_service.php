@@ -6,9 +6,7 @@ Template Name: service
 
 <? get_header(); ?>
 
-<?
-	include('module/bread.php');
-?>
+<?include('module/bread.php');?>
 
 <div class="main-cont">
 	<div class="content">
@@ -28,25 +26,8 @@ Template Name: service
 					 <? endwhile; ?>
 					 <? wp_reset_query();?>
 				</ul>
-
-				<div class="city-title">Услуги в других городах</div>
-				  <div class="city-wrap">
-           <?
-              $args = array(
-              'cat'=> array(11,19),
-              'order' => 'ASC'
-              );
-              query_posts($args);
-              while (have_posts()) : the_post();
-              printf('
-                      <div class="city-el">
-                          <a href="%s">%s</a>
-                      </div>
-              ',get_permalink(),CFS()->get('namecity'));
-               endwhile;
-               wp_reset_query();
-           ?>
-         </div>
+				<? $_GET['catTown'] = array(11,19); ?>
+				<? include('module/town-list.php')?>
 			</div>
 	</div>
 </div>

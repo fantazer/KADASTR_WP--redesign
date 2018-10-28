@@ -5,6 +5,12 @@
  */
 ?>
 
+<?
+/*	NOTE!
+	Шаблон страницы :МЕЖЕВАНИЕ (УТОЧНЕНИЕ ГРАНИЦ) ЗЕМЕЛЬНОГО УЧАСТКА
+	URL страницы : /utochnenie-granits-zemel-nogo-uchast2/
+*/
+?>
 <? get_header('lp'); ?>
 
 <!--block header end-->
@@ -311,37 +317,12 @@
 	</div>
 </div>
 
-<!--slider certificate-->
 <?include('module/advant.php');?>
-
-<!--customers-->
 <?include('module/customers.php');?>
-
 <? include('module/sertificate.php'); ?>
-
 <? include('module/contact-form.php'); ?>
+<? include('module/questions-lp.php'); ?>
 
-<!--questions-->
-<div class="section section--news ">
-	<div class="section-title">Часто задаваемые вопросы</div>
-	<div class="section-title-sub">Просто о сложном</div>
-	<div class="main-cont">
-		<div class="questions">
-			<div class="questions-slider owl-carousel">
-        <? while (have_rows('questions')): the_row(); ?>
-					<div class="questions__el">
-						<div class="questions__el-wrap">
-							<div class="questions__name"><? the_sub_field('name_questions'); ?></div>
-							<div class="questions__text">
-                <? the_sub_field('text_questions'); ?>
-							</div>
-						</div>
-					</div>
-        <? endwhile; ?>
-			</div>
-		</div>
-	</div>
-</div>
 <? get_footer(); ?>
 
 

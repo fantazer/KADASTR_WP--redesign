@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html>
 	<!--create by ANATOLY KUZNETSOV-->
-
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,7 +13,6 @@
 		<link rel="shortcut icon" href="favicon.ico" />
 		<!--SEO-->
 		<title>Document</title>
-		<meta name="description" itemprop="description" content="" />
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/vendor.css">
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/style.css">
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/style-edit.css">
@@ -25,8 +23,6 @@
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-TJWDBCS');</script>
 		<!-- End Google Tag Manager -->
-
-
 	</head>
 	<?php wp_head(); ?>
 	<body>
@@ -119,7 +115,6 @@
 									//'walker' => new Description_Walker
 								);
 								wp_nav_menu($args);
-
 						?>
 					</div>
 				</div>
@@ -127,17 +122,3 @@
 			<!--nav-end-->
 		</div>
 		<!--block header end-->
-
-		<?/*
-			$args = array(
-				'menu' => 'Главное меню',
-				'menu_class'=> '',
-				'container'=> 'div',
-				'container_class' => 'menu-wrap', // css-класс блока
-				'items_wrap'       => '<div class="menu">%3$s</div>',
-				'depth' => 0,
-				'walker' => new Description_Walker
-			);
-			wp_nav_menu($args);
-
-		*/?>
