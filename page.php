@@ -44,13 +44,13 @@ Template Name: service
              ?>
         <?php endif ?>
     <?
-      //вывод списка Города-инженер-II для страницы /aktsii-i-skidki/
-      if ( $current_id == 2139 ): ?>
+      //вывод списка Города-геодезия single-geodez--list.php
+      if ( $current_id == 2131 ): ?>
           <div class="city-title">Услуги в других городах:</div>
              <div class="city-wrap">
              <?
                 $args = array(
-                'cat'=> 34,
+                'cat'=> 36,
                 'order' => 'ASC'
                 );
                 query_posts($args);

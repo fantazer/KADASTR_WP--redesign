@@ -19,7 +19,7 @@
 					Ваши вопросы.
 				</div>
 				<div class="header__get">
-					<a class="header__btn header__btn-more" href="#why">Подробнее</a>
+					<a class="header__btn header__btn-more" href="#important">Подробнее</a>
 					<div class="header__btn header__btn-get header__btn-get--yellow modal-get" data-modal="order">Заказать</div>
 				</div>
 			</div>
@@ -27,7 +27,7 @@
 	</div>
 </div>
 <!--Что это такое-->
-<div class="section section--kadast-eng" id="why">
+<div class="section section--kadast-eng" id="important">
 	<div class="section-wrap__img"
 	     style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/baner-38.jpg');"></div>
 	<div class="main-cont">
@@ -135,8 +135,7 @@
 	</div>
 </div>
 <!--from begin-->
-<div class="section section--start section--lg"
-     style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/baner-11.png');">
+<div class="section section--start section--lg" id="price" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/baner-11.png');">
 	<div class="main-cont">
 		<div class="section-wrap">
 			<div class="section-call section-call--img"></div>
@@ -168,7 +167,7 @@
 	</div>
 </div>
 <!--Как мы работаем-->
-<div class="section section-step" id="step">
+<div class="section section-step" id="advance">
 	<div class="section-filter"></div>
 	<div class="main-cont">
 		<div class="section-title">как мы работаем</div>

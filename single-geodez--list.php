@@ -14,13 +14,12 @@
 
 <!--block header end-->
 <div class="lp-baner lp-baner--borderland lp-baner--dark">
-	<div class="lp-baner__img lp-baner__img--right-left"
-	     style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/baner-43.jpg');"></div>
+	<div class="lp-baner__img lp-baner__img--right-left" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/baner-43.jpg');"></div>
 	<div class="lp-baner-filter--green"></div>
 	<div class="main-cont">
 		<div class="lp-baner__wrap">
 			<div class="lp-baner__content">
-				<div class="lp-baner__title lp-baner__title--think">Услуги геодезиста</div>
+				<div class="lp-baner__title lp-baner__title--think"><?= the_title(); ?></div>
 				<div class="lp-baner__title-sub lp-baner__title-sub--lg">Понадобились услуги геодезиста?
 					<br> Мы с удовольствием ответим на все Ваши вопросы.
 				</div>
@@ -39,30 +38,18 @@
 </div>
 <!--Что это такое-->
 <div class="section " id="why">
-	<div class="section-wrap__img"
-	     style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/baner-45.jpg');"></div>
+	<div class="section-wrap__img" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/baner-44.jpg');"></div>
 	<div class="main-cont">
 		<div class="section-wrap">
 			<div class="section-call section-call--mid">
 				<div class="section-title section-title--left">Зачем нужен геодезист?</div>
-				<div class="box box--sm">
-					<p>Геодезист нужен там, где требуется уверенность в точности измерений. Геодезист – это инженер, обладающий
-						специализированными техническими знаниями, согласно которым при помощи специального высокоточного
-						оборудования он может определять геометрические параметры участков местности и расположенных на них
-						объектов.</p>
-					<p>В каких же случаях нам необходима точность измерений? В первую очередь, безусловно, это определение точного
-						положения на местности различных объектов (например, границ земельных участков). Также точность необходима
-						на всех этапах строительства (например, контроль соответствия строящегося объекта проекту). Недаром
-						существует пословица: "Семь раз отмерь, один раз отрежь". Любая неточность или несоответствие могут в
-						дальнейшем дорого обойтись. Геодезические работы – это очень важная составляющая, ведь от качества их
-						выполнения зависит будущее строительство, его надежность и долговечность.</p>
-					<p><strong>Юридическим лицам</strong> не всегда есть необходимость держать в штате геодезиста, который будет
-						занят ежедневно. Это связано с тем что, часть геодезических работ (например, передача высотных отметок и
-						разметка от существующих конструкций) может быть выполнена прорабом или мастером. Но полностью без
-						геодезиста обойтись не получится. Чтобы не держать в штате высокооплачиваемого специалиста, который не может
-						быть загружен на 100%, и не покупать дорогостоящее оборудование, которое будет находиться в простое, есть
-						возможность приглашать геодезистов нашей компании на разовые работы. В нашем штате находятся настоящие
-						профессионалы в области геодезии, которые оперативно справятся с любой поставленной задачей.</p>
+				<div class="box">
+					<?
+          while (have_posts()) : the_post();
+            the_content(); // выводим контент
+          endwhile;
+          porstAfter(36, true);
+        ?>
 				</div>
 			</div>
 		</div>
@@ -251,10 +238,43 @@
 	</div>
 </div>
 
-<? include('module/advant.php'); ?>
-<? include('module/customers.php'); ?>
-<? include('module/sertificate.php'); ?>
-<? include('module/contact-form.php'); ?>
-<? include('module/questions-lp.php'); ?>
 
-<? get_footer(); ?>
+<div class="section section--news ">
+	<div class="section-title">Часто задаваемые вопросы</div>
+	<div class="section-title-sub">Просто о сложном</div>
+	<div class="main-cont">
+		<div class="questions">
+			<div class="questions-slider owl-carousel">
+				<div class="questions__el">
+					<div class="questions__el-wrap">
+						<div class="questions__name">Каковы сроки выполнения различных видов геодезических работ?</div>
+						<div class="questions__text">
+							<p>Услуги геодезиста незаменимы и обязательны в процессе проектирования и строительства, землеустройства и
+								межевания. Тарифы, сроки и состав геодезических мероприятий, из-за их огромного разнообразия, могут
+								значительно разниться в каждом конкретном случае. Так, для крупного строительства профессиональное
+								сопровождение геодезиста может затянуться на годы, при том, что топографическую съемку для частного
+								заказчика можно совершить за несколько дней, а выполнить обмер для кадастрового плана или вынос точек и
+								осей в натуру — всего за считанные часы.</p>
+						</div>
+					</div>
+				</div>
+				<div class="questions__el">
+					<div class="questions__el-wrap">
+						<div class="questions__name">Из чего складывается стоимость услуги «геодезист на день»?</div>
+						<div class="questions__text"><p>Что касается расценок на указанные услуги, то они складываются из
+								стоимости:</p>
+							<ul>
+								<li>выезда геодезиста или бригады специалистов на конкретный участок и/или объект изысканий;</li>
+								<li>полевых работ и амортизации оборудования;</li>
+								<li>камеральных работ по обработке данных;</li>
+								<li>оформления итоговых отчетов и документов;</li>
+								<li>изготовления чертежей, схем, планов и исполнительных актов.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

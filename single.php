@@ -8,7 +8,11 @@
 	}
 	elseif (in_category(array(33,34))) {
 		include('single-kadastral-enginer--list.php');
-	} else {
+	}
+	elseif (in_category(36)) {
+		include('single-geodez--list.php');
+	}
+	else {
 
 	get_header();
 	include('module/bread.php');
