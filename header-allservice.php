@@ -118,7 +118,7 @@
 			</div>
       <?
       $args = array(
-        'menu' => 'Технический план',
+        'menu' => 'Все услуги в городах',
         'menu_class' => '',
         'container' => 'div',
         'container_class' => 'menu-wrap', // css-класс блока

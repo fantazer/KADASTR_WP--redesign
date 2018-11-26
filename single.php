@@ -12,6 +12,9 @@
 	elseif (in_category(36)) {
 		include('single-geodez--list.php');
 	}
+	elseif (in_category(array(37))) {
+		include('single-all-sevices.php');
+	}
 	else {
 
 	get_header();
