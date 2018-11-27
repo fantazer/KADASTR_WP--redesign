@@ -81,12 +81,7 @@ function porstAfterTrim($a, $order)
 					<div class="header__btn header__btn-get modal-get" data-modal="order">Заказать</div>
 				</div>
 			</div>
-			<!--.lp-baner__image
-  .lp-baner__image-el(style="background-image:url('img/lp-item-5.jpg')")
-  //img(src="img/lp-item-5.jpg", alt="")
-
-  -->
-		</div>
+			</div>
 	</div>
 </div>
 <!--Что это такое-->
@@ -103,14 +98,56 @@ function porstAfterTrim($a, $order)
 			          while (have_posts()) : the_post();
 			            the_content(); // выводим контент
 			          endwhile;
-			          
-			        ?>
-			         <br>
-			         <br>
-			          <h3>Другие услуги:</h3>
-			          <ul>
-			          	<? porstAfterTrim($category_id, true);?>
-			          </ul>
+				?>
+				<div class="box">
+					<?
+						//sorry for this = ( i am frontender
+
+						$GLOBALS['category_id'] = $category_id;
+						$extendDistrict = function($cat,$text){
+							if($GLOBALS['category_id']===$cat) {
+								echo "<h3> Работаем во всех населенных пунктах района:</h3>";
+								echo do_shortcode('[text_module id='.$text.']');
+							}
+						};
+
+						$extendDistrict(55,8135);
+						$extendDistrict(35,8136);
+						$extendDistrict(39,8138);
+						$extendDistrict(40,8139);
+						$extendDistrict(41,8140);
+						$extendDistrict(42,8141);
+						$extendDistrict(43,8142);
+						$extendDistrict(44,8143);
+						$extendDistrict(45,8144);
+						$extendDistrict(46,8145);
+						$extendDistrict(47,8146);
+						$extendDistrict(48,8147);
+						$extendDistrict(49,8148);
+						$extendDistrict(50,8151);
+						$extendDistrict(51,8152);
+						$extendDistrict(52,8154);
+						$extendDistrict(53,8155);
+						$extendDistrict(54,8156);
+						$extendDistrict(54,8156);
+						$extendDistrict(56,8158);
+						$extendDistrict(57,8159);
+						$extendDistrict(66,8162);
+						$extendDistrict(65,8163);
+						$extendDistrict(64,8164);
+						$extendDistrict(63,8165);
+						$extendDistrict(62,8166);
+						$extendDistrict(61,8167);
+						$extendDistrict(60,8168);
+					?>
+
+				</div>
+				<br>
+				<br>
+				<h3>Другие услуги:</h3>
+				<ul>
+				  <? porstAfterTrim($category_id, true);?>
+				</ul>
 				</div>
 			</div>
 		</div>

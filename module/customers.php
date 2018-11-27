@@ -4,16 +4,25 @@
 	<div class="main-cont">
 		<div class="slider-customer owl-carousel">
 			<div class="slider__el">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/11-customer.jpg" alt=""/>
+				<img src="<?php echo get_template_directory_uri(); ?>/img/mosobl.jpg" alt=""/>
 			</div>
 			<div class="slider__el">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/2-customer.jpg" alt=""/>
+				<img src="<?php echo get_template_directory_uri(); ?>/img/vtb.jpg" alt=""/>
+			</div>
+			<div class="slider__el">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/familia.jpg" alt=""/>
+			</div>
+			<div class="slider__el">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/11-customer.jpg" alt=""/>
 			</div>
 			<div class="slider__el">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/14-customer.jpg" alt=""/>
 			</div>
 			<div class="slider__el">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/6-customer.jpg" alt=""/>
+			</div>
+			<div class="slider__el">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/2-customer.jpg" alt=""/>
 			</div>
 			<div class="slider__el">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/7-customer.jpg" alt=""/>

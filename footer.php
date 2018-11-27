@@ -99,6 +99,6 @@
 <!--block footer end-->
 <script src="<?php echo get_template_directory_uri(); ?>/js/combined.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/script.js"></script>
-
+<!--SQL - <?php /*echo get_num_queries (); */?> | <?php /*timer_stop (1); */?> сек. | <?php /*echo round (memory_get_usage ()/1024/1024, 2) */?> МБ-->
 </body>
 </html>
