@@ -237,3 +237,9 @@ function porstAfterTrim($a, $order)
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+  window.onload = function() {
+    yaCounter32012941.reachGoal('SERVICEPAGE'); 
+  };
+</script>

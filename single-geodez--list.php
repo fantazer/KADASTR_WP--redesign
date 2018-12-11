@@ -157,7 +157,7 @@
 	</div>
 </div>
 <!--service-->
-<div class="section section--calc section--calc--topograf">
+<div class="section section--calc section--calc--topograf" id="price">
 	<div class="main-cont">
 		<div class="section-title">Стоимость наших работ</div>
 		<div class="section-title-sub">Работаем в Москве и во всех районах Московской области.</div>

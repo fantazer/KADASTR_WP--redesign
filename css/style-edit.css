@@ -139,6 +139,12 @@ li {
 .section--tablet .section-call {
   width: 100%;
 }
+.cost-inform {
+  font-size: 12px;
+}
+.get-sale-row {
+  margin-top: 30px;
+}
 @media only screen and (max-width: 1280px) {
   .section--tablet .section-call {
     width: 100%;

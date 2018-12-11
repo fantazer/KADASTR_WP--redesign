@@ -4,6 +4,9 @@
 	<div class="main-cont">
 		<div class="slider-customer owl-carousel">
 			<div class="slider__el">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/reconstr.jpg" alt=""/>
+			</div>
+			<div class="slider__el">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/mosobl.jpg" alt=""/>
 			</div>
 			<div class="slider__el">

@@ -145,6 +145,54 @@ $(document).ready(function(){
     }
  	});
 	//range slider===end
+
+		//range slider
+  $(".calc-range--plan").ionRangeSlider({
+ 		values: [
+ 			"20 кв.м.",
+ 			"50 кв.м.",
+ 			"100 кв.м.",
+ 			"150 кв.м.",
+ 			"200 кв.м.",
+ 			"250 кв.м.",
+ 			"300 кв.м.",
+ 			"более 300 кв.м."
+ 		],
+ 		grid: true,
+ 		onChange: function (data) {
+ 				if(data.from_value == "20 кв.м."){
+ 					$('.calc-range-numb').text('8 000');
+ 				}
+ 				if(data.from_value == "50 кв.м."){
+ 					$('.calc-range-numb').text('10 000 ');
+ 				}
+ 				if(data.from_value == "100 кв.м."){
+ 					$('.calc-range-numb').text('14 000 ');
+ 				}
+ 				if(data.from_value == "150 кв.м."){
+ 					$('.calc-range-numb').text('16 000 ');
+ 				}
+ 				if(data.from_value == "200 кв.м."){
+ 					$('.calc-range-numb').text('18 000 ');
+ 				}
+ 				if(data.from_value == "250 кв.м."){
+ 					$('.calc-range-numb').text('22 000 ');
+ 				}
+ 				if(data.from_value == "300 кв.м."){
+ 					$('.calc-range-numb').text('24 000 ');
+ 				}
+ 				if(data.from_value == "более 300 кв.м."){
+ 					$('.calc-range-numb').text('от 24 000 ');
+ 				}
+ 				if(data.from_value == "более 300 кв.м."){
+ 					$('.calc-text--attansion').show();
+ 				} else {
+ 					$('.calc-text--attansion').hide();
+ 				}
+    }
+ 	});
+	//range slider===end
+
 	//drop menu
 	var hideToggle = function(targetClick,toggleEl) {
 		$(targetClick).click(function(event){

@@ -23,6 +23,7 @@
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-TJWDBCS');</script>
 		<!-- End Google Tag Manager -->
+
 	</head>
 	<?php wp_head(); ?>
 	<body>
