@@ -28,8 +28,7 @@
 		font-size: 14px
 		width: 80%
 		margin-left: 20px
-.nav-phone-el
-	margin-left: auto
+
 
 .advance--single-title
 	font-size: 18px
@@ -127,6 +126,11 @@ li
 
 .get-sale-row
 	margin-top: 30px
+
+.menu-mobile-calc
+	display: none!important
+
+
 @media only screen and (max-width: 1280px)
 	.section--tablet
 		.section-call
@@ -144,6 +148,11 @@ li
 	.section--union
 		background-image: url('/wp-content/themes/CGIKU/img/house-megevanie.png')!important
 		background-position: center center
+@media only screen and (max-width: 768px)
+	.news__el
+		width: calc(1/2*100% - (1 - 1/2)*40px)
+	.menu-mobile-calc
+		display: block!important
 @media only screen and (max-width: 640px)
 	.main-service__col-wrap
 		.main-service__el
@@ -161,5 +170,13 @@ li
 	.lp-small-head
 		.lp-baner__title
 			font-size: 22px
+	.news__el
+		width: 100%
+	.questions-more
+		padding-bottom: 40px
+@media only screen and (min-width: 769px)
+	.menu-wrap
+		display: block !important
+
 //@media only screen and (max-width: 768px)
 //@media only screen and (max-width: 640px)
