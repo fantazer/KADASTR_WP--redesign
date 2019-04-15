@@ -23,14 +23,14 @@
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-TJWDBCS');</script>
 		<!-- End Google Tag Manager -->
-
-	</head>
-	<?php wp_head(); ?>
-	<body>
-		<!-- Google Tag Manager (noscript) -->
+			<!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJWDBCS"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
+	</head>
+	<?php wp_head(); ?>
+	<body>
+
 		<!--block header-->
 		<div class="head-container">
 			<!--header-->

@@ -41,6 +41,8 @@
 	</div>
 </div>
 
+
+
 <!--from begin-->
 <div id="important" class="section section--start section--start-sm section--left-bg"
      style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/lp-item-9.jpg');">
@@ -52,16 +54,15 @@
 				<div class="box">
 					<?php echo CFS()->get('add_text'); ?>
           <?
-            porstAfter(11,true);
-						porstAfter(14,true);
-						porstAfter(15,true);
+            $categories = get_the_category();
+						$category_id = $categories[0]->cat_ID;
+            porstAfterTitle($category_id,true);
           ?>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
 
 <!--service-->
 <div class="section section--calc" id="price">

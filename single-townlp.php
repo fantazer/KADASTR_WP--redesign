@@ -13,8 +13,8 @@
 	     style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/lp-2.jpg');"></div>
 	<div class="main-cont">
 		<div class="lp-baner__content">
-			<div class="lp-baner__title">Оформление
-				<br> технического плана дома
+			<div class="lp-baner__title">
+				Оформить <?=get_the_title(); ?>
 			</div>
 			<div class="lp-baner__title-sub">Если границы Вашего земельного участка не установлены, либо установлены, но с
 				точностью ниже нормативной – изготавливается межевой план по уточнению границ

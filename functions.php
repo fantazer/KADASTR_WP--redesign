@@ -1,8 +1,59 @@
 <?
 
+
+function porstAfterTitle($a, $order){
+  if (in_category($a)) {
+    global $post;
+    $idPost = get_the_id();
+    $PostArray = array();
+    if ($order) {
+      $args = array(
+        'cat' => $a,
+        //'orderby'=> 'title',
+        'order' => 'ASC'
+      );
+    } else {
+      $args = array(
+        'cat' => $a,
+      );
+    }
+    query_posts($args);
+    while (have_posts()) : the_post();
+      $name = get_the_id();
+      array_push($PostArray, $name);
+    endwhile;
+    wp_reset_query();
+    $key = array_search($idPost, $PostArray);
+    $output = array_slice($PostArray, $key + 1, 5);
+    $LastPost = array_pop($PostArray);
+    $postEl = array('include' => $output, 'post__not_in' => $LastPost, 'order' => 'ASC');
+    $myposts = get_posts($postEl);
+    foreach ($myposts as $post) {
+      setup_postdata($post);
+      ?>
+			<li><a href="<?php the_permalink(); ?>"><?=CFS()->get('namecity');?></a></li>
+      <?
+    }
+    wp_reset_postdata();
+    $needPost = 5 - (count($PostArray) - $key);
+    //echo $needPost;
+    if ($needPost < 6 && $needPost > 0) {
+      $postEl = array('cat' => $a, 'order' => 'ASC', 'posts_per_page' => $needPost);
+      $myposts = get_posts($postEl);
+      foreach ($myposts as $post) {
+        setup_postdata($post);
+        ?>
+				<li><a href="<?php the_permalink(); ?>"><?=CFS()->get('namecity');?></a></li>
+        <?
+      }
+    }
+  }
+}
+
+
 function porstAfter($a, $order)
 {
-  if (in_category($a)) {
+	if (in_category($a)) {
     global $post;
     $idPost = get_the_id();
     $PostArray = array();
@@ -47,8 +98,7 @@ function porstAfter($a, $order)
         <?
       }
     }
-
-  }
+    }
 }
 
 add_filter('single_template', create_function(

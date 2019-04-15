@@ -6,7 +6,6 @@
 ?>
 
 <? get_header('lp'); ?>
-
 <div class="lp-baner lp-baner--borderland lp-baner--dark">
 	<div class="lp-baner__img"
 	     style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/baner-37.jpg');"></div>
@@ -40,7 +39,7 @@
 					 } else { ?>
 					<p>Кадастровый инженер – это специалист, обладающий техническими и юридическими знаниями, получивший
 						квалификационный аттестат на право заниматься кадастровой деятельностью.</p>
-					<p>Деятельность кадастрового инженера можно сравнить с деятельностью нотариуса. Кадастровый инженер
+					<p>Деятельность можно сравнить с деятельностью нотариуса. Кадастровый инженер
 						подготавливает документы для внесения изменений в Единый государственный реестр недвижимости (ЕГРН), и
 						свидетельствует о достоверности данных и сведений
 						в этих документах.</p>
@@ -113,11 +112,9 @@
 						<use xlink:href="#agreement"></use>
 					</svg>
 				</div>
-				<div class="solution__el-title">При оформлении договора долгосрочной аренды на нежилое помещение (на срок от 1
-					года)
+				<div class="solution__el-title">При оформлении договора долгосрочной аренды на нежилое помещение (на срок от 1 года)
 				</div>
-				<div class="solution__el-text">Для внесения в ЕГРН сведений о передаваемом в аренду помещении кадастровым
-					инженером формируется технический план по учету изменений помещения в связи с образованием его части (частей).
+				<div class="solution__el-text">Для внесения в ЕГРН сведений о передаваемом в аренду помещении формируется технический план по учету изменений помещения в связи с образованием его части (частей).
 				</div>
 			</div>
 			<div class="solution__el">
@@ -155,10 +152,10 @@
 						$categories = get_the_category();
 						$category_id = $categories[0]->cat_ID;
 						if($category_id==33){
-              porstAfter(33,true);
+              porstAfterTitle(33,true);
 						}
 						if($category_id==34){
-              porstAfter(34,true);
+              porstAfterTitle(34,true);
 						}
 					?>
 				</div>
@@ -177,8 +174,7 @@
 					<div class="step-content">
 						<div class="step-numb">01</div>
 						<div class="step-text">
-							<div class="step-text__descr">Отправляете нам заявку или звоните. Получаете бесплатную консультацию от
-								кадастрового инженера.
+							<div class="step-text__descr">Отправляете нам заявку или звоните. Получаете бесплатную консультацию.
 							</div>
 						</div>
 					</div>
@@ -268,24 +264,24 @@
 <!--slider certificate-->
 
 <!--questions-->
-<div class="section section--news ">
+<!--<div class="section section--news ">
 	<div class="section-title">Часто задаваемые вопросы</div>
 	<div class="section-title-sub">Просто о сложном</div>
 	<div class="main-cont">
 		<div class="questions">
 			<div class="questions-slider owl-carousel">
-        <? while (have_rows('questions')): the_row(); ?>
+        <?/* while (have_rows('questions')): the_row(); */?>
 					<div class="questions__el">
 						<div class="questions__el-wrap">
-							<div class="questions__name"><? the_sub_field('name_questions'); ?></div>
+							<div class="questions__name"><?/* the_sub_field('name_questions'); */?></div>
 							<div class="questions__text">
-                <? the_sub_field('text_questions'); ?>
+                <?/* the_sub_field('text_questions'); */?>
 							</div>
 						</div>
 					</div>
-        <? endwhile; ?>
+        <?/* endwhile; */?>
 			</div>
 		</div>
 	</div>
-</div>
+</div>-->
 

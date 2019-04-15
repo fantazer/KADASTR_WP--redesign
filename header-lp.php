@@ -56,7 +56,7 @@
 						<div class="top-line-el__wrap">
 							<div class="top-line-el">
 								<div class="top-line-el-title">Работа горячей линии:</div>
-								<div class="top-line-el-info">Ежедневно c 9-00 ч. до 20-00 ч.</div>
+								<div class="top-line-el-info top-line-el-info--light">Ежедневно c 9-00 ч. до 20-00 ч.</div>
 							</div>
 							<div class="top-line-el">
 								<div class="top-line-el-title">Прием онлайн-заявок:</div>
@@ -69,36 +69,20 @@
 							</div>
 						</div>
 						<div class="top-line__contact">
-							<div class="top-line-loc">
-								<div class="top-line-loc-el">
-									<div class="top-line-loc-icon">
-										<svg class="icon">
-											<use xlink:href="#metro"></use>
-										</svg>
-									</div>
-									<div class="top-line-loc-text">Варшавская</div>
-								</div>
-								<div class="top-line-loc-el">
-									<div class="top-line-loc-icon">
-										<svg class="icon">
-											<use xlink:href="#metro"></use>
-										</svg>
-									</div>
-									<div class="top-line-loc-text">Каширская</div>
-								</div>
-								<div class="top-line-loc-el top-line-loc-el--mail">
-									<div class="top-line-loc-icon">
-										<svg class="icon">
-											<use xlink:href="#mail"></use>
-										</svg>
-									</div>
-									<div class="top-line-loc-text"><?= get_field('email', 'option'); ?></div>
-								</div>
-							</div>
 							<div class="nav-phone">
-								<!--<a class="nav-phone-el" href="tel:<? /*=get_field('phone-1', 'option');*/ ?>"><? /*=get_field('phone-1', 'option');*/ ?></a>-->
-								<div class="nav-phone-el ct_phone"
-								"><? //get_field('phone-1', 'option');?></div>
+								<a class="nav-phone-el" href="tel:+7 (495) 514-84-13">+7 (495) 514-84-13</a>
+								<a class="nav-phone-el" href="tel:+7 (495) 514-84-13">+7 (495) 283-96-83</a>
+							</div>
+							<div class="top-line-loc">
+								<a class="top-calc" href="/kalkuljator-uslug/">
+									<div class="top-calc__icon">
+										<svg class="icon">
+											<use xlink:href="#calculator-fat"></use>
+										</svg>
+									</div>
+									<div class="top-calc__text">Калькулятор услуг</div>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
