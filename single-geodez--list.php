@@ -10,7 +10,7 @@
 	URL страницы :  http://cgiku.ru/uslugi-geodezista/
 */
 ?>
-<? get_header('lp'); ?>
+<? get_header(); ?>
 
 <!--block header end-->
 <div class="lp-baner lp-baner--borderland lp-baner--dark">

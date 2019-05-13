@@ -151,6 +151,37 @@ li {
 .link--mark {
   text-decoration: underline;
 }
+.header-search .search {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 15px;
+  width: calc(100% - 30px);
+  height: 100%;
+}
+.header-search .search .input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #dedede;
+}
+.header-search .search button {
+  display: none;
+}
+.header-search__icon:hover {
+  cursor: pointer;
+}
+.header-search__icon .icon {
+  width: 30px;
+  height: 30px;
+}
+.top-line__contact {
+  position: relative;
+}
+.contact-phone {
+  font-size: 18px !important;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
 @media only screen and (max-width: 1280px) {
   .section--tablet .section-call {
     width: 100%;
@@ -160,6 +191,9 @@ li {
   }
 }
 @media only screen and (max-width: 1024px) {
+  .header-search {
+    display: none !important;
+  }
   .top-line-info {
     width: 75%;
   }

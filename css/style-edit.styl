@@ -135,6 +135,34 @@ li
 .link--mark
 	text-decoration: underline
 
+.header-search
+	.search
+		display: none
+		position: absolute;
+		left: 0;
+		top: 15px;
+		width: calc(100% - 30px)
+		height: 100%;
+		.input
+			width: 100%
+			border 0
+			border-bottom 1px solid #dedede
+		button
+			display: none
+.header-search__icon
+	&:hover
+		cursor pointer
+	.icon
+		width 30px
+		height 30px
+
+.top-line__contact
+	position: relative
+
+.contact-phone
+	font-size: 18px!important
+	margin-bottom: 20px
+	font-weight: 700
 @media only screen and (max-width: 1280px)
 	.section--tablet
 		.section-call
@@ -142,6 +170,8 @@ li
 		.section-wrap__img
 			background-image: none!important
 @media only screen and (max-width: 1024px)
+	.header-search
+		display: none!important
 	.top-line-info
 		width: 75%
 @media only screen and (max-width: 960px)

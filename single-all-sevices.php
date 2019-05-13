@@ -10,7 +10,17 @@
 	URL страницы :  http://cgiku.ru/
 */
 ?>
-<? get_header('allservice'); ?>
+
+<?
+	/*$titlePage = get_the_title();
+	if(strpos($titlePage, 'Кадастровые работы в')!== false){
+		get_header();
+	} else {
+	 get_header('allservice');
+	}*/
+	get_header();
+?>
+
 
 <?
 function porstAfterTrim($a, $order)

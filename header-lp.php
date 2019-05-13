@@ -83,6 +83,14 @@
 									<div class="top-calc__text">Калькулятор услуг</div>
 								</a>
 							</div>
+							<div class="header-search">
+								<div class="header-search__icon">
+									<svg class="icon">
+										<use xlink:href="#magnifying-glass"></use>
+									</svg>
+								</div>
+								<?php get_search_form(); ?>
+							</div>
 						</div>
 					</div>
 				</div>

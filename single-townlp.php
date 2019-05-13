@@ -43,10 +43,7 @@
 						о Вашей постройке вносятся в Единый государственный реестр недвижимости (ЕГРН).</p>
 					<p>До 2017 года все постройки на садовых и дачных участках (в СНТ и ДНТ) можно было зарегистрировать по
 						декларации. С 2017 для их регистрации в Ростреестре необходим технический план.</p>
-					<p>Технический план подается в Росреестр (можно через МФЦ). По итогам проверки Росреестром технического плана
-						собственнику выдаётся выписка ЕГРН на здание, подтверждающая право собственности на постройку. С этого
-						момента постройка считается официально
-						зарегистрированной.</p>
+					<p>Технический план подается в Росреестр (можно через МФЦ). По итогам проверки Росреестром  собственнику выдаётся выписка ЕГРН на здание, подтверждающая право собственности на постройку. С этого момента постройка считается официально зарегистрированной.</p>
 						<? } ?>
 				</div>
 			</div>
@@ -70,7 +67,7 @@
           while (have_posts()) : the_post();
             the_content(); // выводим контент
           endwhile;
-          porstAfter(30, true);
+          porstAfterTitle(30, true);
         ?>
 				</div>
 			</div>
@@ -90,7 +87,7 @@
 			<div class="cost__el">
 				<div class="cost__el-img"
 				     style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/house-size-1.png');"></div>
-				<div class="cost__el-title">Площадь дома
+				<div class="cost__el-title">Площадь
 					<span>до 50 кв.м</span>
 				</div>
 				<div class="cost__el-text">(садовый дом, баня, гараж)</div>
@@ -100,7 +97,7 @@
 			<div class="cost__el">
 				<div class="cost__el-img"
 				     style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/house-size-2.png');"></div>
-				<div class="cost__el-title">Площадь дома
+				<div class="cost__el-title">Площадь
 					<span>от 51 до 100 кв.м</span>
 				</div>
 				<div class="cost__el-text">(дачный дом , жилое строение)</div>
@@ -110,7 +107,7 @@
 			<div class="cost__el">
 				<div class="cost__el-img"
 				     style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/house-size-3.png');"></div>
-				<div class="cost__el-title">Площадь дома
+				<div class="cost__el-title">Площадь
 					<span>от 101 до 200 кв.м</span>
 				</div>
 				<div class="cost__el-text">(индивидуальный жилой дом)</div>
@@ -120,7 +117,7 @@
 			<div class="cost__el">
 				<div class="cost__el-img"
 				     style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/house-size-4.png');"></div>
-				<div class="cost__el-title">Площадь дома
+				<div class="cost__el-title">Площадь
 					<span>от 201 кв.м</span>
 				</div>
 				<div class="cost__el-text">(загородный дом, коттедж)</div>
@@ -173,7 +170,7 @@
 						<use xlink:href="#planning"></use>
 					</svg>
 				</div>
-				<div class="doc__title">Формирование технического плана</div>
+				<div class="doc__title">Формирование техплана</div>
 				<div class="doc__text">Необходим для государственного кадастрового учета здания.</div>
 			</div>
 		</div>

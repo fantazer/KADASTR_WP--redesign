@@ -37,7 +37,7 @@
 				</div>
 				<div class="contact-info">
 					<div class="map">
-						<script text/javascript="text/javascript" charset="utf-8" async="async" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A104108c83896b1a6c1b544e50f3d690ee4df2f43b13730f0b9a6f0d5ead96cae&amp;amp;width=100%&amp;amp;height=400&amp;amp;lang=ru_RU&amp;amp;scroll=false"></script>
+						<script text/javascript="text/javascript" charset="utf-8" async="async" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5ab2f377d79652df5a96b1ffc2bd7e32e57b5818f2f61229ea0f3157d990329e&amp;width=100%&amp;height=500&amp;lang=ru_RU&amp;scroll=false"></script>
 					</div>
 					<div class="contact-row-wrap">
 						<div class="contact-row">
@@ -46,7 +46,7 @@
 									<use xlink:href="#placeholder"></use>
 								</svg>
 							</div>
-							<div class="contact-text">Москва, 1-ый Варшавский проезд, дом 1А, строение 9, офис 2.6</div>
+							<div class="contact-text">г. Москва, 1-ый Нагатинский проезд, дом 4, офис 201</div>
 						</div>
 						<div class="contact-row">
 							<div class="contact-icon">

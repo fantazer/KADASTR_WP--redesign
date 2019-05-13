@@ -10,6 +10,20 @@
 
 $(document).ready(function(){
 
+	//toggle search
+	$('.header-search__icon').click(function(){
+		$('.search').slideToggle();
+		$(".search .input").focus();
+		event.stopPropagation();
+	});
+	$('.search').click(function(){
+		event.stopPropagation();
+	});
+	$(document).on("click", function () {
+				$('.search').slideUp();
+	});
+
+	//toggle search===end
 
 	//calc
 	$('.calc-get').click(function(){
