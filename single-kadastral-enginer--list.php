@@ -34,15 +34,15 @@
 			<div class="section-call section-call--mid">
 				<div class="section-title section-title--left">Кто такой кадастровый инженер?</div>
 				<div class="box">
-					<? if(CFS()->get('add_text')){
-							echo CFS()->get('add_text');
-					 } else { ?>
-					<p>Это специалист, обладающий техническими и юридическими знаниями, получивший квалификационный аттестат кадастрового инженера на право заниматься кадастровой деятельностью.</p>
-					<p>Деятельность можно сравнить с деятельностью нотариуса. Кадастровый инженер
-						подготавливает документы для внесения изменений в Единый государственный реестр недвижимости (ЕГРН), и
-						свидетельствует о достоверности данных и сведений
-						в этих документах.</p>
-					<? } ?>
+          <? if (CFS()->get('add_text')) {
+            echo CFS()->get('add_text');
+          } else { ?>
+						<p>Это специалист, обладающий техническими и юридическими знаниями, получивший квалификационный аттестат кадастрового инженера на право заниматься кадастровой деятельностью.</p>
+						<p>Деятельность можно сравнить с деятельностью нотариуса. Кадастровый инженер
+							подготавливает документы для внесения изменений в Единый государственный реестр недвижимости (ЕГРН), и
+							свидетельствует о достоверности данных и сведений
+							в этих документах.</p>
+          <? } ?>
 				</div>
 			</div>
 		</div>
@@ -144,16 +144,73 @@
 						<a href="/prajs-list/" class="link--mark">Прайс-листе</a> (около 30 позиций).</p>
 					<p>За дополнительную плату возможно срочное выполнение кадастровых работ.</p>
 
-					<?
-						$categories = get_the_category();
-						$category_id = $categories[0]->cat_ID;
-						if($category_id==33){
-              porstAfterTitle(33,true);
-						}
-						if($category_id==34){
-              porstAfterTitle(34,true);
-						}
-					?>
+
+					<table class="table">
+						<tbody>
+						<tr>
+							<td>Услуга</td>
+							<td style="width:30%">Цена</td>
+						</tr>
+						<tr>
+							<td>
+								Технический план на дачный, садовый или индивидуальный жилой дом
+							</td>
+							<td>от 8000 руб.</td>
+						</tr>
+						<tr>
+							<td>Межевание земельного участка</td>
+							<td>от 14000 руб.</td>
+						</tr>
+						<tr>
+							<td>Раздел земельного участка</td>
+							<td>от 10000 руб.</td>
+						</tr>
+						<tr>
+							<td>Объединение земельных участков</td>
+							<td>от 10000 руб.</td>
+						</tr>
+						<tr>
+							<td>Исправление реестровой (кадастровой) ошибки</td>
+							<td>от 15000 руб.</td>
+						</tr>
+						<tr>
+							<td>Технический план нежилого помещения</td>
+							<td>от 10000 руб.</td>
+						</tr>
+						<tr>
+							<td>Технический план машино-места</td>
+							<td>от 10000 руб.</td>
+						</tr>
+						<tr>
+							<td>
+								Акт обследования (снятие с кадастрового учета объекта кап. строительства)
+							</td>
+							<td>от 8000 руб.</td>
+						</tr>
+						<tr>
+							<td>Технический план скважины</td>
+							<td>20000 руб.</td>
+						</tr>
+						<tr>
+							<td>Выезд кадастрового инженера для консультации</td>
+							<td>5000 руб.</td>
+						</tr>
+						</tbody>
+					</table>
+					<a href="/prajs-list/" class="btn--md btn--mark">Смотреть все цены</a>
+
+					<ul>
+          <?
+          $categories = get_the_category();
+          $category_id = $categories[0]->cat_ID;
+          if ($category_id == 33) {
+            porstAfterTitle(33, true);
+          }
+          if ($category_id == 34) {
+            porstAfterTitle(34, true);
+          }
+          ?>
+          </ul>
 				</div>
 			</div>
 		</div>
@@ -266,16 +323,16 @@
 	<div class="main-cont">
 		<div class="questions">
 			<div class="questions-slider owl-carousel">
-        <?/* while (have_rows('questions')): the_row(); */?>
+        <? /* while (have_rows('questions')): the_row(); */ ?>
 					<div class="questions__el">
 						<div class="questions__el-wrap">
-							<div class="questions__name"><?/* the_sub_field('name_questions'); */?></div>
+							<div class="questions__name"><? /* the_sub_field('name_questions'); */ ?></div>
 							<div class="questions__text">
-                <?/* the_sub_field('text_questions'); */?>
+                <? /* the_sub_field('text_questions'); */ ?>
 							</div>
 						</div>
 					</div>
-        <?/* endwhile; */?>
+        <? /* endwhile; */ ?>
 			</div>
 		</div>
 	</div>

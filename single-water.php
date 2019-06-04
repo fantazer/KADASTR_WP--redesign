@@ -52,7 +52,7 @@
 	</div>
 </div>
 <!--Зачем это нужно-->
-<div class="section section--start section--survey" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/baner-17.jpg');">
+<div class="section section--start section--survey" id="need" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/baner-17.jpg');">
 	<div class="main-cont">
 		<div class="section-wrap">
 			<div class="section-call section-call--img"></div>
@@ -72,7 +72,7 @@
 	</div>
 </div>
 <!--Это нужно знать-->
-<div class="section section--text" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/baner-15.png');">
+<div class="section section--text" id="knowledge" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/baner-15.png');">
 	<div class="main-cont-sm">
 		<div class="section-title">Это нужно знать!</div>
 		<div class="text-block">
@@ -95,7 +95,7 @@
 	</div>
 </div>
 <!--service-->
-<div class="section section--calc section--calc--topograf">
+<div class="section section--calc section--calc--topograf" id="cost">
 	<div class="main-cont">
 		<div class="section-title">Стоимость наших работ</div>
 		<div class="section-title-sub">Работаем в Москве и во всех районах Московской области.</div>
@@ -126,7 +126,7 @@
 	</div>
 </div>
 <!--Что войдет в стоимость-->
-<div class="section section--doc section--clear-bottom">
+<div class="section section--doc section--clear-bottom" id="work-cost">
 	<div class="main-cont">
 		<div class="section-title">Что войдет в стоимость работ ?</div>
 		<div class="section-title-sub"></div>
@@ -158,7 +158,7 @@
 	</div>
 </div>
 <!--Документы-->
-<div class="section section--doc">
+<div class="section section--doc" id="doc">
 	<div class="main-cont">
 		<div class="section-title">Какие нужны документы?</div>
 		<div class="section-title-sub">Максимальный перечень необходимых документов</div>

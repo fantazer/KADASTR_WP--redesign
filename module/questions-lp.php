@@ -1,4 +1,4 @@
-<div class="section section--news ">
+<div class="section section--news" id="questions">
 	<div class="section-title">Часто задаваемые вопросы</div>
 	<div class="section-title-sub">Просто о сложном</div>
 	<div class="main-cont">

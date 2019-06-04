@@ -12,15 +12,15 @@ $(document).ready(function(){
 
 	//toggle search
 	$('.header-search__icon').click(function(){
-		$('.search').slideToggle();
-		$(".search .input").focus();
+		$('.header .search').slideToggle();
+		$(".header .search .input").focus();
 		event.stopPropagation();
 	});
-	$('.search').click(function(){
+	$('.header .search').click(function(){
 		event.stopPropagation();
 	});
 	$(document).on("click", function () {
-				$('.search').slideUp();
+				$('.header .search').slideUp();
 	});
 
 	//toggle search===end
@@ -652,6 +652,12 @@ $(window).load(function () {
 
 
 	//calculator===end
+
+	// toggle town list
+	$('.akkord-el__head').click(function(){
+		$(this).closest('.akkord-el').find('.akkord-el__list').slideToggle();
+	});
+	// toggle town list === end
 })
 ;( function( window, document )
 {
