@@ -74,16 +74,16 @@ $(document).ready(function(){
  					$('.calc-range-numb').text('0');
  				}
  				if(data.from_value == "400 кв.м."){
- 					$('.calc-range-numb').text('14 000 ');
+ 					$('.calc-range-numb').text('16 000 ');
  				}
  				if(data.from_value == "800 кв.м."){
- 					$('.calc-range-numb').text('14 000 ');
+ 					$('.calc-range-numb').text('16 000 ');
  				}
  				if(data.from_value == "1000 кв.м."){
- 					$('.calc-range-numb').text('15 000 ');
+ 					$('.calc-range-numb').text('17 000 ');
  				}
  				if(data.from_value == "1400 кв.м."){
- 					$('.calc-range-numb').text('20 000 ');
+ 					$('.calc-range-numb').text('22 000 ');
  				}
  				if(data.from_value == "2000 кв.м."){
  					$('.calc-text--attansion').show();
@@ -175,28 +175,28 @@ $(document).ready(function(){
  		grid: true,
  		onChange: function (data) {
  				if(data.from_value == "20 кв.м."){
- 					$('.calc-range-numb').text('8 000');
+ 					$('.calc-range-numb').text('10 000');
  				}
  				if(data.from_value == "50 кв.м."){
- 					$('.calc-range-numb').text('10 000 ');
+ 					$('.calc-range-numb').text('12 000 ');
  				}
  				if(data.from_value == "100 кв.м."){
- 					$('.calc-range-numb').text('14 000 ');
- 				}
- 				if(data.from_value == "150 кв.м."){
  					$('.calc-range-numb').text('16 000 ');
  				}
- 				if(data.from_value == "200 кв.м."){
+ 				if(data.from_value == "150 кв.м."){
  					$('.calc-range-numb').text('18 000 ');
  				}
+ 				if(data.from_value == "200 кв.м."){
+ 					$('.calc-range-numb').text('20 000 ');
+ 				}
  				if(data.from_value == "250 кв.м."){
- 					$('.calc-range-numb').text('22 000 ');
+ 					$('.calc-range-numb').text('24 000 ');
  				}
  				if(data.from_value == "300 кв.м."){
  					$('.calc-range-numb').text('24 000 ');
  				}
  				if(data.from_value == "более 300 кв.м."){
- 					$('.calc-range-numb').text('от 24 000 ');
+ 					$('.calc-range-numb').text('от 26 000 ');
  				}
  				if(data.from_value == "более 300 кв.м."){
  					$('.calc-text--attansion').show();
@@ -440,11 +440,11 @@ $(document).ready(function(){
 	//for init SVG 
 	//svg4everybody();
 	// ==== clear storage =====
-	 localStorage.clear();
+	 /*localStorage.clear();
 	 sessionStorage.clear();
 	 $(window).unload(function(){
 		 localStorage.clear();
-	 });
+	 });*/
 	// ==== clear storage end =====
 
 	

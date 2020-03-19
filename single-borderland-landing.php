@@ -107,7 +107,7 @@
 			<input class="calc-range" type="range" placeholder=""/>
 			<div class="calc-range__wrap">
 				<div class="calc-range-val">
-					<div class="calc-range-numb">14 000</div>
+					<div class="calc-range-numb">16 000</div>
 					<div class="calc-range-pay">руб</div>
 				</div>
 			</div>

@@ -7,7 +7,7 @@
 			<? $imgJub = get_field('gallary', 'option'); ?>
 			<?php foreach( $imgJub as $image ): ?>
 				<div class="slider__el">
-					<a class="fancybox" href="<?php echo $image['url']; ?>" rel="group-elemen">
+					<a class="fancybox" href="<?php echo $image['url']; ?>" rel="cert-img" data-fancybox="images">
 						<img src="<?php echo $image['sizes']['medium']; ?>" alt=""/>
 					</a>
 				</div>

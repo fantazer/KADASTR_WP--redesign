@@ -1,5 +1,8 @@
 <? get_header(); ?>
+
+	
 	<?php
+
 	/*$services = array(
 	  array(
 	    'name' =>'Услуги геодезиста',
@@ -51,7 +54,7 @@
             <?php
             $the_query = new WP_Query(array(
               'meta_key' => 'order',
-              'orderby' => 'meta_value',
+              'orderby' => 'meta_value_num',
               'tag' => 'main-service--kadastr',
               'order' => 'ASC'
             ));
@@ -62,7 +65,7 @@
                 ?>
 								<div class="main-service__el">
 									<div class="main-service__cont">
-										<div class="main-service__el-title"><?= get_field('second-title'); ?></div>
+										<a href="<?= get_permalink(); ?>" class="main-service__el-title"><?= get_field('second-title'); ?></a>
 										<div class="main-service__title-sub"><?= get_field('description'); ?></div>
 										<div class="main-service__price-row">
 											<div class="main-service__price main-service__price--true"><?= get_field('price-true'); ?>руб.

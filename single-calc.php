@@ -44,9 +44,9 @@
 					<div class="calculator__sub-title">Выберите площадь участка</div>
 					<div class="calculator__item">
 						<select class="select-beauty">
-							<option value="14 000 р">до 800 кв.м</option>
-							<option value="15 000 р">от 801 кв.м до 1000 кв.м</option>
-							<option value="20 000 р">от 1001 кв.м до 2000 кв.м</option>
+							<option value="16 000 р">до 800 кв.м</option>
+							<option value="17 000 р">от 801 кв.м до 1000 кв.м</option>
+							<option value="22 000 р">от 1001 кв.м до 2000 кв.м</option>
 						</select>
 						<div class="clear"></div>
 					</div>
@@ -125,10 +125,10 @@
 					<div class="calculator__sub-title">Выберите площадь дома</div>
 					<div class="calculator__item">
 						<select class="select-beauty">
-							<option value="10 000 р">до 50 кв.м</option>
-							<option value="14 000 р">от 51 до 100 кв.м</option>
-							<option value="18 000 р">от 101 до 200 кв.м</option>
-							<option value="22 000 р">от 201 кв.м</option>
+							<option value="12 000 р">до 50 кв.м</option>
+							<option value="16 000 р">от 51 до 100 кв.м</option>
+							<option value="20 000 р">от 101 до 200 кв.м</option>
+							<option value="24 000 р">от 201 кв.м</option>
 						</select>
 						<div class="clear"></div>
 					</div>
@@ -223,7 +223,7 @@
 				</div>
 				<div class="calculator-total">
 					<div class="calculator-total__title">Цена услуги:</div>
-					<div class="calculator-total__val">14 000 р</div>
+					<div class="calculator-total__val">16 000 р</div>
 				</div>
 				<!--Технический план квартиры-->
 				<div class="calculator-msg" data-msg="techplanKv">

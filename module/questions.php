@@ -8,7 +8,8 @@
 				 	$args = array(
 				 	'cat'=> 5,
 				 	'orderby' => 'date',
-				 	'order' => 'DESC'
+				 	'order' => 'DESC',
+				 	'posts_per_page' => 12,
 				 	);
 				 ?>
 				 <? query_posts($args);?>

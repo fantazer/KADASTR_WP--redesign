@@ -621,6 +621,5 @@ function search_only_title_toster_q411859($search, &$wp_query)
   return $search;
 }
 
-add_filter('posts_search', 'search_only_title_toster_q411859', 500, 2);
 
 ?>

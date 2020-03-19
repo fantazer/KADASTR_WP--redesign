@@ -47,6 +47,15 @@
 </div>
 <? include('module/modal.php'); ?>
 
+<div class="cookie">
+	<div class="cookie-wrap">
+		<div class="cookie__msg">
+			Этот сайт использует файлы cookie и другие технологии, чтобы помочь вам в навигации, а также предоставить лучший пользовательский опыт, анализировать использование наших продуктов и услуг, повысить качество рекламных и маркетинговых активностей.
+		</div>
+		<div class="cookie__msg-close"> Принять</div>
+	</div>
+</div>
+
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -54,10 +63,10 @@
    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
    ym(32012941, "init", {
-        id:32012941,
         clickmap:true,
         trackLinks:true,
-        accurateTrackBounce:true
+        accurateTrackBounce:true,
+        webvisor:true
    });
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/32012941" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
@@ -79,6 +88,7 @@
 <!--block footer end-->
 <script src="<?php echo get_template_directory_uri(); ?>/js/combined.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/script.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/script-edit.js"></script>
 <!--SQL - <?php /*echo get_num_queries (); */?> | <?php /*timer_stop (1); */?> сек. | <?php /*echo round (memory_get_usage ()/1024/1024, 2) */?> МБ-->
 
 </body>

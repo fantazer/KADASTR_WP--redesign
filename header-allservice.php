@@ -59,19 +59,19 @@
 								<div class="top-line-el-info top-line-el-info--light">Ежедневно c 9-00 ч. до 20-00 ч.</div>
 							</div>
 							<div class="top-line-el">
-								<div class="top-line-el-title">Прием онлайн-заявок:</div>
+								<div class="top-line-el-title ">Наша почта:</div>
 								<div class="top-line-el-info top-line-el-info--call modal-get" data-modal="order">
 									<svg class="icon">
-										<use xlink:href="#phone"></use>
+										<use xlink:href="#mail"></use>
 									</svg>
-									<span>Круглосуточно</span>
+									<a href="mailto:info@cgiku.ru" class="header-mail-val">info@cgiku.ru</a>
 								</div>
 							</div>
 						</div>
 						<div class="top-line__contact">
 							<div class="nav-phone">
-								<a class="nav-phone-el" href="tel:+7 (495) 514-84-13">+7 (495) 514-84-13</a>
-								<a class="nav-phone-el" href="tel:+7 (495) 514-84-13">+7 (495) 283-96-83</a>
+								<a class="nav-phone-el" href="tel:<? the_field('phone-1', 'option');?>"><? the_field('phone-1', 'option');?></a>
+								<a class="nav-phone-el" href="tel:<? the_field('phone-2', 'option');?>"><? the_field('phone-2', 'option');?></a>
 							</div>
 							<div class="top-line-loc">
 								<a class="top-calc" href="/kalkuljator-uslug/">

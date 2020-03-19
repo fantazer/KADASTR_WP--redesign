@@ -29,7 +29,7 @@
 								</label>
 							</div>
 							<div class="agree-row__text">Согласен с
-								<a href="<?php echo get_template_directory_uri(); ?>/agreement.pdf">условиями обработки персональных данных</a>
+								<a href="/policy/">условиями обработки персональных данных</a>
 							</div>
 						</div>
 						<input class="form-footer-send" type="submit" value="Отправить заявку"/>
