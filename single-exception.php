@@ -93,7 +93,7 @@
 								<a href="http://vsrf.ru/stor_pdf.php?id=1738070" target="_blank">Определение Верховного суда РФ (2019)</a>
 							</li>
 							<li>
-								<a href="https://1ap.sudrf.ru/modules.php?name=sud_delo&amp;srv_num=1&amp;name_op=doc&amp;number=193764&amp;delo_id=5&amp;new=5&amp;text_number=1 " target="_blank">Определение Первого апелляционного суда общей юрисдикции (пример 2020)</a>
+								<a href="https://1ap.sudrf.ru/modules.php?name=sud_delo&amp;srv_num=1&amp;name_op=doc&amp;number=193764&amp;delo_id=5&amp;new=5&amp;text_number=1 " target="_blank">Определение Первого апелляционного суда общей юрисдикции</a>
 							</li>
 						</ul>
 					</div>
