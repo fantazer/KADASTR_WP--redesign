@@ -14,7 +14,7 @@
 	<!--SEO-->
 	<title>Document</title>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/vendor.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?ver=1">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-edit.css">
 	<!-- Google Tag Manager -->
 	<script>(function (w, d, s, l, i) {

@@ -26,7 +26,7 @@
 		</div>
 		<!--Зачем это нужно?-->
 		<div class="section">
-			<div class="section-wrap__img lp-baner--contain" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/remove/remove-3.jpg');"></div>
+			<div class="section-wrap__img lp-baner--contain" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/remove/remove-5.jpg');"></div>
 			<div class="main-cont">
 				<div class="section-wrap">
 					<div class="section-call section-call--mid">

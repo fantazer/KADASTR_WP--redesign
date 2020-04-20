@@ -1,46 +1,55 @@
 <? get_header(); ?>
 
-	
-	<?php
 
-	/*$services = array(
-	  array(
-	    'name' =>'Услуги геодезиста',
-			'title' => 'Услуги геодезиста в',
-			'description' => 'Услуги геодезиста в',
-	    'content' => '[text_module id="14446"]'
-	  )
-	);
-		// Получить данные рубрик, в том числе и без записей, у которых родительская рубрика с ID = 6
-		$cat_data = get_categories( array( 'parent' => 37 ) );
-		if ( $cat_data ) {
-		  foreach ( $cat_data as $one_cat_data ){
-			foreach ($services as $services_item) {
-			      $secondPartTItle = str_replace("Услуги в ", "", $one_cat_data->cat_name);
-			      $title = $services_item['title']." ".$secondPartTItle;
-			      $text = $services_item['content'];
-			      $post_data = array(
-			        'post_title' => $title,
-			        'post_content' => $text,
-			        'post_status' => 'publish',
-			        'post_author' => 1,
-			        'post_category' => array(37,$one_cat_data->cat_ID),
-			      );
-			      $post_id = wp_insert_post(wp_slash($post_data));
-			      add_post_meta($post_id, '_aioseop_title', $services_item['title']." ".$secondPartTItle.", вызов на объект для работ от ООО ЦГИКУ");
-			      add_post_meta($post_id, '_aioseop_description', $services_item['title']." ".$secondPartTItle." от профессионалов ЦГИКУ, любые геодезические работы по приемлемым ценам. Звоните!");
-			      update_post_meta($post_id, 'ratings_average', 5);
-			      update_post_meta($post_id, 'ratings_score', 5);
-			      update_post_meta($post_id, 'ratings_users', 5);
-			      CFS()->save( array('namecity' => $secondPartTItle), array( 'ID' => $post_id ) );
-			    }
-		  }
-		}*/
-	?>
+<?php
+
+/*$services = array(
+  array(
+    'name' =>'Услуги геодезиста',
+    'title' => 'Услуги геодезиста в',
+    'description' => 'Услуги геодезиста в',
+    'content' => '[text_module id="14446"]'
+  )
+);
+  // Получить данные рубрик, в том числе и без записей, у которых родительская рубрика с ID = 6
+  $cat_data = get_categories( array( 'parent' => 37 ) );
+  if ( $cat_data ) {
+    foreach ( $cat_data as $one_cat_data ){
+    foreach ($services as $services_item) {
+          $secondPartTItle = str_replace("Услуги в ", "", $one_cat_data->cat_name);
+          $title = $services_item['title']." ".$secondPartTItle;
+          $text = $services_item['content'];
+          $post_data = array(
+            'post_title' => $title,
+            'post_content' => $text,
+            'post_status' => 'publish',
+            'post_author' => 1,
+            'post_category' => array(37,$one_cat_data->cat_ID),
+          );
+          $post_id = wp_insert_post(wp_slash($post_data));
+          add_post_meta($post_id, '_aioseop_title', $services_item['title']." ".$secondPartTItle.", вызов на объект для работ от ООО ЦГИКУ");
+          add_post_meta($post_id, '_aioseop_description', $services_item['title']." ".$secondPartTItle." от профессионалов ЦГИКУ, любые геодезические работы по приемлемым ценам. Звоните!");
+          update_post_meta($post_id, 'ratings_average', 5);
+          update_post_meta($post_id, 'ratings_score', 5);
+          update_post_meta($post_id, 'ratings_users', 5);
+          CFS()->save( array('namecity' => $secondPartTItle), array( 'ID' => $post_id ) );
+        }
+    }
+  }*/
+?>
 
 	<!--main-service-->
 	<div class="section section--main-service">
 		<div class="main-cont">
+			<div class="hospital">
+				<p>УВАЖАЕМЫЕ КЛИЕНТЫ!</p>
+				<p>С 30.03.2020 по 30.04.2020 наш офис закрыт в связи с коронавирусом COVID-19.</p>
+				<p><strong><u>МЫ РАБОТАЕМ ДИСТАНЦИОННО!</u></strong></p>
+				<p>Рады ответить на Ваши вопросы по телефону или по e-mail!</p>
+				<p>Если Вы ранее уже заказали у нас работы, то позвоните нам и Вас переведут на ответственного сотрудника.</p>
+				<p>Приносим свои извинения и надеемся на понимание.</p>
+				<p><em>Будьте здоровы! </em><em>#лучшедома</em></p>
+			</div>
 			<div class="section-title">Наши самые популярные услуги</div>
 			<div class="section-title-sub">Сравните
 				<span class="text--green">наши цены &nbsp;</span>c&nbsp;
