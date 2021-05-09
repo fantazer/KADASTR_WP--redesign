@@ -244,18 +244,75 @@
 			</div>
       <?
 
-      /*$query = new WP_Query('cat=30','posts_per_page = 10000');
-      while( $query->have_posts() ) {
-        $query->the_post();
-        $id = get_the_ID();
-        $metaTitle = get_post_meta($id, '_aioseop_title', true);
-        if (strpos($metaTitle, 'Заказать технический план дома в') !== false){
+      // Межевание и межевой план в Подольском районе, заказать межевой план земельного участка. Полный спектр геодезических, кадастровых работ. Опытные, ответственные исполнители. Звоните!
+			$isWork = false;
+      if ($isWork) {
+        $query = new WP_Query(
+          'cat=36',
+          'posts_per_page = 10000'
+        );
+        while ($query->have_posts()) {
+          $query->the_post();
+          $id = get_the_ID();
+          $title = get_the_title($id);
           $category = get_the_category();
-          $location = str_replace('Заказать технический план дома в ','',$metaTitle);
-          $editTitle = "Технический план дома в ".$location.", заказать техплан дома в ".$location;
-          update_post_meta($id, '_aioseop_title', $editTitle);
+
+					$str = strpos($title, " в ");
+          $row = substr($title, $str + 4, strlen($title));
+          echo $row . "<br><br><hr><br>";
+
+          /*$metaTitle = get_post_meta($id, 'namecity', true);
+
+          $str = strpos($category[1]->name, " в ");
+          $row = substr($category[1]->name, $str + 3, strlen($category[1]->name));
+          echo $row . "<br><br><hr><br>";*/
+
+          //echo $metaTitle."<br>";
+          //$category = get_the_category();
+          //$location = str_replace('Кадастровый инженер в ','',$title);
+          /*$location = str_replace(', заказать межевой план земельного участка','',$location);
+         $editTitle = "✅ Межевание и межевой план в ".$location.", заказать межевой план земельного участка. Полный спектр геодезических, кадастровых работ. Опытные, ответственные исполнители. Звоните!";*/
+
+          //update_post_meta($id, 'addNamecity', $metaTitle);
+          //update_field("cityEdit",$location,$id);
+          $field_data = array('cityEdit' => $row);
+          $post_data = array('ID' => $id); // the ID is required
+          CFS()->save($field_data, $post_data);
+
         }
-      }*/
+      }
+
+      $isEditMeta = true;
+      if ($isEditMeta) {
+        $query = new WP_Query('cat=11', 'posts_per_page = 10000');
+        while ($query->have_posts()) {
+          $query->the_post();
+          $id = get_the_ID();
+          $metaDescription = get_post_meta($id, '_aioseop_description', true);
+          $metaTitle = get_post_meta($id, '_aioseop_title', true);
+          $town = CFS()->get("cityEdit");
+
+          $editTitle = "Геодезические работы в ".$town.", вызов геодезиста на земельный участок";
+          $editDescription = "✅ Все виды геодезических работ в " . $town . " от профессионалов ЦГИКУ по приемлемым ценам. Центр Геодезических и Кадастровых работа. Наш тел.: +7 (495) 283-96-81. Звоните!";
+
+          //echo $editTitle . "<br><br><hr>";
+          //echo $editDescription . "<br><br><hr>";
+
+          /*$my_post = array();
+					$my_post['ID'] = $id;
+					$my_post['post_content'] = '[text_module id="20968"]';
+
+          wp_update_post( wp_slash($my_post) );*/
+          $field_data = array("add_text" => '[text_module id="21298"]');
+          $post_data = array('ID' => $id); // the ID is required
+          CFS()->save($field_data, $post_data);
+					//echo get_post_meta($id, 'content', true);
+          //update_post_meta($id, '_aioseop_title', $editTitle);
+          //update_post_meta($id, '_aioseop_description', $editDescription);
+          // [text_module id="21298"]
+        }
+      }
+
       ?>
 		</div>
 	</div>

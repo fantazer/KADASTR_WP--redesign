@@ -67,7 +67,7 @@
           while (have_posts()) : the_post();
             the_content(); // выводим контент
           endwhile;
-          porstAfterTitle(30, true);
+          porstAfterTitle(30, true, 'Технический план дома в ');
         ?>
 				</div>
 			</div>

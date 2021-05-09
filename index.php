@@ -37,19 +37,37 @@
     }
   }*/
 ?>
+<?
+/*$args = array(
+  'cat' => 37,
+	'posts_per_page' => 10000,
+);
 
+query_posts($args);
+while (have_posts()) : the_post();
+  $title = get_the_title();
+  //echo $title.'<br>';
+  if (strpos($title, 'Геодезические работы в') !== false) {
+    //echo 'true';
+    $post_id = get_the_ID() ;
+    //update_post_meta($post_id, '_aioseop_title', $title . " - заказать в ЦГИКУ");
+  }
+endwhile;
+wp_reset_query();*/
+
+?>
 	<!--main-service-->
 	<div class="section section--main-service">
 		<div class="main-cont">
-			<div class="hospital">
+	<!--		<div class="hospital">
 				<p>УВАЖАЕМЫЕ КЛИЕНТЫ!</p>
-				<p>С 30.03.2020 по 30.04.2020 наш офис закрыт в связи с коронавирусом COVID-19.</p>
-				<p><strong><u>МЫ РАБОТАЕМ ДИСТАНЦИОННО!</u></strong></p>
-				<p>Рады ответить на Ваши вопросы по телефону или по e-mail!</p>
-				<p>Если Вы ранее уже заказали у нас работы, то позвоните нам и Вас переведут на ответственного сотрудника.</p>
-				<p>Приносим свои извинения и надеемся на понимание.</p>
-				<p><em>Будьте здоровы! </em><em>#лучшедома</em></p>
-			</div>
+
+				<p><strong><u>МЫ РАБОТАЕМ В ШТАТНОМ РЕЖИМЕ!</u></strong></p>
+				<p>Если Вы хотите заказать услугу или получить консультацию нашего инженера, свяжитесь с нами по телефону или по e-mail. В настоящее время в связи с распространением коронавируса COVID-19 прием в нашем офисе временно не осуществляется.</p>
+				<p>Если Вы ранее уже заказали у нас работы, позвоните нам и Вас переведут на ответственного сотрудника.</p>
+				<p>Надеемся на Ваше понимание.</p>
+				<p><em>Будьте здоровы! #лучшедома</em></p>
+			</div>-->
 			<div class="section-title">Наши самые популярные услуги</div>
 			<div class="section-title-sub">Сравните
 				<span class="text--green">наши цены &nbsp;</span>c&nbsp;
@@ -83,7 +101,9 @@
 											</div>
 										</div>
 										<div class="main-service__get">
-											<a class="main-service__btn main-service__btn-more" href="<?= get_permalink(); ?>">Подробнее</a>
+											<a class="main-service__read-more" href="<?= get_permalink(); ?>">
+												<img src="<?php echo get_template_directory_uri(); ?>/img/btn-more.svg" >
+											</a>
 											<div class="main-service__btn main-service__btn-get modal-get" data-modal="order">Заказать</div>
 										</div>
 									</div>

@@ -6799,7 +6799,8 @@ select.select-beauty {
   background-position: center center;
   -webkit-border-radius: 10px;
           border-radius: 10px;
-  padding: 20% 10%;
+  padding: 22% 10%;
+  background-position: top center;
 }
 @media only screen and (max-width: 480px) {
   .personal-full__img {

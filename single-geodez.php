@@ -71,7 +71,7 @@
 <!--Когда нужны услуги-->
 <div class="section section-step">
 	<div class="main-cont">
-		<div class="section-title">Наиболее популярные геодезические услуги</div>
+		<div class="section-title">Наиболее популярные геодезические услуги в <? echo CFS()->get("cityEdit"); ?></div>
 		<div class="solution">
 			<div class="solution__el">
 				<div class="solution__el-icon">

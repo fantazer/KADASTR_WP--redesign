@@ -190,13 +190,13 @@ $(document).ready(function(){
  					$('.calc-range-numb').text('20 000 ');
  				}
  				if(data.from_value == "250 кв.м."){
- 					$('.calc-range-numb').text('24 000 ');
+ 					$('.calc-range-numb').text('25 000 ');
  				}
  				if(data.from_value == "300 кв.м."){
- 					$('.calc-range-numb').text('24 000 ');
+ 					$('.calc-range-numb').text('30 000 ');
  				}
  				if(data.from_value == "более 300 кв.м."){
- 					$('.calc-range-numb').text('от 26 000 ');
+ 					$('.calc-range-numb').text('от 30 000 ');
  				}
  				if(data.from_value == "более 300 кв.м."){
  					$('.calc-text--attansion').show();

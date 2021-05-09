@@ -9,13 +9,14 @@
 	<meta name="theme-color" content="#000"/>
 	<meta name="msapplication-navbutton-color" content="#000"/>
 	<meta name="apple-mobile-web-app-status-bar-style" content="#000"/>
+	<meta name="yandex-verification" content="1f3fe6bc59106b96" />
 	<!--icons-->
 	<link rel="shortcut icon" href="favicon.ico"/>
 	<!--SEO-->
 	<title>Document</title>
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/vendor.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?ver=1">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-edit.css">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/vendor.css?ver=3">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?ver=3">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-edit.css?ver=3">
 	<!-- Google Tag Manager -->
 	<script>(function (w, d, s, l, i) {
 			w[l] = w[l] || [];

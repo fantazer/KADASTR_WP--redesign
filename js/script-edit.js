@@ -1,6 +1,6 @@
 /* ======= PLS add your scripts her =======*/
 $(document).ready(function(){
-		//bubble
+	//bubble
 	var limit = 24 * 3600 * 1000; // 24 часа
 	//var limit = 100 * 1000; // 24 часа
 	var localStorageInitTime = localStorage.getItem('localStorageInitTime');

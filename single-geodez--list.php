@@ -58,7 +58,7 @@
 <!--Когда нужны услуги-->
 <div class="section section-step">
 	<div class="main-cont">
-		<div class="section-title">Наиболее популярные геодезические услуги</div>
+		<div class="section-title">Наиболее популярные геодезические услуги в <? echo CFS()->get("cityEdit"); ?></div>
 		<div class="solution">
 			<div class="solution__el">
 				<div class="solution__el-icon">
@@ -77,7 +77,7 @@
 						<use xlink:href="#total-station"></use>
 					</svg>
 				</div>
-				<div class="solution__el-title">Топографическая съемка</div>
+				<div class="solution__el-title">Топографическая и геодезическая съемка</div>
 				<div class="solution__el-text">Для отражения текущего состояния местности и определения с точностью до
 					сантиметров таких параметров, как: размеры объектов на участке, расстояния между объектами, перепад высот
 					рельефа.

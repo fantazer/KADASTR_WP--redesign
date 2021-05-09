@@ -1,5 +1,5 @@
 <? get_header(); ?>
-
+<? $addCityName = CFS()->get("cityEdit"); ?>
 <!--block header end-->
 <div class="lp-baner lp-baner--borderland">
 	<div class="lp-baner__img lp-baner__img--borderland" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/sosed.png');"></div>
@@ -22,6 +22,8 @@
 		</div>
 	</div>
 </div>
+
+
 
 <!--why you need this-->
 <div class="section section--why section--why-borderland" id="why" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/house-megevanie.png');">
@@ -56,7 +58,7 @@
           <?
             $categories = get_the_category();
 						$category_id = $categories[0]->cat_ID;
-            porstAfterTitle($category_id,true);
+            porstAfterTitle($category_id,true,"Межевание в ");
           ?>
 				</div>
 			</div>
@@ -67,7 +69,7 @@
 <!--service-->
 <div class="section section--calc" id="price">
 	<div class="main-cont">
-		<div class="section-title">Стоимость наших работ</div>
+		<div class="section-title">Стоимость межевание земельного участка в <?= $addCityName; ?></div>
 		<div class="section-title-sub">При необходимости согласования границ с ДГИ г. Москвы стоимость увеличивается на 5000
 			руб
 		</div>
@@ -182,7 +184,7 @@
 <div class="section section-step" id="step">
 	<div class="section-filter"></div>
 	<div class="main-cont">
-		<div class="section-title">как мы работаем</div>
+		<div class="section-title">Как мы работаем</div>
 		<div class="step">
 			<div class="step-row">
 				<div class="step-el">

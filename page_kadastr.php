@@ -12,6 +12,7 @@ Template Name: kadastr
 		<? include('module/toolbar.php'); ?>
 		<div class="content__info">
 			<? the_title('<h1>', '</h1>'); ?>
+			<div class="number-list">
 			<?
 				$args = array(
 				  'menu' => 'КАДАСТРОВЫЕ РАБОТЫ',
@@ -19,8 +20,8 @@ Template Name: kadastr
 				);
 				wp_nav_menu($args);
 			?>
-
-			<p>Дополнительные услуги</p>
+			</div>
+			<h2>Дополнительные услуги</h2>
 			<ul>
 				<?
 					$args = array('cat' => 16,

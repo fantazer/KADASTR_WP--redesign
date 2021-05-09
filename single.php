@@ -28,7 +28,7 @@
         <?
 	        the_title('<h1>', '</h1>');
 	        if (in_category(12)){
-	            the_date();
+	            echo '<div class="date-article">'.the_date().'</div>';
 	        }
 	        the_content();
 	        porstAfter(11, true);
@@ -63,8 +63,8 @@
 				<!-- for page about -->
 
         <? if (CFS()->get('seo_text')) { ?>
-          <? include('module/advant--small.php'); ?>
         <? } ?>
+        <? include('module/advant--small.php'); ?>
 
 				<div class="seo_text">
           <?php echo CFS()->get('seo_text'); ?>
