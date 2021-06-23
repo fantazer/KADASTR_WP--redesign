@@ -2,12 +2,11 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="d16d3344-b46f-4358-a55b-8fb916b2a504" name="CGIKU" url="http://cgiku.ru">
-        <fileTransfer host="cgiku.ru" port="21">
+      <webServer id="d16d3344-b46f-4358-a55b-8fb916b2a504" name="CGIKU" url="http://u45890.netangels.ru">
+        <fileTransfer host="u45890.netangels.ru" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
-          <option name="port" value="21" />
         </fileTransfer>
       </webServer>
     </option>
