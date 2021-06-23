@@ -284,32 +284,33 @@
 
       $isEditMeta = true;
       if ($isEditMeta) {
-        $query = new WP_Query('cat=11', 'posts_per_page = 10000');
+        $query = new WP_Query('cat=37', 'posts_per_page = 10000');
         while ($query->have_posts()) {
           $query->the_post();
           $id = get_the_ID();
+          $title = get_the_title();
           $metaDescription = get_post_meta($id, '_aioseop_description', true);
           $metaTitle = get_post_meta($id, '_aioseop_title', true);
           $town = CFS()->get("cityEdit");
 
-          $editTitle = "Геодезические работы в ".$town.", вызов геодезиста на земельный участок";
-          $editDescription = "✅ Все виды геодезических работ в " . $town . " от профессионалов ЦГИКУ по приемлемым ценам. Центр Геодезических и Кадастровых работа. Наш тел.: +7 (495) 283-96-81. Звоните!";
+          $editTitle = "Заказать СПОЗУ в ".$town.", цена для ИЖС от ЦГИКУ";
+          //$editDescription = "✅ СПОЗУ в ". $town ." от профессионалов ЦГИКУ по приемлемым ценам. Центр Геодезических и Кадастровых работа. Наш тел.: +7 (495) 283-96-81. Звоните!";
 
-          //echo $editTitle . "<br><br><hr>";
-          //echo $editDescription . "<br><br><hr>";
+          if (strpos($title, 'Кадастровые работы в')!== false){
+            echo $title . "<br><br><hr>";
+            //update_post_meta($id, '_aioseop_title', $editTitle);
+            //update_post_meta($id, '_aioseop_description', $editDescription);
+          }
 
           /*$my_post = array();
 					$my_post['ID'] = $id;
 					$my_post['post_content'] = '[text_module id="20968"]';
 
           wp_update_post( wp_slash($my_post) );*/
-          $field_data = array("add_text" => '[text_module id="21298"]');
-          $post_data = array('ID' => $id); // the ID is required
-          CFS()->save($field_data, $post_data);
+
 					//echo get_post_meta($id, 'content', true);
           //update_post_meta($id, '_aioseop_title', $editTitle);
           //update_post_meta($id, '_aioseop_description', $editDescription);
-          // [text_module id="21298"]
         }
       }
 

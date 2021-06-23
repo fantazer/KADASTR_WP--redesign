@@ -84,7 +84,12 @@ function porstAfterTrim($a, $order)
 		<div class="lp-baner__wrap">
 			<div class="lp-baner__content">
 				<div class="lp-baner__title"><?= the_title(); ?></div>
-				<div class="lp-baner__title-sub lp-baner__title-sub--lg">Все виды кадастровых и геодезических услуг
+				<div class="lp-baner__title-sub lp-baner__title-sub--lg">
+					<?if (strpos(get_the_title(), 'Кадастровые работы в')!== false){?>
+            Все виды кадастровых и геодезических работ
+          <?}else {?>
+					Все виды кадастровых и геодезических услуг
+					<?}?>
 				</div>
 				<div class="header__get">
 					<a class="header__btn header__btn-more" href="#why">Подробнее</a>
@@ -247,6 +252,9 @@ function porstAfterTrim($a, $order)
 		</div>
 	</div>
 </div>
+
+
+<? include('module/listSameService.php'); ?>
 
 <script type="text/javascript">
   window.onload = function() {
