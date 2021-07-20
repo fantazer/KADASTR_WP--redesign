@@ -134,12 +134,12 @@ wp_reset_query();*/
                 ?>
 								<div class="main-service__el">
 									<div class="main-service__cont">
-										<div class="main-service__el-title"><?= get_field('second-title'); ?></div>
+										<div class="main-service__el-title"><?= get_field('second-title'); ?> </div>
 										<div class="main-service__title-sub"><?= get_field('description'); ?></div>
 										<div class="main-service__price-row">
-											<div class="main-service__price main-service__price--true"><?= get_field('price-true'); ?>руб.
+											<div class="main-service__price main-service__price--true"><?= get_field('price-true'); ?> <?= get_field('TemplatePriceTrue'); ?>руб.
 											</div>
-											<div class="main-service__price main-service__price--false"><?= get_field('price-false'); ?>руб.
+											<div class="main-service__price main-service__price--false"><?= get_field('price-false'); ?><?= get_field('TemplatePriceFalse'); ?>руб.
 											</div>
 										</div>
 										<div class="main-service__get">

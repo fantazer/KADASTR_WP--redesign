@@ -49,12 +49,31 @@ $(document).ready(function(){
 	});
 	//calc-end
 	//smooth scroll
-	$(document).on('click', 'a[href^="#"]', function (event) {
+$(document).on('click', 'a[href^="#"]', function (event) {
 			event.preventDefault();
 			$('html, body').animate({
 					scrollTop: $($.attr(this, 'href')).offset().top - 170
 			}, 1500);
 	});
+
+		function scrollOnPageLoad() {
+		// to top right away
+		if (window.location.hash) scroll(0, 0);
+		// void some browsers issue
+		setTimeout(scroll(0, 0), 1);
+		var hashLink = window.location.hash;
+			if ($(hashLink).length) {
+				$(function () {
+						// *only* if we have anchor on the url
+						// smooth scroll to the anchor id
+						$('html, body').animate({
+							scrollTop: $(window.location.hash).offset().top - 300
+						}, 2000);
+				});
+			}
+	}
+
+	scrollOnPageLoad();
 	//smooth scroll===end
 
 	//range slider

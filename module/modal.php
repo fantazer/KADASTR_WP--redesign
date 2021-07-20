@@ -1,5 +1,4 @@
 <div class="modal-layer">
-	<div class="modal-cont">
 		<div class="modal-filter"></div>
 		<div class="modal-wrap">
       <?php if (get_field('howworkaddtext')) { ?>
@@ -21,6 +20,24 @@
 				</div>
       <? } ?>
 
+			<?php if (get_field('costaddtext')) { ?>
+				<div class="modal" data-modal="costAddText">
+					<div class="modal-content">
+						<div class="modal-close">
+							<svg class="icon">
+								<use xlink:href="#close"></use>
+							</svg>
+						</div>
+						<div class="type--bold type--black type--lg type--center mb-24">Цены на наши услуги</div>
+						<div class="text">
+              <?= get_field('costaddtext') ?>
+						</div>
+						<div class="row-btn--center">
+							<div class="modal-sale-get modal-get" data-modal="order">Заказать</div>
+						</div>
+					</div>
+				</div>
+      <? } ?>
 
 			<div class="modal" data-modal="order">
 				<div class="modal-content modal-content--fogot">
@@ -308,5 +325,4 @@
 				</div>
       <? } ?>
 		</div>
-	</div>
 </div>

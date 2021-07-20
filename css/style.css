@@ -3521,6 +3521,7 @@ a:visited {
   margin-bottom: 30px;
   padding-left: 26px;
   list-style: none;
+  font-size: 14px !important;
 }
 
 .text ul li {
@@ -6046,9 +6047,12 @@ body {
 }
 
 .modal-content {
+  margin: 60px auto;
   background: #fff;
   position: relative;
-  padding: 40px;
+  padding: 32px;
+  -webkit-border-radius: 16px;
+          border-radius: 16px;
 }
 
 .modal-content--register {
@@ -6062,9 +6066,15 @@ body {
 
 .modal__show {
   opacity: 1;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: scale(1) translateZ(0) translate3d(0, 0, 0);
+          transform: scale(1) translateZ(0) translate3d(0, 0, 0);
+  position: relative;
+  z-index: 1000;
+  left: initial;
+  top: initial;
+  -webkit-transition: -webkit-transform 0.6s, opacity 0.8s;
+          transition: transform 0.6s, opacity 0.8s;
+  margin: auto;
 }
 
 .modal-close {
@@ -6095,8 +6105,22 @@ body {
 }
 
 .modal-wrap {
-  position: relative;
+  position: fixed;
+  width: 100%;
   height: 100%;
+  overflow-y: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .modal-title {
@@ -15609,29 +15633,6 @@ select.select-beauty {
             box-shadow: 0 0 0;
   }
 
-  .modal-content {
-    padding: 20px;
-  }
-
-  .modal-content {
-    width: 80%;
-  }
-
-  .modal__show {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-
   .modal-close {
     top: 15px;
     right: 15px;
@@ -16468,11 +16469,10 @@ select.select-beauty {
   }
 
   .modal-content {
-    max-height: -webkit-calc(100vh - 60px);
-    max-height: calc(100vh - 60px);
-    overflow-y: scroll;
-    padding: 20px 5px;
-    width: 100% !important;
+    height: 100%;
+    width: -webkit-calc(100% - 40px);
+    width: calc(100% - 40px);
+    padding: 20px;
   }
 
   .category {
@@ -18594,5 +18594,11 @@ select.select-beauty {
   .personal-full__el-info {
     width: 100%;
     margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .modal-content {
+    padding: 24px 16px;
   }
 }
