@@ -95,9 +95,9 @@ wp_reset_query();*/
 										<a href="<?= get_permalink(); ?>" class="main-service__el-title"><?= get_field('second-title'); ?></a>
 										<div class="main-service__title-sub"><?= get_field('description'); ?></div>
 										<div class="main-service__price-row">
-											<div class="main-service__price main-service__price--true"><?= get_field('price-true'); ?>руб.
+											<div class="main-service__price main-service__price--true"><?= get_field('price-true'); ?> руб.
 											</div>
-											<div class="main-service__price main-service__price--false"><?= get_field('price-false'); ?>руб.
+											<div class="main-service__price main-service__price--false"><?= get_field('price-false'); ?> руб.
 											</div>
 										</div>
 										<div class="main-service__get">
@@ -124,7 +124,7 @@ wp_reset_query();*/
             $the_query = new WP_Query(array(
               'tag' => 'main-service--geo',
               'meta_key' => 'order',
-              'orderby' => 'meta_value',
+              'orderby' => 'meta_value_num',
               'order' => 'ASC'
             ));
             ?>
@@ -137,9 +137,9 @@ wp_reset_query();*/
 										<div class="main-service__el-title"><?= get_field('second-title'); ?> </div>
 										<div class="main-service__title-sub"><?= get_field('description'); ?></div>
 										<div class="main-service__price-row">
-											<div class="main-service__price main-service__price--true"><?= get_field('price-true'); ?> <?= get_field('TemplatePriceTrue'); ?>руб.
+											<div class="main-service__price main-service__price--true"><?= get_field('price-true'); ?> руб.
 											</div>
-											<div class="main-service__price main-service__price--false"><?= get_field('price-false'); ?><?= get_field('TemplatePriceFalse'); ?>руб.
+											<div class="main-service__price main-service__price--false"><?= get_field('price-false'); ?> руб.
 											</div>
 										</div>
 										<div class="main-service__get">

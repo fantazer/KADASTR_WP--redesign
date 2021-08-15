@@ -14,7 +14,7 @@
 		<div class="lp-baner__wrap">
 			<div class="lp-baner__content">
 				<div class="lp-baner__title lp-baner__title--sm"><?= the_title(); ?></div>
-				<div class="lp-baner__title-sub"><?= get_field('TemplateSecondTitle'); ?></div>
+				<div class="lp-baner__title-sub"><?= get_field('subTitle'); ?></div>
 				<div class="header__get">
 					<a class="header__btn header__btn-more" href="#why">Подробнее</a>
 					<div class="header__btn header__btn-get header__btn-get--yellow modal-get" data-modal="order">Заказать</div>
@@ -26,7 +26,7 @@
 <!--mainBanner === end-->
 
 <!--howWork-->
-<div class="section section--doc section--fill" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/igs/concrete-texture.png');">
+<div class="section section--doc section--fill" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/igs/concrete-texture.png');" id="important">
 	<div class="main-cont-sm">
 		<div class="section-title">Как это работает</div>
 		<div class="text-block text-block--seal ">
@@ -50,7 +50,7 @@
 		<div class="section-wrap">
 			<div class="section-call section-call--mid">
 				<div class="text-block">
-					<div class="section-title section-title--left">Зачем нужно</div>
+					<div class="section-title section-title--left">Зачем это нужно</div>
 					<div class="box">
             <?= get_field('whyNeed'); ?>
 					</div>
@@ -87,7 +87,7 @@
 <!--doc === end-->
 
 <!--cost-->
-<div class="section section--calc section--calc--topograf">
+<div class="section section--calc section--calc--topograf" id="price">
 	<div class="main-cont-sm">
 		<div class="section-title">Стоимость наших работ</div>
 		<div class="section-title-sub">Работаем в Москве и во всех районах Московской области.</div>
@@ -95,14 +95,14 @@
 			<!--input(type="range" placeholder=""  class="calc-range--topograf")-->
 			<div class="calc-range__wrap">
 				<div class="calc-range-val calc-range-val--lg">
-					<div class="calc-range-numb"><span class="type--sm">от</span> <?= get_field('cost'); ?></div>
+					<div class="calc-range-numb"><span class="type--sm">от</span> <?= get_field('cost'); ?> <span class="type--sm">руб.</span></div>
 					<div class="calc-range-pay"><sup>*</sup></div>
 				</div>
 			</div>
       <? if (get_field('costDescriptionText')) { ?>
-				<div class="calc-text"><?= get_field('costDescriptionText'); ?></div>
+				<div class="calc-text"><?= get_field('costDescriptionText'); ?> </div>
       <? } else { ?>
-				<div class="calc-text">Работаем в Москве и во всех районах Московской области.</div>
+				<div class="calc-text"><sup>*</sup>Стоимость зависит от площади объекта.</div>
       <? } ?>
 		</div>
     <?php if (get_field('costaddtext')) { ?>
