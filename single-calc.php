@@ -245,7 +245,7 @@
       <?
 
       // Межевание и межевой план в Подольском районе, заказать межевой план земельного участка. Полный спектр геодезических, кадастровых работ. Опытные, ответственные исполнители. Звоните!
-			$isWork = false;
+      $isWork = false;
       if ($isWork) {
         $query = new WP_Query(
           'cat=36',
@@ -257,7 +257,7 @@
           $title = get_the_title($id);
           $category = get_the_category();
 
-					$str = strpos($title, " в ");
+          $str = strpos($title, " в ");
           $row = substr($title, $str + 4, strlen($title));
           echo $row . "<br><br><hr><br>";
 
@@ -282,7 +282,7 @@
         }
       }
 
-      $isEditMeta = true;
+      $isEditMeta = false;
       if ($isEditMeta) {
         $query = new WP_Query('cat=37', 'posts_per_page = 10000');
         while ($query->have_posts()) {
@@ -293,11 +293,11 @@
           $metaTitle = get_post_meta($id, '_aioseop_title', true);
           $town = CFS()->get("cityEdit");
 
-          $editTitle = "Заказать СПОЗУ в ".$town.", цена для ИЖС от ЦГИКУ";
+          $editTitle = "Заказать СПОЗУ в " . $town . ", цена для ИЖС от ЦГИКУ";
           //$editDescription = "✅ СПОЗУ в ". $town ." от профессионалов ЦГИКУ по приемлемым ценам. Центр Геодезических и Кадастровых работа. Наш тел.: +7 (495) 283-96-81. Звоните!";
 
-          if (strpos($title, 'Кадастровые работы в')!== false){
-            echo $title . "<br><br><hr>";
+          if (strpos($title, 'Кадастровые работы в') !== false) {
+            //echo $title . "<br><br><hr>";
             //update_post_meta($id, '_aioseop_title', $editTitle);
             //update_post_meta($id, '_aioseop_description', $editDescription);
           }
@@ -308,7 +308,7 @@
 
           wp_update_post( wp_slash($my_post) );*/
 
-					//echo get_post_meta($id, 'content', true);
+          //echo get_post_meta($id, 'content', true);
           //update_post_meta($id, '_aioseop_title', $editTitle);
           //update_post_meta($id, '_aioseop_description', $editDescription);
         }
@@ -342,5 +342,169 @@
 		</div>
 	</div>
 </div>
+
+
+<?php
+
+include('module/townGeneratorList.php');
+
+$catServiceList = array(
+  /*array(
+    "name" => "Топографическая съемка для газификации",
+    "title" => "Топографическая съемка для газификации в ",
+    "idCat" => "22723",
+  ),*/
+  /*array(
+    "name" => "Оформление сервитута на земельный участок",
+    "title" => "Оформление сервитута на земельный участок в ",
+    "idCat" => "22939",
+  ),*/
+  array(
+    "name" => "Дендроплан участка",
+    "title" => "Дендроплан участка в ",
+    "idCat" => "22874",
+  ),
+  array(
+    "name" => "Ситуационный план земельного участка",
+    "title" => "Ситуационный план земельного участка в ",
+    "idCat" => "22804",
+  ),
+  array(
+    "name" => "Топографическая съёмка в масштабе 1:2000",
+    "title" => "Топографическая съёмка в масштабе 1:2000 в ",
+    "idCat" => "22799",
+  ),
+  array(
+    "name" => "Поэтажный план и экспликация",
+    "title" => "Поэтажный план и экспликация в ",
+    "idCat" => "22785",
+  ),
+  array(
+    "name" => "Топографическая съёмка в масштабе 1:500",
+    "title" => "Топографическая съёмка в масштабе 1:500 в ",
+    "idCat" => "22780",
+  ),
+  array(
+    "name" => "Обмер земельного участка",
+    "title" => "Обмер земельного участка в ",
+    "idCat" => "22773",
+  ),
+  array(
+    "name" => "Оформление земельного участка",
+    "title" => "Оформление земельного участка в ",
+    "idCat" => "22763",
+  ),
+  array(
+    "name" => "Обмеры зданий и помещений",
+    "title" => "Обмеры зданий и помещений в ",
+    "idCat" => "22751",
+  ),
+  array(
+    "name" => "Технический план линейного объекта",
+    "title" => "Технический план линейного объекта в ",
+    "idCat" => "22736",
+  ),
+);
+
+
+
+$catServiceAddTitle = " - заказать в ЦГИКУ";
+$catServiceAddDescription = " - от профессионалов ЦГИКУ по приемлемым ценам.  Тел.: +7 (495) 283-96-81, +7 (495) 283-96-83 - Звоните!";
+
+echo "11111111111";
+
+
+$generator = false;
+if ($generator) {
+  foreach ($catServiceList as $catServiceListEl) {
+    $cid = wp_insert_term(
+      $catServiceListEl["name"], // category name
+      'category', // taxonomy
+      array(
+        'description' => 'Список городов для ' . $catServiceListEl["name"], // optional
+        'slug' => 'Список городов для ' . $catServiceListEl["name"],
+        'parent' => 380, // set it as a sub-category
+      )
+    );
+    foreach ($townList as $townListEl) {
+      $title = $catServiceListEl["title"].$townListEl['secondName'];
+      $post_data = array(
+        'post_title' => $title,
+        'post_status' => 'publish',
+        'post_author' => 1,
+        'post_category' => array($cid['term_id'], 380),
+      );
+      $post_id = wp_insert_post(wp_slash($post_data));
+
+      add_post_meta($post_id, '_aioseop_title', $catServiceListEl["title"] . $townListEl['secondName'] . $catServiceAddTitle);
+      add_post_meta($post_id, '_aioseop_description', $catServiceListEl["title"] . $townListEl['secondName'] . $catServiceAddDescription);
+      CFS()->save(array('cityname' => $townListEl['name']), array('ID' => $post_id));
+      CFS()->save(array('citysecondname' => $townListEl['secondName']), array('ID' => $post_id));
+      CFS()->save(array('idparent' => $catServiceListEl['idCat']), array('ID' => $post_id));
+    }
+  }
+}
+/*$services = array(
+  array(
+    'name' =>'Услуги геодезиста',
+    'title' => 'Услуги геодезиста в',
+    'description' => 'Услуги геодезиста в',
+    'content' => '[text_module id="14446"]'
+  )
+);
+  // Получить данные рубрик, в том числе и без записей, у которых родительская рубрика с ID = 6
+  $cat_data = get_categories( array( 'parent' => 37 ) );
+  if ( $cat_data ) {
+    foreach ( $cat_data as $one_cat_data ){
+    foreach ($services as $services_item) {
+          $secondPartTItle = str_replace("Услуги в ", "", $one_cat_data->cat_name);
+          $title = $services_item['title']." ".$secondPartTItle;
+          $text = $services_item['content'];
+          $post_data = array(
+            'post_title' => $title,
+            'post_content' => $text,
+            'post_status' => 'publish',
+            'post_author' => 1,
+            'post_category' => array(37,$one_cat_data->cat_ID),
+          );
+          $post_id = wp_insert_post(wp_slash($post_data));
+          add_post_meta($post_id, '_aioseop_title', $services_item['title']." ".$secondPartTItle.", вызов на объект для работ от ООО ЦГИКУ");
+          add_post_meta($post_id, '_aioseop_description', $services_item['title']." ".$secondPartTItle." от профессионалов ЦГИКУ, любые геодезические работы по приемлемым ценам. Звоните!");
+          update_post_meta($post_id, 'ratings_average', 5);
+          update_post_meta($post_id, 'ratings_score', 5);
+          update_post_meta($post_id, 'ratings_users', 5);
+          CFS()->save( array('namecity' => $secondPartTItle), array( 'ID' => $post_id ) );
+        }
+    }
+  }*/
+?>
+<?
+/*$args = array(
+  'cat' => 37,
+	'posts_per_page' => 10000,
+);
+
+query_posts($args);
+while (have_posts()) : the_post();
+  $title = get_the_title();
+  //echo $title.'<br>';
+  if (strpos($title, 'Геодезические работы в') !== false) {
+    //echo 'true';
+    $post_id = get_the_ID() ;
+    //update_post_meta($post_id, '_aioseop_title', $title . " - заказать в ЦГИКУ");
+  }
+endwhile;
+wp_reset_query();*/
+
+?>
+
+
+
+
+
+
+
+
+
 
 <? get_footer(); ?>

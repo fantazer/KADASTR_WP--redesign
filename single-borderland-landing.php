@@ -214,7 +214,7 @@
 <div class="section section-step" id="step">
 	<div class="section-filter"></div>
 	<div class="main-cont">
-		<div class="section-title">как мы работаем</div>
+		<div class="section-title">Как мы работаем</div>
 		<div class="step">
 			<div class="step-row">
 				<div class="step-el">

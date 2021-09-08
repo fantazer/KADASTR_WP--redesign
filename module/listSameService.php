@@ -76,7 +76,7 @@
       <?php endif; ?>
 
 		</div>
-		<a class="main-service__el-get" href="kadastrovy-e-raboty/">Eще услуги</a>
+		<a class="main-service__el-get" href="/kadastrovy-e-raboty/">Eще услуги</a>
 	</div>
 </div>
 </div>

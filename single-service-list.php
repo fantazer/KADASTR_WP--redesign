@@ -17,26 +17,30 @@ include('module/bread.php');
       <? the_title('<h1>', '</h1>'); ?>
       <? the_content(); ?>
       <?
-      $parent_id = 37;
-      $countOfCat = count(get_term_children($parent_id,'category'));
-			$countOfCat = round( $countOfCat/3, 0, PHP_ROUND_HALF_UP);;
-			//echo $countOfCat;
-      $sub_cats = get_categories(array(
-        'child_of' => $parent_id,
-        'hide_empty' => 0,
-      ));
-      $i = 0;
-      if ($sub_cats) {
+
+      $listTemplate = array(37, 380);
+      foreach ($listTemplate as &$listTemplateEl) {
+
+        $parent_id = $listTemplateEl;
+        $countOfCat = count(get_term_children($parent_id, 'category'));
+        $countOfCat = round($countOfCat / 1, 0, PHP_ROUND_HALF_UP);;
+        //echo $countOfCat;
+        $sub_cats = get_categories(array(
+          'child_of' => $parent_id,
+          'hide_empty' => 0,
+        ));
+        $i = 0;
+        if ($sub_cats) {
           foreach ($sub_cats as $cat) {
-	        if ($i < $countOfCat) {
-	          //echo $i;
-	            $id = $cat->term_id;
-	            //get_category_link($id);
-	            ?>
+            if ($i < $countOfCat) {
+              //echo $i;
+              $id = $cat->term_id;
+              //get_category_link($id);
+              ?>
 							<div class="akkord-el">
 								<div class="akkord-el__head">
 									<div class="akkord-el__head-name">
-	                  <?= $cat->name; ?>
+                    <?= $cat->name; ?>
 									</div>
 									<div class="akkord-el__head-icon">
 										<svg class="icon">
@@ -46,32 +50,40 @@ include('module/bread.php');
 								</div>
 								<div class="akkord-el__list">
 									<ul>
-	                  <?
-	                  $args = array(
-	                    'cat' => $id,
-	                    'posts_per_page' => 9999,
-	                    //'offset' => 1,
+                    <?
+                    $args = array(
+                      'cat' => $id,
+                      'posts_per_page' => 9999,
+                      //'offset' => 1,
 
-	                  );
-	                  ?>
-	                  <? query_posts($args); ?>
-	                  <? while (have_posts()) : the_post(); ?>
+                    );
+                    ?>
+                    <? query_posts($args); ?>
+                    <? while (have_posts()) : the_post(); ?>
 											<li>
 												<a href="<?= get_permalink(); ?>"> <?= get_the_title(); ?></a>
 											</li>
-	                  <? endwhile; ?>
-	                  <? wp_reset_query(); ?>
+                    <? endwhile; ?>
+                    <? wp_reset_query(); ?>
 									</ul>
 								</div>
 							</div>
-	            <?
-	          }
-	          $i++;
+              <?
+            }
+            $i++;
 
+          }
+          wp_reset_postdata(); // сбрасываем глобальную переменную пост
         }
-        wp_reset_postdata(); // сбрасываем глобальную переменную пост
+
+        echo "<hr>";
       }
       ?>
+
+
+      <? //new template ?>
+
+
 		</div>
 	</div>
 </div>

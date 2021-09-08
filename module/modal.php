@@ -1,7 +1,11 @@
+<?
+CFS()->get('idparent') ? $listTownTemplateVal = CFS()->get('idparent') : $listTownTemplateVal=false
+?>
+
 <div class="modal-layer">
 		<div class="modal-filter"></div>
 		<div class="modal-wrap">
-      <?php if (get_field('howworkaddtext')) { ?>
+      <?php if (get_field('howworkaddtext',$listTownTemplateVal)) { ?>
 				<div class="modal" data-modal="howWorkAddText">
 					<div class="modal-content">
 						<div class="modal-close">
@@ -11,7 +15,7 @@
 						</div>
 						<div class="type--bold type--black type--lg type--center mb-24">Подробнее по теме</div>
 						<div class="text">
-              <?= get_field('howworkaddtext') ?>
+              <?= get_field('howworkaddtext',$listTownTemplateVal) ?>
 						</div>
 						<div class="row-btn--center">
 							<div class="modal-sale-get modal-get" data-modal="order">Заказать</div>
@@ -20,7 +24,7 @@
 				</div>
       <? } ?>
 
-			<?php if (get_field('costaddtext')) { ?>
+			<?php if (get_field('costaddtext',$listTownTemplateVal)) { ?>
 				<div class="modal" data-modal="costAddText">
 					<div class="modal-content">
 						<div class="modal-close">
@@ -30,7 +34,7 @@
 						</div>
 						<div class="type--bold type--black type--lg type--center mb-24">Цены на наши услуги</div>
 						<div class="text">
-              <?= get_field('costaddtext') ?>
+              <?= get_field('costaddtext',$listTownTemplateVal) ?>
 						</div>
 						<div class="row-btn--center">
 							<div class="modal-sale-get modal-get" data-modal="order">Заказать</div>

@@ -3,9 +3,9 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="d16d3344-b46f-4358-a55b-8fb916b2a504" name="CGIKU" url="http://u45890.netangels.ru">
-        <fileTransfer host="u45890.netangels.ru" port="21">
+        <fileTransfer rootFolder="/home/u45890" accessType="SFTP" host="u45890.netangels.ru" port="22" sshConfigId="e857cc2b-a3d6-4a2b-a3a5-4b8ddadc5a2d" sshConfig="u45890@u45890.netangels.ru:22 password">
           <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" />
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" />
           </advancedOptions>
         </fileTransfer>
       </webServer>

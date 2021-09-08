@@ -15,6 +15,9 @@
 	elseif (in_category(array(37))) {
 		include('single-all-sevices.php');
 	}
+	elseif (in_category(array(380))) {
+		include('single-serviceTemplate.php');
+	}
 	else {
 
 	get_header();
@@ -90,9 +93,12 @@
 	</div>
 
 <? } ?>
+
+<? if (!in_category(array(380))) { ?>
 <? include('module/sertificate.php'); ?>
 <? include('module/customers.php'); ?>
 <? include('module/contact-form.php'); ?>
 
 <? get_footer(); ?>
+<? } ?>
 
