@@ -14,7 +14,7 @@
 		<div class="personal-full">
 			<div class="personal-full__img" style="background-image:url(<?= get_field('logo'); ?>);"></div>
 			<div class="personal-full__el-info">
-				<div class="personal-full__el-title"><?= get_the_title(); ?></div>
+				<h1 class="personal-full__el-title"><?= get_the_title(); ?></h1>
 				<div class="personal-full__el-position"><?= get_field('staff'); ?></div>
 				<div class="personal-full__el-text">
 					 <? while (have_posts()) : the_post(); ?>

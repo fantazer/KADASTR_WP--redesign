@@ -360,56 +360,15 @@ $catServiceList = array(
     "idCat" => "22939",
   ),*/
   array(
-    "name" => "Дендроплан участка",
-    "title" => "Дендроплан участка в ",
-    "idCat" => "22874",
-  ),
-  array(
-    "name" => "Ситуационный план земельного участка",
-    "title" => "Ситуационный план земельного участка в ",
-    "idCat" => "22804",
-  ),
-  array(
-    "name" => "Топографическая съёмка в масштабе 1:2000",
-    "title" => "Топографическая съёмка в масштабе 1:2000 в ",
-    "idCat" => "22799",
-  ),
-  array(
-    "name" => "Поэтажный план и экспликация",
-    "title" => "Поэтажный план и экспликация в ",
-    "idCat" => "22785",
-  ),
-  array(
-    "name" => "Топографическая съёмка в масштабе 1:500",
-    "title" => "Топографическая съёмка в масштабе 1:500 в ",
-    "idCat" => "22780",
-  ),
-  array(
-    "name" => "Обмер земельного участка",
-    "title" => "Обмер земельного участка в ",
-    "idCat" => "22773",
-  ),
-  array(
-    "name" => "Оформление земельного участка",
-    "title" => "Оформление земельного участка в ",
-    "idCat" => "22763",
-  ),
-  array(
-    "name" => "Обмеры зданий и помещений",
-    "title" => "Обмеры зданий и помещений в ",
-    "idCat" => "22751",
-  ),
-  array(
-    "name" => "Технический план линейного объекта",
-    "title" => "Технический план линейного объекта в ",
-    "idCat" => "22736",
+    "name" => "Оформление дома",
+    "title" => "Оформление дома в собственность в ",
+    "idCat" => "23491",
   ),
 );
 
 
-
 $catServiceAddTitle = " - заказать в ЦГИКУ";
-$catServiceAddDescription = " - от профессионалов ЦГИКУ по приемлемым ценам.  Тел.: +7 (495) 283-96-81, +7 (495) 283-96-83 - Звоните!";
+$catServiceAddDescription = " с помощью профессионалов ЦГИКУ по приемлемым ценам.  Тел.: +7 (495) 283-96-81, +7 (495) 283-96-83 - Звоните!";
 
 echo "11111111111";
 
@@ -437,7 +396,7 @@ if ($generator) {
       $post_id = wp_insert_post(wp_slash($post_data));
 
       add_post_meta($post_id, '_aioseop_title', $catServiceListEl["title"] . $townListEl['secondName'] . $catServiceAddTitle);
-      add_post_meta($post_id, '_aioseop_description', $catServiceListEl["title"] . $townListEl['secondName'] . $catServiceAddDescription);
+      add_post_meta($post_id, '_aioseop_description', "Оформите частный дом в " . $townListEl['secondName'] . $catServiceAddDescription);
       CFS()->save(array('cityname' => $townListEl['name']), array('ID' => $post_id));
       CFS()->save(array('citysecondname' => $townListEl['secondName']), array('ID' => $post_id));
       CFS()->save(array('idparent' => $catServiceListEl['idCat']), array('ID' => $post_id));

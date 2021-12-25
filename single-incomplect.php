@@ -14,7 +14,7 @@
 			<div class="main-cont">
 				<div class="lp-baner__wrap">
 					<div class="lp-baner__content">
-						<div class="lp-baner__title lp-baner__title--fat">Технический план объекта незавершенного строительства</div>
+						<h1 class="lp-baner__title lp-baner__title--fat">Технический план объекта незавершенного строительства</h1>
 						<div class="lp-baner__title-sub">Закажите технический план и забудьте о проблемах, связанных с незарегистрированным домом, строительство которого не завершено!</div>
 						<div class="header__get">
 							<a class="header__btn header__btn-more" href="#why">Подробнее</a>

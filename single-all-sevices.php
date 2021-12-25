@@ -83,7 +83,7 @@ function porstAfterTrim($a, $order)
 	<div class="main-cont">
 		<div class="lp-baner__wrap">
 			<div class="lp-baner__content">
-				<div class="lp-baner__title"><?= the_title(); ?></div>
+				<h1 class="lp-baner__title"><?= the_title(); ?></h1>
 				<div class="lp-baner__title-sub lp-baner__title-sub--lg">
 					<?if (strpos(get_the_title(), 'Кадастровые работы в')!== false){?>
             Все виды кадастровых и геодезических работ

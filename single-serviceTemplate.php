@@ -20,7 +20,7 @@
 	<div class="main-cont">
 		<div class="lp-baner__wrap">
 			<div class="lp-baner__content">
-				<div class="lp-baner__title lp-baner__title--sm"><?= the_title(); ?></div>
+				<h1 class="lp-baner__title lp-baner__title--sm"><?= the_title(); ?></h1>
 				<div class="lp-baner__title-sub"><?= get_field('subTitle',$listTownTemplateVal); ?></div>
 				<div class="header__get">
 					<a class="header__btn header__btn-more" href="#why">Подробнее</a>
@@ -133,7 +133,7 @@
 	<div class="main-cont">
 		<div class="section-title">Какие нужны документы?</div>
 		<div class="section-title-sub">Максимальный перечень необходимых документов</div>
-		<div class="g g-2 sm__g-1 gap-20">
+		<div class="g g-2 sm__g-1 gap-20 w100">
       <? $docNumber = 0; ?>
       <? $docNumberIconArray = ['attest', 'plan', 'doc', 'planning', 'posred', 'idea', 'image', 'information']; ?>
       <? while (have_rows('needDoc',$listTownTemplateVal)): the_row(); ?>
@@ -188,6 +188,7 @@
 <!--cost === end-->
 
 <!--need payment-->
+<? if(have_rows('costconsist',$listTownTemplateVal)){?>
 <div class="section section--doc">
 	<div class="main-cont-sm">
 		<div class="section-title mb-32">Что войдет в стоимость работ ?</div>
@@ -206,8 +207,10 @@
 		</div>
 	</div>
 </div>
+<? } ?>
 
 <!--step work-->
+<? if(have_rows('stepwork',$listTownTemplateVal)){?>
 <div class="section section-step" id="step">
 	<div class="section-filter"></div>
 	<div class="main-cont">
@@ -242,13 +245,11 @@
 		</div>
 	</div>
 </div>
+<? } ?>
 
 <? include('module/advant.php'); ?>
 <? include('module/customers.php'); ?>
 <? include('module/sertificate.php'); ?>
 <? include('module/contact-form.php'); ?>
-
-
-
 
 <? get_footer(); ?>

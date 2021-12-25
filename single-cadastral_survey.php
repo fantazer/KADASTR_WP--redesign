@@ -19,7 +19,7 @@
 	<div class="main-cont">
 		<div class="lp-baner__wrap">
 			<div class="lp-baner__content">
-				<div class="lp-baner__title lp-baner__title--fat">Кадастровая съемка</div>
+				<h1 class="lp-baner__title lp-baner__title--fat">Кадастровая съемка</h1>
 				<div class="lp-baner__title-sub">Выполнение работ как на частных земельных участках (для физических лиц), так и
 					на участках большой площади (для юридических лиц).
 				</div>

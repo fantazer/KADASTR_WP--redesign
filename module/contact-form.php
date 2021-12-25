@@ -46,7 +46,7 @@
 									<use xlink:href="#placeholder"></use>
 								</svg>
 							</div>
-							<div class="contact-text">г. Москва, 1-ый Нагатинский проезд, дом 4, офис 201</div>
+							<div class="contact-text">г. Москва, 1-ый Нагатинский проезд, дом 4, офис 210</div>
 						</div>
 						<div class="contact-row">
 							<div class="contact-icon">

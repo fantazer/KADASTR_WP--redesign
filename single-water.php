@@ -18,7 +18,7 @@
 	<div class="main-cont">
 		<div class="lp-baner__wrap">
 			<div class="lp-baner__content">
-				<div class="lp-baner__title lp-baner__title--sm">Технический план скважины</div>
+				<h1 class="lp-baner__title lp-baner__title--sm">Технический план скважины</h1>
 				<div class="lp-baner__title-sub">Закажите технический план и забудьте о проблемах, связанных с незарегистрированной скважиной!</div>
 				<div class="header__get">
 					<a class="header__btn header__btn-more" href="#why">Подробнее</a>

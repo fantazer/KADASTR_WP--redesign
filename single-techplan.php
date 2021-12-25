@@ -15,9 +15,9 @@
 	<div class="main-cont">
 		<div class="lp-baner__wrap">
 			<div class="lp-baner__content">
-				<div class="lp-baner__title lp-baner__title--think">
+				<h1 class="lp-baner__title lp-baner__title--think">
 					Технический план <br> машино-места
-				</div>
+				</h1>
 				<div class="lp-baner__title-sub">Зарегистрируйте свое машино-место по всем правилам!
 					<br> Работаем по всей Москве и Московской области.
 				</div>

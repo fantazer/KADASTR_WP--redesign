@@ -14,7 +14,7 @@
 			<div class="main-cont">
 				<div class="lp-baner__wrap">
 					<div class="lp-baner__content">
-						<div class="lp-baner__title lp-baner__title--fat">Уведомление о планируемом сносе объекта капитального строительства</div>
+						<h1 class="lp-baner__title lp-baner__title--fat">Уведомление о планируемом сносе объекта капитального строительства</h1>
 						<div class="lp-baner__title-sub lp-baner__title-sub--mark">Оформите процедуру сноса Вашего здания по всем правилам.</div>
 						<div class="header__get">
 							<a class="header__btn header__btn-more" href="#why">Подробнее</a>

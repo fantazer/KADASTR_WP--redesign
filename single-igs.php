@@ -18,7 +18,7 @@
 			<div class="main-cont">
 				<div class="lp-baner__wrap">
 					<div class="lp-baner__content">
-						<div class="lp-baner__title lp-baner__title--xs">Уведомление о планируемых строительстве или реконструкции объекта ИЖС или садового дома</div>
+						<h1 class="lp-baner__title lp-baner__title--xs">Уведомление о планируемых строительстве или реконструкции объекта ИЖС или садового дома</h1>
 						<div class="header__get" >
 							<a class="header__btn header__btn-more" href="#why">Подробнее</a>
 							<div class="header__btn header__btn-get modal-get" data-modal="order">Заказать</div>
@@ -104,18 +104,7 @@
 		</div>
 	</div>
 	<div class="doc doc--line">
-		<div class="doc__el doc__el--line">
-			<div class="doc__icon">
-				<svg class="icon">
-					<use xlink:href="#air-freight"></use>
-				</svg>
-			</div>
-			<div class="doc__content">
-				<div class="doc__title">Росавиация</div>
-				<div class="doc__text">Если земельный участок попадает в границы полос воздушных подходов аэродромов. Данная информация размещена на официальном сайте Центрального МТУ РОСАВИАЦИИ</div>
-				<a class="doc__link" href="http://mtuvtcrfavt.ru/documents/670.html">Подробнее</a>
-			</div>
-		</div>
+
 		<div class="doc__el doc__el--line">
 			<div class="doc__icon">
 				<svg class="icon">

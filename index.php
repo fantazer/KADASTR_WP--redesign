@@ -90,31 +90,33 @@ wp_reset_query();*/
               <?php while ($the_query->have_posts()) : $the_query->the_post();
                 $class = get_field('order') ? 'class="order"' : '';
                 ?>
-								<div class="main-service__el">
-									<div class="main-service__cont">
-										<a href="<?= get_permalink(); ?>" class="main-service__el-title"><?= get_field('second-title'); ?></a>
-										<div class="main-service__title-sub"><?= get_field('description'); ?></div>
-										<div class="main-service__price-row">
-											<div class="main-service__price main-service__price--true"><?= get_field('price-true'); ?> руб.
+                <?php if (get_field('second-title')!=''){?>
+									<div class="main-service__el">
+										<div class="main-service__cont">
+											<a href="<?= get_permalink(); ?>" class="main-service__el-title"><?= get_field('second-title'); ?></a>
+											<div class="main-service__title-sub"><?= get_field('description'); ?></div>
+											<div class="main-service__price-row">
+												<div class="main-service__price main-service__price--true"><?= get_field('price-true'); ?> руб.
+												</div>
+												<div class="main-service__price main-service__price--false"><?= get_field('price-false'); ?> руб.
+												</div>
 											</div>
-											<div class="main-service__price main-service__price--false"><?= get_field('price-false'); ?> руб.
+											<div class="main-service__get">
+												<a class="main-service__read-more" href="<?= get_permalink(); ?>">
+													<img src="<?php echo get_template_directory_uri(); ?>/img/btn-more.svg" >
+												</a>
+												<div class="main-service__btn main-service__btn-get modal-get" data-modal="order">Заказать</div>
 											</div>
 										</div>
-										<div class="main-service__get">
-											<a class="main-service__read-more" href="<?= get_permalink(); ?>">
-												<img src="<?php echo get_template_directory_uri(); ?>/img/btn-more.svg" >
-											</a>
-											<div class="main-service__btn main-service__btn-get modal-get" data-modal="order">Заказать</div>
+										<div class="main-service__img">
+											<div class="main-service__img-el" style="background-image:url('<?= get_field('image'); ?>');"></div>
 										</div>
 									</div>
-									<div class="main-service__img">
-										<div class="main-service__img-el" style="background-image:url('<?= get_field('image'); ?>');"></div>
-									</div>
-								</div>
+								<? } ?>
               <?php endwhile; ?>
             <?php endif; ?>
 					</div>
-					<a class="main-service__el-get" href="kadastrovy-e-raboty/">Eще услуги</a>
+					<a class="main-service__el-get" href="/kadastrovy-e-raboty/">Eще услуги</a>
 				</div>
 
 				<div class="main-service__col">
@@ -132,6 +134,7 @@ wp_reset_query();*/
               <?php while ($the_query->have_posts()) : $the_query->the_post();
                 $class = get_field('order') ? 'class="order"' : '';
                 ?>
+                <?php if (get_field('second-title')!=''){?>
 								<div class="main-service__el">
 									<div class="main-service__cont">
 										<div class="main-service__el-title"><?= get_field('second-title'); ?> </div>
@@ -151,6 +154,7 @@ wp_reset_query();*/
 										<div class="main-service__img-el" style="background-image:url('<?= get_field('image'); ?>');"></div>
 									</div>
 								</div>
+                <? } ?>
               <?php endwhile; ?>
             <?php endif; ?>
 					</div>

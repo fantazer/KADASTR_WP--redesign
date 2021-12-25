@@ -13,7 +13,7 @@
 	<div class="main-cont">
 		<div class="lp-baner__wrap">
 			<div class="lp-baner__content">
-				<div class="lp-baner__title lp-baner__title--sm"><?= the_title(); ?></div>
+				<h1 class="lp-baner__title lp-baner__title--sm"><?= the_title(); ?></h1>
 				<div class="lp-baner__title-sub">Понадобились услуги кадастрового инженера в <?= CFS()->get('addnamecity');?> ? Мы с удовольствием ответим на все
 					Ваши вопросы.
 				</div>

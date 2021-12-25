@@ -13,7 +13,7 @@
     <div class="main-cont">
       <div class="lp-baner__wrap">
         <div class="lp-baner__content">
-          <div class="lp-baner__title">Топографическая съёмка земельного участка</div>
+          <h1 class="lp-baner__title">Топографическая съёмка земельного участка</h1>
           <div class="lp-baner__title-sub">Выполнение работ как на частных земельных участках (для физических лиц), так и на участках большой площади (для юридических лиц).</div>
           <div class="lp-baner__title-status">Нами выполнено более 1000 объектов общей площадью
             <br> более 50 000 000 кв.м. (5 000 га).</div>

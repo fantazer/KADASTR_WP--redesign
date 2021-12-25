@@ -18,7 +18,7 @@
 	<div class="main-cont">
 		<div class="lp-baner__wrap">
 			<div class="lp-baner__content">
-				<div class="lp-baner__title lp-baner__title--sm">Межевание земель общего пользования СНТ</div>
+				<h1 class="lp-baner__title lp-baner__title--sm">Межевание земель общего пользования СНТ</h1>
 				<div class="lp-baner__title-sub">Установите точные границы земель общего пользования СНТ на местности и избавьтесь от возможных земельных споров в будущем!</div>
 				<div class="header__get">
 					<a class="header__btn header__btn-more" href="#why">Подробнее</a>

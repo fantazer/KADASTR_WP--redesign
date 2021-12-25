@@ -19,7 +19,7 @@
 	<div class="main-cont">
 		<div class="lp-baner__wrap">
 			<div class="lp-baner__content">
-				<div class="lp-baner__title lp-baner__title--sm">Услуги кадастрового инженера</div>
+				<h1 class="lp-baner__title lp-baner__title--sm">Услуги кадастрового инженера</h1>
 				<div class="lp-baner__title-sub">Понадобились услуги кадастрового инженера? Мы с удовольствием ответим на все
 					Ваши вопросы.
 				</div>

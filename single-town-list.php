@@ -10,9 +10,9 @@
 				<div class="lp-baner__title">
 					<?=the_title();?>
 				</div>
-				<div class="lp-baner__title-sub">Установите точные границы участка на местности как можно скорее, и Вы
+				<h1 class="lp-baner__title-sub">Установите точные границы участка на местности как можно скорее, и Вы
 					избавитесь от возможных проблем в будущем!
-				</div>
+				</h1>
 				<div class="header__get">
 					<a class="header__btn header__btn-more" href="#why">Подробнее</a>
 					<div class="header__btn header__btn-get modal-get" data-modal="order">Заказать</div>

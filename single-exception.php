@@ -13,7 +13,7 @@
 	<div class="main-cont">
 		<div class="lp-baner__wrap">
 			<div class="lp-baner__content">
-				<div class="lp-baner__title lp-baner__title--fat">Исключение объекта из перечня налогообложения</div>
+				<h1 class="lp-baner__title lp-baner__title--fat">Исключение объекта из перечня налогообложения</h1>
 				<div class="lp-baner__title-sub lp-baner__title-sub--mark">
 					<strong>Важно:</strong> Мы вернем вам деньги за наши услуги, в случае неудовлетворения исковых требований. Вы ничем не рискуете!
 				</div>
