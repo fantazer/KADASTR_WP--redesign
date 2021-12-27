@@ -1,174 +1,88 @@
 <? get_header(); ?>
 
-
-<?php
-
-/*$services = array(
-  array(
-    'name' =>'Услуги геодезиста',
-    'title' => 'Услуги геодезиста в',
-    'description' => 'Услуги геодезиста в',
-    'content' => '[text_module id="14446"]'
-  )
-);
-  // Получить данные рубрик, в том числе и без записей, у которых родительская рубрика с ID = 6
-  $cat_data = get_categories( array( 'parent' => 37 ) );
-  if ( $cat_data ) {
-    foreach ( $cat_data as $one_cat_data ){
-    foreach ($services as $services_item) {
-          $secondPartTItle = str_replace("Услуги в ", "", $one_cat_data->cat_name);
-          $title = $services_item['title']." ".$secondPartTItle;
-          $text = $services_item['content'];
-          $post_data = array(
-            'post_title' => $title,
-            'post_content' => $text,
-            'post_status' => 'publish',
-            'post_author' => 1,
-            'post_category' => array(37,$one_cat_data->cat_ID),
-          );
-          $post_id = wp_insert_post(wp_slash($post_data));
-          add_post_meta($post_id, '_aioseop_title', $services_item['title']." ".$secondPartTItle.", вызов на объект для работ от ООО ЦГИКУ");
-          add_post_meta($post_id, '_aioseop_description', $services_item['title']." ".$secondPartTItle." от профессионалов ЦГИКУ, любые геодезические работы по приемлемым ценам. Звоните!");
-          update_post_meta($post_id, 'ratings_average', 5);
-          update_post_meta($post_id, 'ratings_score', 5);
-          update_post_meta($post_id, 'ratings_users', 5);
-          CFS()->save( array('namecity' => $secondPartTItle), array( 'ID' => $post_id ) );
-        }
-    }
-  }*/
-?>
-<?
-/*$args = array(
-  'cat' => 37,
-	'posts_per_page' => 10000,
-);
-
-query_posts($args);
-while (have_posts()) : the_post();
-  $title = get_the_title();
-  //echo $title.'<br>';
-  if (strpos($title, 'Геодезические работы в') !== false) {
-    //echo 'true';
-    $post_id = get_the_ID() ;
-    //update_post_meta($post_id, '_aioseop_title', $title . " - заказать в ЦГИКУ");
-  }
-endwhile;
-wp_reset_query();*/
-
-?>
-	<!--main-service-->
-	<div class="section section--main-service">
-		<div class="main-cont">
-	<!--		<div class="hospital">
-				<p>УВАЖАЕМЫЕ КЛИЕНТЫ!</p>
-
-				<p><strong><u>МЫ РАБОТАЕМ В ШТАТНОМ РЕЖИМЕ!</u></strong></p>
-				<p>Если Вы хотите заказать услугу или получить консультацию нашего инженера, свяжитесь с нами по телефону или по e-mail. В настоящее время в связи с распространением коронавируса COVID-19 прием в нашем офисе временно не осуществляется.</p>
-				<p>Если Вы ранее уже заказали у нас работы, позвоните нам и Вас переведут на ответственного сотрудника.</p>
-				<p>Надеемся на Ваше понимание.</p>
-				<p><em>Будьте здоровы! #лучшедома</em></p>
-			</div>-->
-			<div class="section-title">Наши самые популярные услуги</div>
-			<div class="section-title-sub">Сравните
-				<span class="text--green">наши цены &nbsp;</span>c&nbsp;
-				<span class="text--red">ценами конкурентов</span>
-			</div>
-			<div class="main-service">
-				<div class="main-service__col">
-
-					<div class="main-service__title">Кадастровые работы</div>
-					<div class="main-service__col-wrap">
-            <?php
-            $the_query = new WP_Query(array(
-              'meta_key' => 'order',
-              'orderby' => 'meta_value_num',
-              'tag' => 'main-service--kadastr',
-              'order' => 'ASC'
-            ));
-            ?>
-            <?php if ($the_query->have_posts()): ?>
-              <?php while ($the_query->have_posts()) : $the_query->the_post();
-                $class = get_field('order') ? 'class="order"' : '';
-                ?>
-                <?php if (get_field('second-title')!=''){?>
-									<div class="main-service__el">
-										<div class="main-service__cont">
-											<a href="<?= get_permalink(); ?>" class="main-service__el-title"><?= get_field('second-title'); ?></a>
-											<div class="main-service__title-sub"><?= get_field('description'); ?></div>
-											<div class="main-service__price-row">
-												<div class="main-service__price main-service__price--true"><?= get_field('price-true'); ?> руб.
-												</div>
-												<div class="main-service__price main-service__price--false"><?= get_field('price-false'); ?> руб.
-												</div>
-											</div>
-											<div class="main-service__get">
-												<a class="main-service__read-more" href="<?= get_permalink(); ?>">
-													<img src="<?php echo get_template_directory_uri(); ?>/img/btn-more.svg" >
-												</a>
-												<div class="main-service__btn main-service__btn-get modal-get" data-modal="order">Заказать</div>
-											</div>
-										</div>
-										<div class="main-service__img">
-											<div class="main-service__img-el" style="background-image:url('<?= get_field('image'); ?>');"></div>
-										</div>
-									</div>
-								<? } ?>
-              <?php endwhile; ?>
-            <?php endif; ?>
+	<!--main banner-->
+	<div class="banner-main" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/mainPage-banner-1.jpg');">
+		<div class="banner-main__content">
+			<div class="main-cont-sm">
+				<div class="f f-col f-aic">
+					<div class="banner-main__title">Ваш надежный партнер в оформлении недвижимости и инженерных изысканий</div>
+					<div class="type--main type--center type--black wmax-500 mb-64 type--title md__hide">Качественные услуги от команды с многолетним опытом. Мы рещим вашу проблему уже сегодня.</div>
+					<div class="f gap-32 mb-48 md__hide">
+						<div class="f f-aic gap-12">
+							<div class="round bg--mark"></div>
+							<span class="type--w600 type--black">Штат инженеров</span>
+						</div>
+						<div class="f f-aic gap-12">
+							<div class="round bg--mark"></div>
+							<span class="type--w600 type--black">Расчет по факту работ</span>
+						</div>
+						<div class="f f-aic gap-12">
+							<div class="round bg--mark"></div>
+							<span class="type--w600 type--black">Гарантия сроков</span>
+						</div>
 					</div>
-					<a class="main-service__el-get" href="/kadastrovy-e-raboty/">Eще услуги</a>
-				</div>
-
-				<div class="main-service__col">
-					<div class="main-service__title">Геодезические работы</div>
-					<div class="main-service__col-wrap">
-            <?php
-            $the_query = new WP_Query(array(
-              'tag' => 'main-service--geo',
-              'meta_key' => 'order',
-              'orderby' => 'meta_value_num',
-              'order' => 'ASC'
-            ));
-            ?>
-            <?php if ($the_query->have_posts()): ?>
-              <?php while ($the_query->have_posts()) : $the_query->the_post();
-                $class = get_field('order') ? 'class="order"' : '';
-                ?>
-                <?php if (get_field('second-title')!=''){?>
-								<div class="main-service__el">
-									<div class="main-service__cont">
-										<div class="main-service__el-title"><?= get_field('second-title'); ?> </div>
-										<div class="main-service__title-sub"><?= get_field('description'); ?></div>
-										<div class="main-service__price-row">
-											<div class="main-service__price main-service__price--true"><?= get_field('price-true'); ?> руб.
-											</div>
-											<div class="main-service__price main-service__price--false"><?= get_field('price-false'); ?> руб.
-											</div>
-										</div>
-										<div class="main-service__get">
-											<a class="main-service__btn main-service__btn-more" href="<?= get_permalink(); ?>">Подробнее</a>
-											<div class="main-service__btn main-service__btn-get modal-get" data-modal="order">Заказать</div>
-										</div>
-									</div>
-									<div class="main-service__img">
-										<div class="main-service__img-el" style="background-image:url('<?= get_field('image'); ?>');"></div>
-									</div>
-								</div>
-                <? } ?>
-              <?php endwhile; ?>
-            <?php endif; ?>
+					<div class="f gap-12 sm__fw">
+						<a class="btn--md btn--mark btn--fix sm__w100" rel="m_PageScroll2id" href="#main">Подробнее</a>
+						<a class="btn--md btn--light btn--fix sm__w100" rel="m_PageScroll2id" href="#order">Заказать</a>
 					</div>
-					<a class="main-service__el-get" href="geodezicheskie-raboty/">Eще услуги</a>
 				</div>
 			</div>
 		</div>
 	</div>
-<? include('module/advant.php'); ?>
-<? include('module/customers.php'); ?>
-<? include('module/sertificate.php'); ?>
-<? include('module/contact-form.php'); ?>
-<? include('module/news-list.php'); ?>
-<? include('module/questions.php'); ?>
+	<!--main banner-->
 
+	<!--category-->
+	<div class="main-cont" id="main">
+			<div class="type--center type--lg type--w700 type--title mt-100 mb-64">Каталог наших услуг</div>
+			<div class="g g-2 gap-24 mb-100 sm__g-1">
+				<a class="bor bor--border p-48 f f-col br-8" href="/geodezicheskie-raboty/">
+					<div class="decorate bg--mark br-8 mb-48"></div>
+					<div class="type--md type--w700 type--title mb-24">Геодезические услуги</div>
+					<div class="type--main type--lh-1_6 mb-48">Геодезическое сопровождение строительства, исполнительная съемка, обмеры земельных участков и объектов капитального строительства, вынос в натуру, геодезические съемки.</div>
+					<div class="type--sm type--mark type--w700 mt-a">Подробнее</div>
+				</a>
+				<a class="bor bor--border p-48 f f-col br-8" href="/kadastrovy-e-raboty/">
+					<div class="decorate bg--mark br-8 mb-48"></div>
+					<div class="type--md type--w700 type--title mb-24">Кадастровые услуги</div>
+					<div class="type--main type--lh-1_6 mb-48">Постановка на кадастровый учет, учет изменений объектов недвижимости, графическое описание санитарно-защитной зоны.</div>
+					<div class="type--sm type--mark type--w700 mt-a">Подробнее</div>
+				</a>
+				<a class="bor bor--border p-48 f f-col br-8" href="/juridicheskie-uslugi/">
+					<div class="decorate bg--mark br-8 mb-48"></div>
+					<div class="type--md type--w700 type--title mb-24">Юридические услуги</div>
+					<div class="type--main type--lh-1_6 mb-48">Регистрация прав (представление интересов в Росреестре), оптимизация налогообложения, уведомления о строительстве/сносе, экспертизы.</div>
+					<div class="type--sm type--mark type--w700 mt-a">Подробнее</div>
+				</a>
+				<a class="bor bor--border p-48 f f-col br-8" href="/inzhenernye-izyskanija/">
+					<div class="decorate bg--mark br-8 mb-48"></div>
+					<div class="type--md type--w700 type--title mb-24">Инженерные изыскания для строительства</div>
+					<div class="type--main type--lh-1_6 mb-48">Геология, экология, топографическая съемка</div>
+					<div class="type--sm type--mark type--w700 mt-a">Подробнее</div>
+				</a>
+			</div>
+		</div>
+	<!--category ===end -->
+
+	<? include('module/advant.php'); ?>
+
+	<!--about-->
+	<div class="main-cont mb-100">
+			<div class="type--lg type--w700 type--title type--center mb-32">О нашей компании</div>
+			<img class="mb-32 w100 br-8" src="<?php echo get_template_directory_uri(); ?>/img/companyGroup.jpg" alt="" />
+			<div class="text">
+				<p>Компания «Центр геодезических и кадастровых услуг» (ЦГиКУ) – это динамично развивающаяся организация, начавшая свою работу в 2012 году, основным профилем которой является выполнение кадастровых и геодезических работ. За время деятельности компании
+					нами выполнены работы более чем на 5000 объектах по всей России.
+					<p>Мы являемся постоянными подрядчиками ПАО Сбербанк, АО «Мосводоканал», АО «Дон-Строй Инвест», ГУП «Московское имущество», ЦУМ, ГБУ МО «МОСАВТОДОР», АШАН, LIEBHERR и др., что подтверждается благодарственными письмами.</p>
+					<p>Наши сотрудники - выпускники ведущих профильных ВУЗов страны, таких как Московский государственный университет геодезии и картографии (МИИГАиК), Государственный университет по землеустройству (ГУЗ). Все наши кадастровые инженеры имеют Аттестаты кадастровых
+						инженеров и состоят в СРО, таких как А СРО «Кадастровые инженеры», А СРО «ОПКД».</p>
+				</p>
+			</div>
+		</div>
+	<!--about ==end-->
+
+	<? include('module/customers.php'); ?>
+	<? include('module/popularService.php'); ?>
+	<? include('module/news-list.php'); ?>
+	<? include('module/questions.php'); ?>
 
 <? get_footer(); ?>

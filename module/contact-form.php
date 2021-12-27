@@ -1,4 +1,4 @@
-<div class="section section-contact" id="contact">
+<!--<div class="section section-contact" id="contact">
 	<div class="main-cont">
 		<div class="section-title">Наши контакты</div>
 		<div class="contact">
@@ -79,3 +79,4 @@
 		</div>
 	</div>
 </div>
+-->

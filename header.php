@@ -9,14 +9,14 @@
 	<meta name="theme-color" content="#000"/>
 	<meta name="msapplication-navbutton-color" content="#000"/>
 	<meta name="apple-mobile-web-app-status-bar-style" content="#000"/>
-	<meta name="yandex-verification" content="1f3fe6bc59106b96" />
+	<meta name="yandex-verification" content="1f3fe6bc59106b96"/>
 	<!--icons-->
 	<link rel="shortcut icon" href="favicon.ico"/>
 	<!--SEO-->
 	<title>Document</title>
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/vendor.css?ver=3">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?ver=3">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-edit.css?ver=3">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/vendor.css?ver=4">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?ver=4">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-edit.css?ver=4">
 	<!-- Google Tag Manager -->
 	<script>(function (w, d, s, l, i) {
 			w[l] = w[l] || [];
@@ -43,89 +43,71 @@
 <body>
 
 <!--block header-->
-<div class="head-container">
+<div class="head-container <?if(is_front_page() && is_home()) {?> pos-a<?}?>">
 	<!--header-->
-	<div class="header">
-		<div class="top-line">
-			<div class="main-cont">
-				<div class="top-line-wrap">
-					<a class="main-logo" href="/">
-						<img class="logo--full" src="<?php echo get_template_directory_uri(); ?>/img/logo-dark.png" alt=""/>
-						<img class="logo--short" src="<?php echo get_template_directory_uri(); ?>/img/logo-short.png" alt=""/>
-					</a>
-					<div class="top-line-info">
-						<div class="top-line-el__wrap">
-							<div class="top-line-el">
-								<div class="top-line-el-title">Работа горячей линии:</div>
-								<div class="top-line-el-info top-line-el-info--light">Ежедневно c 9-00 ч. до 20-00 ч.</div>
-							</div>
-							<div class="top-line-el">
-								<div class="top-line-el-title ">Наша почта:</div>
-								<div class="top-line-el-info top-line-el-info--call modal-get" data-modal="order">
-									<svg class="icon">
-										<use xlink:href="#mail"></use>
-									</svg>
-									<a href="mailto:info@cgiku.ru" class="header-mail-val">info@cgiku.ru</a>
-								</div>
-							</div>
+	<!-- mobile menu-->
+	<div class="slide-block slide-block--right slide-block--menu shadow-lg" data-menu="menu">
+		<div class="js-accordion psv-16 psh-32">
+			<div class="f f-between mb-24">
+				<img class="w40" src="<?php echo get_template_directory_uri(); ?>/img/logo-dark.svg" alt=""/>
+				<svg class="icon icon--24 icon-h--mark cp tr js-slide-block-close">
+					<use xlink:href="#close"></use>
+				</svg>
+			</div>
+			<div class="type--title type--w700 mb-16">Услуги</div>
+			<div class="pl-16 mb-16">
+				<a class="type--16 type--w500 type--title db mb-4" href="/geodezicheskie-raboty/">Геодезические</a>
+				<a class="type--16 type--w500 type--title db mb-4" href="/kadastrovy-e-raboty/">Кадастровые</a>
+				<a class="type--16 type--w500 type--title db mb-4" href="/juridicheskie-uslugi/">Юридические</a>
+				<a class="type--16 type--w500 type--title db" href="/inzhenernye-izyskanija/">Инженерные изыскания</a>
+			</div>
+			<a class="type--title type--w700 db mb-12" href="/prajs-list/">Цены</a>
+			<a class="type--title type--w700 db mb-12" href="/o-kompanii/">О нас</a>
+			<a class="type--title type--w700 db mb-12" href="/nashi-litsenzii/">Лицензии</a>
+			<a class="type--title type--w700 db" href="/kontakty/">Контакты</a>
+			<a class="type--w700 type--24 mt-48 mb-16 db type--title type--black" href="tel:8 (499) 110-12-15">8 (499) 110-12-15</a>
+			<div class="type--typeSecondary type--sm mb-12 w80">г. Москва, 1-ый Нагатинский проезд, д. 4, офис 210</div>
+			<div class="type--typeSecondary type--sm mb-12">info@cgiku.ru</div>
+		</div>
+		<!-- mobile menu === end-->
+	</div>
+	<div class="header psv-10 bor bor--border sm__psv-0">
+		<div class="main-cont">
+			<div class="header-wrap">
+				<a class="logo" href="/">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/logo-dark.svg" alt=""/>
+				</a>
+				<div class="header-nav w45 md__hide">
+					<div class="header-nav__el type--title type--w500 cp header-nav__el-drop">
+						<div class="f f-mid">
+							<span class="type--nowrap">Услуги</span>
+							<svg class="icon icon--sm ml-8 tr">
+								<use xlink:href="#arrow-down"></use>
+							</svg>
 						</div>
-						<div class="top-line__contact">
-							<div class="nav-phone">
-								<a class="nav-phone-el" href="tel:<? the_field('phone-1', 'option');?>"><? the_field('phone-1', 'option');?></a>
-								<a class="nav-phone-el" href="tel:<? the_field('phone-2', 'option');?>"><? the_field('phone-2', 'option');?></a>
-							</div>
-							<div class="top-line-loc">
-								<a class="top-calc" href="/kalkuljator-uslug/">
-									<div class="top-calc__icon">
-										<svg class="icon">
-											<use xlink:href="#calculator-fat"></use>
-										</svg>
-									</div>
-									<div class="top-calc__text">Калькулятор услуг</div>
-								</a>
-							</div>
-							<div class="header-search">
-								<div class="header-search__icon">
-									<svg class="icon">
-										<use xlink:href="#magnifying-glass"></use>
-									</svg>
-								</div>
-                <?php get_search_form(); ?>
-							</div>
+						<div class="header-nav__el-drop-list">
+							<a class="type--sm type-h--mark tr dib mb-4" href="/geodezicheskie-raboty/">Геодезические</a>
+							<a class="type--sm type-h--mark tr dib mb-4" href="/kadastrovy-e-raboty/">Кадастровые</a>
+							<a class="type--sm type-h--mark tr dib mb-4" href="/juridicheskie-uslugi/">Юридические</a>
+							<a class="type--sm type-h--mark tr dib" href="/inzhenernye-izyskanija/">Инженерные изыскания</a>
 						</div>
 					</div>
+					<a class="header-nav__el type--title type--w500 type--nowrap type-h--mark" href="/prajs-list/">Цены</a>
+					<a class="header-nav__el type--title type--w500 type--nowrap type-h--mark" href="/o-kompanii/">О нас</a>
+					<a class="header-nav__el type--title type--w500 type--nowrap type-h--mark" href="/nashi-litsenzii/">Лицензии</a>
+					<a class="header-nav__el type--title type--w500 type--nowrap type-h--mark" href="/kontakty/">Контакты</a>
+				</div>
+				<div class="header-phone md__ml-a">
+					<a class="type--title type--w700 type--black type--20 sm__type--12" href="tel:+7 (495) 514-84-13">+7 (495) 514-84-13</a>
+				</div>
+				<div class="head-toggle md__show js-slide-block-toggle md__ml-12 f f-mid" data-menu="menu">
+					<svg class="icon icon--md">
+						<use xlink:href="#menu"></use>
+					</svg>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<!--header-end-->
-<!--nav-->
-<div class="nav">
-	<div class="main-cont">
-		<div class="nav-wrap">
-			<div class="nav-toggle">
-				<svg class="icon">
-					<use xlink:href="#menu"></use>
-				</svg>
-				<span>Меню</span>
-			</div>
-      <?
-      $args = array(
-        'menu' => 'Главное меню',
-        'menu_class' => '',
-        'container' => 'div',
-        'container_class' => 'menu-wrap', // css-класс блока
-        'items_wrap' => '<ul class="menu">%3$s</ul>',
-        'depth' => 0,
-        //'walker' => new Description_Walker
-      );
-      wp_nav_menu($args);
-      ?>
-
-		</div>
-	</div>
-</div>
-<!--nav-end-->
-</div>
 <!--block header end-->
+

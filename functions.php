@@ -1,5 +1,9 @@
 <?
 
+function my_pagination_rewrite() {
+    add_rewrite_rule('novosti/page/?([0-9]{1,})/?$', 'index.php?category_name=blog&paged=$matches[1]', 'top');
+}
+add_action('init', 'my_pagination_rewrite');
 
 
 /*rtf support*/
@@ -133,7 +137,7 @@ function porstAfter($a, $order)
     foreach ($myposts as $post) {
       setup_postdata($post);
       ?>
-			<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+			<li><a href="<?php the_permalink(); ?>" class="link--mark"><?php the_title(); ?></a></li>
       <?
     }
     wp_reset_postdata();

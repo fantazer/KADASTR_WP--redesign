@@ -5,6 +5,7 @@ CFS()->get('idparent') ? $listTownTemplateVal = CFS()->get('idparent') : $listTo
 <div class="modal-layer">
 		<div class="modal-filter"></div>
 		<div class="modal-wrap">
+
       <?php if (get_field('howworkaddtext',$listTownTemplateVal)) { ?>
 				<div class="modal" data-modal="howWorkAddText">
 					<div class="modal-content">
@@ -87,6 +88,7 @@ CFS()->get('idparent') ? $listTownTemplateVal = CFS()->get('idparent') : $listTo
 					</form>
 				</div>
 			</div>
+
 			<div class="modal" data-modal="true">
 				<div class="modal-content modal-content--true">
 					<svg class="icon">
@@ -95,6 +97,7 @@ CFS()->get('idparent') ? $listTownTemplateVal = CFS()->get('idparent') : $listTo
 					<div class="modal-text-true">Ваша заявка принята</div>
 				</div>
 			</div>
+
 			<div class="modal" data-modal="next">
 				<div class="modal-content modal-content--truesend">
 					<svg class="icon">
@@ -103,6 +106,7 @@ CFS()->get('idparent') ? $listTownTemplateVal = CFS()->get('idparent') : $listTo
 					<div class="modal-text-truesend">Ваша заявка принята!</div>
 				</div>
 			</div>
+
 			<div class="modal modal--sale" data-modal="sale">
 				<div class="modal-content">
 					<div class="modal-close">
@@ -159,6 +163,7 @@ CFS()->get('idparent') ? $listTownTemplateVal = CFS()->get('idparent') : $listTo
 					</div>
 				</div>
 			</div>
+
 			<div class="modal modal--sale" data-modal="sale--border">
 				<div class="modal-content">
 					<div class="modal-close">
@@ -201,6 +206,7 @@ CFS()->get('idparent') ? $listTownTemplateVal = CFS()->get('idparent') : $listTo
 					</div>
 				</div>
 			</div>
+
 			<div class="modal modal--sale" data-modal="igs-1">
 				<div class="modal-content">
 					<div class="modal-close">
@@ -228,6 +234,7 @@ CFS()->get('idparent') ? $listTownTemplateVal = CFS()->get('idparent') : $listTo
 					</div>
 				</div>
 			</div>
+
       <? if (get_the_ID() === 14989) { ?>
 				<div class="modal modal--sale" data-modal="igs-2">
 					<div class="modal-content">
@@ -328,5 +335,20 @@ CFS()->get('idparent') ? $listTownTemplateVal = CFS()->get('idparent') : $listTo
 					</div>
 				</div>
       <? } ?>
+
+      <div class="modal" data-modal="msgTrue">
+				<div class="js-modal-close modal-close">
+					<svg class="icon">
+						<use xlink:href="#close"></use>
+					</svg>
+				</div>
+				<div class="modal-content">
+					<div class="type--mdx type--w700 mb-20">Спасибо за вашу заявку</div>
+					<div class="modal-text text">
+						<p>Мы скоро свяжемся с Вами и уточним все вопросы.</p>
+					</div>
+					<div class="btn--md btn--light btn--full modal-hide">Понятно</div>
+				</div>
+			</div>
 		</div>
 </div>

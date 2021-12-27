@@ -5,10 +5,10 @@
     <? include('module/bread.php'); ?>
 		<div class="text">
 			<h1><?= single_cat_title(); ?></h1>
-			<div class="g g-3 f-gap-24 sm__g-1 mb-100">
+			<div class="g g-3 f-gap-24 sm__g-1">
         <?
         $args = array(
-          'cat' => 14,
+          'cat' => 12,
           'orderby' => 'date',
           'order' => 'DESC'
         );
@@ -29,5 +29,5 @@
 	</div>
 
   <? include('module/customers.php'); ?>
-  <? include('module/popularService.php'); ?>
+  <? include('module/questions.php'); ?>
   <? get_footer() ?>
