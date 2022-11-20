@@ -20,8 +20,7 @@
 		<div class="lp-baner__wrap">
 			<div class="lp-baner__content">
 				<h1 class="lp-baner__title lp-baner__title--think"><?= the_title(); ?></h1>
-				<div class="lp-baner__title-sub lp-baner__title-sub--lg">Понадобились услуги геодезиста?
-					<br> Мы с удовольствием ответим на все Ваши вопросы.
+				<div class="lp-baner__title-sub lp-baner__title-sub--lg">Выезд геодезиста на объект любой сложности
 				</div>
 				<div class="header__get">
 					<a class="header__btn header__btn-more" href="#why">Подробнее</a>
@@ -166,7 +165,7 @@
 			<div class="calc-range__wrap">
 				<div class="calc-range-val calc-range-val--lg">
 					<span>от</span>
-					<div class="calc-range-numb">10 000</div>
+					<div class="calc-range-numb">15 000</div>
 					<span>руб./день</span>
 				</div>
 			</div>
@@ -243,38 +242,40 @@
 	<div class="section-title">Часто задаваемые вопросы</div>
 	<div class="section-title-sub">Просто о сложном</div>
 	<div class="main-cont">
-		<div class="questions">
-			<div class="questions-slider owl-carousel">
-				<div class="questions__el">
-					<div class="questions__el-wrap">
-						<div class="questions__name">Каковы сроки выполнения различных видов геодезических работ?</div>
-						<div class="questions__text">
-							<p>Услуги геодезиста незаменимы и обязательны в процессе проектирования и строительства, землеустройства и
-								межевания. Тарифы, сроки и состав геодезических мероприятий, из-за их огромного разнообразия, могут
-								значительно разниться в каждом конкретном случае. Так, для крупного строительства профессиональное
-								сопровождение геодезиста может затянуться на годы, при том, что топографическую съемку для частного
-								заказчика можно совершить за несколько дней, а выполнить обмер для кадастрового плана или вынос точек и
-								осей в натуру — всего за считанные часы.</p>
-						</div>
-					</div>
+		<div class="js-accordion">
+			<div class="accordion__el js-accordion-el">
+				<div class="accordion__el-head js-accordion-head">
+					<div class="accordion__el-head-text type--w500 type--title w80 sm__type--12">Каковы сроки выполнения различных видов геодезических работ?</div>
+					<div class="accordion__el-head-icon"></div>
 				</div>
-				<div class="questions__el">
-					<div class="questions__el-wrap">
-						<div class="questions__name">Из чего складывается стоимость услуги «геодезист на день»?</div>
-						<div class="questions__text"><p>Что касается расценок на указанные услуги, то они складываются из
-								стоимости:</p>
-							<ul>
-								<li>выезда геодезиста или бригады специалистов на конкретный участок и/или объект изысканий;</li>
-								<li>полевых работ и амортизации оборудования;</li>
-								<li>камеральных работ по обработке данных;</li>
-								<li>оформления итоговых отчетов и документов;</li>
-								<li>изготовления чертежей, схем, планов и исполнительных актов.</li>
-							</ul>
-						</div>
-					</div>
+				<div class="accordion__el-content text js-accordion-content">
+					<p>Услуги геодезиста незаменимы и обязательны в процессе проектирования и строительства, землеустройства и
+						межевания. Тарифы, сроки и состав геодезических мероприятий, из-за их огромного разнообразия, могут
+						значительно разниться в каждом конкретном случае. Так, для крупного строительства профессиональное
+						сопровождение геодезиста может затянуться на годы, при том, что топографическую съемку для частного
+						заказчика можно совершить за несколько дней, а выполнить обмер для кадастрового плана или вынос точек и
+						осей в натуру — всего за считанные часы.</p>
+				</div>
+			</div>
+			<div class="accordion__el js-accordion-el">
+				<div class="accordion__el-head js-accordion-head">
+					<div class="accordion__el-head-text type--w500 type--title w80 sm__type--12">Из чего складывается стоимость услуги «геодезист на день»?</div>
+					<div class="accordion__el-head-icon"></div>
+				</div>
+				<div class="accordion__el-content text js-accordion-content">
+					<p>Что касается расценок на указанные услуги, то они складываются из
+						стоимости:</p>
+					<ul>
+						<li>выезда геодезиста или бригады специалистов на конкретный участок и/или объект изысканий;</li>
+						<li>полевых работ и амортизации оборудования;</li>
+						<li>камеральных работ по обработке данных;</li>
+						<li>оформления итоговых отчетов и документов;</li>
+						<li>изготовления чертежей, схем, планов и исполнительных актов.</li>
+					</ul>
 				</div>
 			</div>
 		</div>
+
 	</div>
 </div>
 

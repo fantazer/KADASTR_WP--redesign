@@ -42,3 +42,13 @@
 .recall-info {
   line-height: 1.6;
 }
+.calc-text {
+  margin: 20px 0;
+}
+@media only screen and (max-width: 580px) {
+  table {
+    min-width: 290px;
+    display: block;
+    overflow: auto;
+  }
+}

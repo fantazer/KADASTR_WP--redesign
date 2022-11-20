@@ -64,7 +64,7 @@
         <div class="cost__el-title">Площадь участка
           <span>1000 кв.м.</span>
         </div>
-        <div class="cost__el-text cost__el-text--mark">Без геодезических обмеров</div>
+        <div class="type--center type--w700 type--md type--orange mb-24">Без геодезических обмеров</div>
         <div class="cost__el-text">10 рабочих дней</div>
         <div class="cost__el-price">10 000 руб.</div>
         <div class="service__btn service__btn-get modal-get" data-modal="order">Заказать</div>
@@ -74,7 +74,7 @@
         <div class="cost__el-title">Площадь участка
           <span>1000 кв.м.</span>
         </div>
-        <div class="cost__el-text cost__el-text--mark">С геодезическими обмерами</div>
+        <div class="type--center type--w700 type--md type--mark mb-24">С геодезическими обмерами</div>
         <div class="cost__el-text">10 рабочих дней</div>
         <div class="cost__el-price">15 000 руб.</div>
         <div class="service__btn service__btn-get modal-get" data-modal="order">Заказать</div>
@@ -84,7 +84,7 @@
         <div class="cost__el-title">Площадь участка
           <span>более 1000 кв.м.</span>
         </div>
-        <div class="cost__el-text cost__el-text--mark">Зависит от площади участка</div>
+        <div class="type--center type--w700 type--md msv-24"></div>
         <div class="cost__el-text">Индивидуально</div>
         <div class="cost__el-price">от 15 000 руб.</div>
         <div class="service__btn service__btn-get modal-get" data-modal="order">Заказать</div>

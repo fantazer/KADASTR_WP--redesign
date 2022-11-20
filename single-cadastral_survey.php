@@ -101,21 +101,21 @@
 			<div class="cost__el">
 				<div class="cost__el-img" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/survey-pay-3.jpg');"></div>
 				<div class="cost__el-title">Площадь участка
-					<span>до 1000 кв.м.</span>
+					<span>до 1 гектара</span>
 				</div>
 				<div class="cost__el-text cost__el-text--mark">1 раб. день</div>
-				<div class="cost__el-text">зависит от площади и местоположения</div>
-				<div class="cost__el-price">10 000 руб.</div>
+				<div class="cost__el-text">Зависит от площади и местоположения</div>
+				<div class="cost__el-price">от 10 000 руб.</div>
 				<div class="service__btn service__btn-get modal-get" data-modal="order">Заказать</div>
 			</div>
 			<div class="cost__el">
 				<div class="cost__el-img" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/survey-pay-2.jpg');"></div>
 				<div class="cost__el-title">Площадь участка
-					<span>более 1000 кв.м.</span>
+					<span>более 1 гектара</span>
 				</div>
 				<div class="cost__el-text cost__el-text--mark">Индивидуально</div>
-				<div class="cost__el-text">Индивидуально</div>
-				<div class="cost__el-price">от 10 000 руб.</div>
+				<div class="cost__el-text">Стоимость за выезд не менее</div>
+				<div class="cost__el-price">10 000 руб.</div>
 				<div class="service__btn service__btn-get modal-get" data-modal="order">Заказать</div>
 			</div>
 		</div>

@@ -13,9 +13,9 @@
 	<div class="lp-baner-filter lp-baner-filter--light"></div>
 	<div class="main-cont">
 		<div class="lp-baner__content">
-			<div class="lp-baner__title">Оформление
+			<h1 class="lp-baner__title">Оформление
 				<br> технического плана дома
-			</div>
+			</h1>
 			<div class="lp-baner__title-sub">Если границы Вашего земельного участка не установлены, либо установлены, но с
 				точностью ниже нормативной – изготавливается межевой план по уточнению границ
 			</div>

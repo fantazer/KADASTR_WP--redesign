@@ -8,7 +8,7 @@
 			<div class="g g-3 f-gap-24 sm__g-1">
         <?
         $args = array(
-          'cat' => 10,
+          'cat' => 4,
           'orderby' => 'date',
           'order' => 'DESC'
         );

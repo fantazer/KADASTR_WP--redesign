@@ -104,11 +104,11 @@
 			<div class="calc-range__wrap">
 				<div class="calc-range-val calc-range-val--lg">
 					<span>от</span>
-					<div class="calc-range-numb">20 000</div>
+					<div class="calc-range-numb">30 000</div>
 					<span>руб</span>
 				</div>
 			</div>
-			<div class="calc-text">Цена за одну скважину. 10 раб.дней</div>
+			<div class="calc-text">Цена за одну скважину. Время исполнения 10 раб. дней.</div>
 		</div>
 		<div class="calc-ur-cont">
 			<div class="calc-ur-pay calc-ur-pay--light">

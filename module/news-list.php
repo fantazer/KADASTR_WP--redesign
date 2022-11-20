@@ -1,6 +1,6 @@
 <div class="psv-100 sm__psv-48">
 	<div class="main-cont">
-		<div class="type--center type--lg type--w700 type--title mb-32">Последние новости</div>
+		<div class="type--center type--lgx type--w700 type--title mb-64">Последние новости</div>
 		<div class="g g-3 f-gap-24 sm__g-1">
       <?
       $args = array(

@@ -2,7 +2,7 @@
 <?
 $categories = get_the_category();
 $catID = $categories[0]->cat_ID;
-if (in_array($catID, array(6, 7,398,399))) { ?>
+if (in_array($catID, array(6, 7, 398, 399))) { ?>
 	<div class="page">
 		<div class="main-cont">
       <? include('module/bread.php'); ?>
@@ -23,20 +23,31 @@ if (in_array($catID, array(6, 7,398,399))) { ?>
 					<div class="p-32 bor bor--border f f-col bg--white br-8">
 						<a href="<?= get_permalink(); ?>" class="type--w500 type--title type--md mb-24 type-h--mark"><?= get_the_title(); ?></a>
 						<div class="type--14 type--main mb-32 type--lh-1_6">
-							<?
-								if(get_the_content()){ echo wp_trim_words(get_the_content(), 12, ' ...');}
-								if(get_field('subTitle')){ echo get_field('subTitle');}
-							?>
+              <?
+              if (get_field('subTitle')) {
+                echo get_field('subTitle');
+              }elseif(get_the_content()) {
+                echo wp_trim_words(get_the_content(), 12, ' ...');
+              }
+              ?>
+
 						</div>
 						<div class="type--md type--w700 mb-24 mt-a">
-							<?
-								if(get_field('cost')){ echo get_field('cost')." руб";}
-								if(get_field('price-true')){ echo get_field('price-true')." руб";}
-							?>
+              <?
+              if (get_field('cost')) {
+                echo "от ".get_field('cost') . " руб";
+              } elseif (get_field('price-true')) {
+                if ((float)get_field('price-true')){
+                  echo "от ".get_field('price-true') . " руб";
+                }else{
+									echo get_field('price-true');
+                }
+              }
+              ?>
 						</div>
-					<div class="f sm__fw">
+						<div class="f sm__fw">
 							<a href="<?= get_permalink(); ?>" class="btn btn--md btn--light sm__w100 sm__mb-10">Подробнее</a>
-							<div class="btn btn--md btn--mark ml-24 sm__w100 sm__ml-0">Заказать</div>
+							<div class="btn btn--md btn--mark ml-24 sm__w100 sm__ml-0 modal-get" data-modal="order">Заказать</div>
 						</div>
 					</div>
         <? endwhile; ?>

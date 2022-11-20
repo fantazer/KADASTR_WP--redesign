@@ -1,7 +1,7 @@
 <div class="bg--fieldBackground">
 			<div class="psv-100 mb-100 sm__psv-48">
 				<div class="main-cont">
-					<div class="type--center type--lg type--w700 type--title mb-64">Почему выбирают нас</div>
+					<div class="type--center type--lgx type--w700 type--title mb-64">Почему выбирают нас</div>
 					<div class="g g-3 gap-24 mb-64 sm__g-2">
 						<div class="bor bor--border p-32 bg--white br-4">
 							<div class="icon--64 br-round bg--stateSuccessBG f f-mid mb-32">

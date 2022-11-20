@@ -1,6 +1,6 @@
 <div class="mb-100">
 	<div class="main-cont">
-		<div class="type--center type--lg type--w700 type--title mb-32">Частые вопросы</div>
+		<div class="type--center type--lgx type--w700 type--title mb-64">Частые вопросы</div>
     <?
     $args = array(
       'cat' => 5,

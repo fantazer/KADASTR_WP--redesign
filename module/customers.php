@@ -1,5 +1,5 @@
 <div class="main-cont">
-	<div class="type--lg type--w700 type--title type--center mb-32">Наши заказчики</div>
+	<div class="type--lgx type--w700 type--title type--center mb-32">Наши заказчики</div>
 	<div class="g g-6 g-gap-20 mb-100 sm__g-3">
 		<img class="customer-item filter--grayscale p-24 tr" src="<?php echo get_template_directory_uri(); ?>/img/1-customer.jpg" alt=""/>
 		<img class="customer-item filter--grayscale p-24 tr" src="<?php echo get_template_directory_uri(); ?>/img/2-customer.jpg" alt=""/>

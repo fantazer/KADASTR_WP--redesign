@@ -3,8 +3,8 @@
 <div class="bg--fieldBackground">
 	<div class="psv-100 sm__psv-48">
 		<div class="main-cont">
-			<div class="type--center type--lg type--w700 type--title mb-32">Популярные услуги</div>
-			<div class="type--center w60 ml-a mr-a type--md mb-64 sm__w100 sm__type--14">уточнение, исправление реестровой ошибки, объединение, раздел, перераспределение, образование земельных участков</div>
+			<div class="type--center type--lgx type--w700 type--title mb-24">Популярные услуги</div>
+			<div class="type--center w60 ml-a mr-a type--typeSecondary mb-64 sm__w100 sm__type--14">Качественные услуги от команды с многолетним опытом.<br> Мы рещим вашу проблему уже сегодня.</div>
 			<div class="g g-2 f-gap-24 sm__g-1 mb-32">
         <?
         $args = array(
@@ -34,8 +34,7 @@
               <?
               if (get_field('cost')) {
                 echo get_field('cost') . " руб";
-              }
-              if (get_field('price-true')) {
+              } elseif (get_field('price-true')) {
                 echo get_field('price-true') . " руб";
               }
               ?>

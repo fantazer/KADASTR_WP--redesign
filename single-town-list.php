@@ -2,17 +2,17 @@
 <? $addCityName = CFS()->get("cityEdit"); ?>
 <!--block header end-->
 <div class="lp-baner lp-baner--borderland">
-	<div class="lp-baner__img lp-baner__img--borderland" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/sosed.png');"></div>
+	<div class="lp-baner__img lp-baner__img--borderland" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/sosed.jpg');"></div>
 	<div class="lp-baner-filter lp-baner-filter--light"></div>
 	<div class="main-cont">
 		<div class="lp-baner__wrap">
 			<div class="lp-baner__content">
-				<div class="lp-baner__title">
+				<h1 class="lp-baner__title">
 					<?=the_title();?>
-				</div>
-				<h1 class="lp-baner__title-sub">Установите точные границы участка на местности как можно скорее, и Вы
-					избавитесь от возможных проблем в будущем!
 				</h1>
+				<div class="lp-baner__title-sub">Установите точные границы участка на местности как можно скорее, и Вы
+					избавитесь от возможных проблем в будущем!
+				</div>
 				<div class="header__get">
 					<a class="header__btn header__btn-more" href="#why">Подробнее</a>
 					<div class="header__btn header__btn-get modal-get" data-modal="order">Заказать</div>

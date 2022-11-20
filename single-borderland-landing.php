@@ -15,7 +15,7 @@
 
 <!--block header end-->
 <div class="lp-baner lp-baner--borderland">
-	<div class="lp-baner__img lp-baner__img--borderland" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/sosed.png');"></div>
+	<div class="lp-baner__img lp-baner__img--borderland" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/sosed.jpg');"></div>
 	<div class="lp-baner-filter lp-baner-filter--light"></div>
 	<div class="main-cont">
 		<div class="lp-baner__wrap">

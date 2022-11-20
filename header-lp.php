@@ -14,9 +14,9 @@
 	<link rel="shortcut icon" href="favicon.ico"/>
 	<!--SEO-->
 	<title>Document</title>
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/vendor.css?ver=3">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?ver=3">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-edit.css?ver=3">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/vendor.css?ver=5">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?ver=5">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-edit.css?ver=5">
 	<!-- Google Tag Manager -->
 	<script>(function (w, d, s, l, i) {
 			w[l] = w[l] || [];
@@ -38,8 +38,8 @@
 		        height="0" width="0" style="display:none;visibility:hidden"></iframe>
 	</noscript>
 	<!-- End Google Tag Manager (noscript) -->
-</head>
 <?php wp_head(); ?>
+</head>
 <body>
 
 <!--block header-->
@@ -65,7 +65,7 @@
 			<a class="type--title type--w700 db mb-12" href="/o-kompanii/">О нас</a>
 			<a class="type--title type--w700 db mb-12" href="/nashi-litsenzii/">Лицензии</a>
 			<a class="type--title type--w700 db" href="/kontakty/">Контакты</a>
-			<a class="type--w700 type--24 mt-48 mb-16 db type--title type--black" href="tel:8 (499) 110-12-15">8 (499) 110-12-15</a>
+			<a class="type--w700 type--24 mt-48 mb-16 db type--title type--black" href="tel:+7 (495) 514-84-13">+7 (495) 514-84-13</a>
 			<div class="type--typeSecondary type--sm mb-12 w80">г. Москва, 1-ый Нагатинский проезд, д. 4, офис 210</div>
 			<div class="type--typeSecondary type--sm mb-12">info@cgiku.ru</div>
 		</div>

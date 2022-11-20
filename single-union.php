@@ -71,7 +71,7 @@
 					<span>до 2000 кв.м.</span>
 				</div>
 				<div class="cost__el-text cost__el-text--mark">10 раб. дней</div>
-				<div class="cost__el-text">зависит от площади и местоположения</div>
+				<div class="cost__el-text">Зависит от площади и местоположения</div>
 				<div class="cost__el-price">10 000 руб.</div>
 				<div class="service__btn service__btn-get modal-get" data-modal="order">Заказать</div>
 			</div>
@@ -80,9 +80,9 @@
 				<div class="cost__el-title">Площадь образуемого участка
 					<span>более 2000 кв.м.</span>
 				</div>
-				<div class="cost__el-text cost__el-text--mark">Индивидуально</div>
-				<div class="cost__el-text">Индивидуально</div>
-				<div class="cost__el-price">от 10 000 руб.</div>
+				<div class="cost__el-text cost__el-text--mark">10 раб. дней</div>
+				<div class="cost__el-text">Зависит от площади и местоположения</div>
+				<div class="cost__el-price">Индивидуально</div>
 				<div class="service__btn service__btn-get modal-get" data-modal="order">Заказать</div>
 			</div>
 		</div>

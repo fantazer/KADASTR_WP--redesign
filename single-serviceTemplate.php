@@ -43,7 +43,7 @@
       <?= get_field('howwork',$listTownTemplateVal); ?>
       <?php if (get_field('howworkaddtext',$listTownTemplateVal)) { ?>
 				<dic class="f f-jcc">
-					<div class="btn--lg btn--mark modal-get" data-modal="howWorkAddText">Узнать подробнее</div>
+					<div class="btn--md btn--mark modal-get" data-modal="howWorkAddText">Узнать подробнее</div>
 				</dic>
       <? } ?>
 		</div>
@@ -141,7 +141,7 @@
 					<svg class="icon--mark mb-24 icon--xl">
 						<use xlink:href="#<?= $docNumberIconArray[$docNumber] ?>"></use>
 					</svg>
-					<div class="type--bold type--md type--black "><?= the_sub_field('needDocTitle',$listTownTemplateVal); ?></div>
+					<div class="type--w700 type--black"><?= the_sub_field('needDocTitle',$listTownTemplateVal); ?></div>
           <? if (get_sub_field('needDocText',$listTownTemplateVal)) { ?>
 						<div class=" type--black mt-24 mb-24  type--lh-1_4"><?= the_sub_field('needDocText',$listTownTemplateVal); ?></div>
           <? } ?>

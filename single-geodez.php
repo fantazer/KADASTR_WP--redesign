@@ -21,8 +21,7 @@
 		<div class="lp-baner__wrap">
 			<div class="lp-baner__content">
 				<h1 class="lp-baner__title lp-baner__title--think">Услуги геодезиста</h1>
-				<div class="lp-baner__title-sub lp-baner__title-sub--lg">Понадобились услуги геодезиста?
-					<br> Мы с удовольствием ответим на все Ваши вопросы.
+				<div class="lp-baner__title-sub lp-baner__title-sub--lg">Выезд геодезиста на объект любой сложности
 				</div>
 				<div class="header__get">
 					<a class="header__btn header__btn-more" href="#why">Подробнее</a>
@@ -179,7 +178,7 @@
 			<div class="calc-range__wrap">
 				<div class="calc-range-val calc-range-val--lg">
 					<span>от</span>
-					<div class="calc-range-numb">10 000</div>
+					<div class="calc-range-numb">15 000</div>
 					<span>руб./день</span>
 				</div>
 			</div>

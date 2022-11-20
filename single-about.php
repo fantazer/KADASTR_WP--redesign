@@ -13,7 +13,7 @@
 	<div class="section-title">О нашей компании</div>
 	<div class="main-cont">
 		<div class="about-content">
-			<div class="about-text">
+			<div class="about-text text">
         <? while (have_posts()) : the_post(); ?>
           <? the_content(); ?>
         <? endwhile; ?>

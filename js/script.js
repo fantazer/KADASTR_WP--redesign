@@ -38,36 +38,26 @@ $(document).ready(function () {
 	//range slider
 	$(".calc-range").ionRangeSlider({
 		values: [
-			"400 кв.м.",
-			"600 кв.м.",
-			"800 кв.м.",
-			"1000 кв.м.",
-			"1400 кв.м.",
-			"1600 кв.м.",
-			"2000 кв.м."
+			"до 800 кв.м.",
+			"800-1000 кв.м.",
+			"1001-2000 кв.м.",
 		],
 		grid: true,
 		onChange: function (data) {
-			if (data.from_value == "0 кв.м.") {
-				$('.calc-range-numb').text('0');
+			if (data.from_value == "до 800 кв.м.") {
+				$('.calc-range-numb').text('16 000 ');
 			}
-			if (data.from_value == "400 кв.м.") {
-				$('.calc-range-numb').text('14 000 ');
+			if (data.from_value == "800-1000 кв.м.") {
+				$('.calc-range-numb').text('18 000 ');
 			}
-			if (data.from_value == "800 кв.м.") {
-				$('.calc-range-numb').text('14 000 ');
-			}
-			if (data.from_value == "1000 кв.м.") {
-				$('.calc-range-numb').text('15 000 ');
-			}
-			if (data.from_value == "1400 кв.м.") {
+			if (data.from_value == "1001-2000 кв.м.") {
 				$('.calc-range-numb').text('20 000 ');
 			}
-			if (data.from_value == "2000 кв.м.") {
-				$('.calc-text--attansion').show();
-			} else {
-				$('.calc-text--attansion').hide();
-			}
+			/*	if (data.from_value == "2000 кв.м.") {
+					$('.calc-text--attansion').show();
+				} else {
+					$('.calc-text--attansion').hide();
+				}*/
 		}
 	});
 	//range slider===end
@@ -75,33 +65,23 @@ $(document).ready(function () {
 	//range slider
 	$(".calc-range--topograf").ionRangeSlider({
 		values: [
-			"600 кв.м.",
 			"800 кв.м.",
-			"1000 кв.м.",
-			"1400 кв.м.",
-			"1600 кв.м.",
-			"2000 кв.м."
+			"1500 кв.м.",
+			"более 1500 кв.м."
 		],
 		grid: true,
 		onChange: function (data) {
-			if (data.from_value == "0 кв.м.") {
-				$('.calc-range-numb').text('0');
-			}
-			if (data.from_value == "600 кв.м.") {
-				$('.calc-range-numb').text('10 000 ');
-			}
 			if (data.from_value == "800 кв.м.") {
-				$('.calc-range-numb').text('10 000 ');
-			}
-			if (data.from_value == "1000 кв.м.") {
 				$('.calc-range-numb').text('15 000 ');
 			}
-			if (data.from_value == "1400 кв.м.") {
-				$('.calc-range-numb').text('15 000 ');
+			if (data.from_value == "1500 кв.м.") {
+				$('.calc-range-numb').text('20 000 ');
 			}
-			if (data.from_value == "2000 кв.м.") {
+			if (data.from_value == "более 1500 кв.м.") {
+				$('.calc-range__wrap').hide();
 				$('.calc-text--attansion').show();
 			} else {
+				$('.calc-range__wrap').show();
 				$('.calc-text--attansion').hide();
 			}
 		}
@@ -110,24 +90,64 @@ $(document).ready(function () {
 	//range slider
 	$(".calc-range--mistake").ionRangeSlider({
 		values: [
-			"800 кв.м",
-			"1000 кв.м.",
-			"1400 кв.м.",
-			"1600 кв.м.",
-			"2000 кв.м."
+			"до 800 кв.м.",
+			"800-1000 кв.м.",
+			"1001-2000 кв.м.",
 		],
 		grid: true,
 		onChange: function (data) {
-			if (data.from_value == "800 кв.м.") {
-				$('.calc-range-numb').text('15 000 ');
+			if (data.from_value == "до 800 кв.м.") {
+				$('.calc-range-numb').text('16 000 ');
 			}
-			if (data.from_value == "1000 кв.м.") {
+			if (data.from_value == "800-1000 кв.м.") {
 				$('.calc-range-numb').text('18 000 ');
 			}
-			if (data.from_value == "1400 кв.м.") {
+			if (data.from_value == "1001-2000 кв.м.") {
 				$('.calc-range-numb').text('20 000 ');
 			}
-			if (data.from_value == "2000 кв.м.") {
+		}
+	});
+	//range slider===end
+
+	//range slider
+	$(".calc-range--plan").ionRangeSlider({
+		values: [
+			"20 кв.м.",
+			"50 кв.м.",
+			"100 кв.м.",
+			"150 кв.м.",
+			"200 кв.м.",
+			"250 кв.м.",
+			"300 кв.м.",
+			"более 300 кв.м."
+		],
+		grid: true,
+		onChange: function (data) {
+			if (data.from_value == "20 кв.м.") {
+				$('.calc-range-numb').text('10 000');
+			}
+			if (data.from_value == "50 кв.м.") {
+				$('.calc-range-numb').text('12 000 ');
+			}
+			if (data.from_value == "100 кв.м.") {
+				$('.calc-range-numb').text('16 000 ');
+			}
+			if (data.from_value == "150 кв.м.") {
+				$('.calc-range-numb').text('18 000 ');
+			}
+			if (data.from_value == "200 кв.м.") {
+				$('.calc-range-numb').text('20 000 ');
+			}
+			if (data.from_value == "250 кв.м.") {
+				$('.calc-range-numb').text('25 000 ');
+			}
+			if (data.from_value == "300 кв.м.") {
+				$('.calc-range-numb').text('30 000 ');
+			}
+			if (data.from_value == "более 300 кв.м.") {
+				$('.calc-range-numb').text('от 30 000 ');
+			}
+			if (data.from_value == "более 300 кв.м.") {
 				$('.calc-text--attansion').show();
 			} else {
 				$('.calc-text--attansion').hide();
@@ -579,7 +599,6 @@ $(document).ready(function () {
 	// slide menu
 
 
-
 	var hideSlideMenu = function (el) {
 		$(".head-toggle").removeClass('active');
 		$(".slide-block").removeClass("active");
@@ -675,12 +694,11 @@ $(document).ready(function () {
 					url: "/wp-content/themes/CGIKU/sender.php", //файл формировании оплаты
 					data: currentSendData,
 					success: function (data) {
-
-						/*setTimeout(function () {
-							$('.modal-close').click();
-							location.reload();
-						}, 5000);*/
-						console.log(currentSendData);
+						$(':input', currentForm) //очитска формы от данных
+							.not(':button, :submit, :reset, :hidden')
+							.val('')
+							.removeAttr('checked')
+							.removeAttr('selected')
 						initModal("msgTrue")
 					}
 				});
@@ -691,6 +709,17 @@ $(document).ready(function () {
 			console.log($(this).data("type"));
 		});
 	});
+
+	// fix 100vh
+	function appHeight() {
+		const doc = document.documentElement
+		doc.style.setProperty('--vh', (window.innerHeight * .01) + 'px');
+	}
+
+	window.addEventListener('resize', appHeight);
+	appHeight();
+	// fix 100vh === end
+
 })
 
 $(document).ready(function () {

@@ -99,14 +99,14 @@
 			<!--input(type="range" placeholder=""  class="calc-range--topograf")-->
 			<div class="calc-range__wrap">
 				<div class="calc-range-val calc-range-val--lg">
-					<div class="calc-range-numb">10 000</div>
-					<div class="calc-range-pay">руб<sup>*</sup></div>
+					<div class="calc-range-numb">12 000</div>
+					<div class="calc-range-pay">руб</div>
 				</div>
 			</div>
-			<div class="calc-text calc-text--attansion">
+			<!--<div class="calc-text calc-text--attansion">
 				<span>свыше 2000 кв.м. цена определяется индивидуально</span>
 			</div>
-			<div class="calc-text">*Цена услуги за одно машино-место без обмеров. <br> Стоимость обмеров Машино-места - <b>2000 руб</b></div>
+			<div class="calc-text">*Цена услуги за одно машино-место без обмеров. <br> Стоимость обмеров Машино-места - <b>2000 руб</b></div>-->
 		</div>
 		<div class="calc-ur-cont">
 			<div class="calc-ur-pay">

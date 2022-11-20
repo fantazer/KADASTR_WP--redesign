@@ -6,7 +6,8 @@ if (isset($_POST['name'])) {
   }
 
   $formData = array_map('clearData', $_POST);
-  $to = 'kuznecovs45@gmail.com';
+  //$to = 'kuznecovs45@gmail.com';
+  $to = 'info@cgiku.ru,kuznecovs45@gmail.com';
   $subject = 'Заявка с сайта CGIKU.RU';
   $body = "Заявка :<br><br>";
   foreach ($formData as $key => $value) {

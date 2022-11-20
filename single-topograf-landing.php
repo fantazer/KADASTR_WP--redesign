@@ -75,12 +75,12 @@
         <input class="calc-range--topograf" type="range" placeholder="" />
         <div class="calc-range__wrap">
           <div class="calc-range-val">
-            <div class="calc-range-numb">10 000</div>
+            <div class="calc-range-numb">15 000</div>
             <div class="calc-range-pay">руб</div>
           </div>
         </div>
-        <div class="calc-text calc-text--attansion">
-          <span>свыше 2000 кв.м. цена определяется индивидуально</span>
+        <div class="calc-text calc-text--attansion mt-32">
+          <span>Свыше 1500 кв.м. цена определяется индивидуально</span>
         </div>
         <div class="calc-text">Цена услуги за один участок</div>
       </div>

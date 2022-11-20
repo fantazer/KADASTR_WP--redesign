@@ -7,7 +7,7 @@
 			<div class="type--w700 type--lg mb-24">Оставьте вашу заявку</div>
 			<div class="type--w700 type--xl type--mark mb-12 sm__type--32">+7 (495) 514-84-13</div>
 			<div class="type--w600 mb-32 sm__type--12">г. Москва, 1-ый Нагатинский проезд, д. 4, офис 210</div>
-			<div class="g g-2 gap-24 mb-24">
+			<div class="g g-2 gap-24 mb-24 sm__g-1">
 				<div class="input-row">
 					<input class="input js-input-data" type="text" name="name[1]" placeholder="Ваше Ф.И.O" data-type="name" data-condition="name"/>
 				</div>
@@ -30,8 +30,7 @@
 							</svg>
 						</div>
 						<div class="style-input-text">Я ознакомился с
-							<a href="#">политикой конфиденциальности</a>,
-							<a href="#">публичной офертой</a> и даю согласие на обработку моих персональных данных
+							<a href="/policy/">политикой конфиденциальности</a> и даю согласие на обработку моих персональных данных
 						</div>
 					</label>
 				</div>
@@ -41,8 +40,8 @@
 	</form>
 	<div class="w50 md__w100">
 		<div class="h100 w100 map--mobile">
-			<script text
-			/javascript="text/javascript" charset="utf-8" async="async" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A104108c83896b1a6c1b544e50f3d690ee4df2f43b13730f0b9a6f0d5ead96cae&amp;amp;width=100%&amp;amp;height=100%&amp;amp;lang=ru_RU&amp;amp;scroll=false"></script>
+
+			<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5ab2f377d79652df5a96b1ffc2bd7e32e57b5818f2f61229ea0f3157d990329e&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>
 		</div>
 	</div>
 </div>
