@@ -4,7 +4,8 @@
  * Template Post Type: post, page, product
  */
 ?>
-<? get_header('lp'); ?>
+<? //get_header('lp'); ?>
+<? get_header(); ?>
 
 
 <?
@@ -24,7 +25,7 @@
 				<div class="lp-baner__title-sub"><?= get_field('subTitle',$listTownTemplateVal); ?></div>
 				<div class="header__get">
 					<a class="header__btn header__btn-more" href="#why">Подробнее</a>
-					<div class="header__btn header__btn-get header__btn-get--yellow modal-get" data-modal="order">Заказать</div>
+					<div class="header__btn header__btn-get header__btn-get--yellow modal-get" data-modal="order">Заказать!</div>
 				</div>
 			</div>
 		</div>
@@ -35,7 +36,15 @@
 <!--howWork-->
 <div class="section section--doc section--fill" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/igs/concrete-texture.png');" id="important">
 	<div class="main-cont-sm">
-		<div class="section-title">Как это работает</div>
+		<div class="section-title">
+			<? if(get_the_ID()===14884){?>
+			Зачем это нужно
+			<? }elseif(get_the_ID()===14880){ ?>
+				Что это такое
+			<? }else{ ?>
+			Как это работает
+			<? } ?>
+		</div>
 		<div class="text-block text-block--seal ">
 			<div class="seal">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/seal.png" alt=""/>
@@ -57,13 +66,20 @@
 		<div class="section-wrap">
 			<div class="section-call section-call--mid">
 				<div class="text-block">
-					<div class="section-title section-title--left">Зачем это нужно</div>
+					<div class="section-title section-title--left">
+						<? if(get_the_ID()===14884){?>
+						Что это такое
+						<? }else{ ?>
+						Зачем это нужно
+						<? } ?>
+					</div>
 					<div class="box">
             <?= get_field('whyNeed',$listTownTemplateVal); ?>
             <?
             if ($listTownTemplateVal) {
               $categories = get_the_category();
               $category_id = $categories[0]->cat_ID;
+              //var_dump($post);
               function porstAfterTrim($a, $order)
               {
                 if (in_category($a)) {
@@ -92,22 +108,24 @@
                   $LastPost = array_pop($PostArray);
                   $postEl = array('include' => $output, 'post__not_in' => $LastPost, 'order' => 'ASC');
                   $myposts = get_posts($postEl);
-                  foreach ($myposts as $post) {
-                    setup_postdata($post);
+                  foreach ($myposts as $postItem) {
+                    $post_title = $postItem->post_title;
+                    $post_link = $postItem->guid;
                     ?>
-				            <li><a href="<?php the_permalink(); ?>"><?= get_the_title(); ?></a></li>
+				            <li><a href="<?= $post_link ?>"><?= $post_title ?></a></li>
                     <?
                   }
-                  wp_reset_postdata();
+                  //wp_reset_postdata();
                   $needPost = 3 - (count($PostArray) - $key);
                   //echo $needPost;
                   if ($needPost < 4 && $needPost > 0) {
                     $postEl = array('cat' => $a, 'order' => 'ASC', 'posts_per_page' => $needPost);
                     $myposts = get_posts($postEl);
-                    foreach ($myposts as $post) {
-                      setup_postdata($post);
+                    foreach ($myposts as $postItem) {
+                      $post_title = $postItem->post_title;
+                      $post_link = $postItem->guid;
                       ?>
-					            <li><a href="<?php the_permalink(); ?>"><?= get_the_title(); ?></a></li>
+					            <li><a href="<?= $post_link ?>"><?= $post_title ?></a></li>
                       <?
                     }
                   }

@@ -7,7 +7,8 @@ add_action('init', 'my_pagination_rewrite');
 
 
 /*rtf support*/
-function porstAfterTitle($a, $order,$text=""){
+function porstAfterTitle($a, $order, $text = "")
+{
   if (in_category($a)) {
     global $post;
     $idPost = get_the_id();
@@ -34,22 +35,24 @@ function porstAfterTitle($a, $order,$text=""){
     $LastPost = array_pop($PostArray);
     $postEl = array('include' => $output, 'post__not_in' => $LastPost, 'order' => 'ASC');
     $myposts = get_posts($postEl);
-    foreach ($myposts as $post) {
-      setup_postdata($post);
-      ?>
-			<li><a href="<?php the_permalink(); ?>"><? echo $text;  ?> <?=CFS()->get('namecity');?></a></li>
-      <?
-    }
+    foreach ($myposts as $postItem) {
+        $post_title = $postItem->post_title;
+        $post_link = $postItem->post_name;
+        ?>
+				<li><a href="/<?= $post_link ?>/"><?= $post_title ?></a></li>
+        <?
+      }
     wp_reset_postdata();
     $needPost = 3 - (count($PostArray) - $key);
     //echo $needPost;
     if ($needPost < 4 && $needPost > 0) {
       $postEl = array('cat' => $a, 'order' => 'ASC', 'posts_per_page' => $needPost);
       $myposts = get_posts($postEl);
-      foreach ($myposts as $post) {
-        setup_postdata($post);
+      foreach ($myposts as $postItem) {
+        $post_title = $postItem->post_title;
+        $post_link = $postItem->post_name;
         ?>
-				<li><a href="<?php the_permalink(); ?>"><? echo $text;  ?><?=CFS()->get('namecity');?></a></li>
+				<li><a href="/<?= $post_link ?>/"><?= $post_title ?></a></li>
         <?
       }
     }

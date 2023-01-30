@@ -76,7 +76,7 @@
 								<a href="https://www.mos.ru/upload/photobank/common/upload/28.11.2014_64-02-1613_14_Sobyanin_S.S._Apparat_Mera_i_Pravitelstva_Moskvy_be27349ab0338e2baf2b67b468f1c55b.pdf " target="_blank">Постановление Правительства Москвы от 28.11.2014 №700-ПП</a>
 							</li>
 							<li>
-								<a href="/wp-content/uploads/2022/01/Postanovlenie-Pravitelstva-Moskvy-1833-PP-ot-23.11.2021-na-2022-god.pdf" target="_blank">Постановление Правительства Москвы №1833-ПП от 23.11.2021 (на 2022 год)</a>
+								<a href="/wp-content/uploads/2023/01/doc.pdf" target="_blank">Постановление Правительства Москвы №2564-ПП от 22.11.2022 (на 2023 год)</a>
 							</li>
 							<br/>
 						</ul>

@@ -13,7 +13,7 @@
 	<!--icons-->
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
 	<!--SEO-->
-	<title>Document</title>
+	<?php wp_head(); ?>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/vendor.css?ver=5">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?ver=5">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-edit.css?ver=5">
@@ -38,7 +38,7 @@
 		        height="0" width="0" style="display:none;visibility:hidden"></iframe>
 	</noscript>
 	<!-- End Google Tag Manager (noscript) -->
-<?php wp_head(); ?>
+
 </head>
 <body>
 
