@@ -37,13 +37,9 @@
 <div class="section section--doc section--fill" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/igs/concrete-texture.png');" id="important">
 	<div class="main-cont-sm">
 		<div class="section-title">
-			<? if(get_the_ID()===14884){?>
-			Зачем это нужно
-			<? }elseif(get_the_ID()===14880){ ?>
-				Что это такое
-			<? }else{ ?>
-			Как это работает
-			<? } ?>
+
+		<?= get_field('howworktitle',$listTownTemplateVal) ? get_field('howworktitle',$listTownTemplateVal) : 'Как это работает'  ?>
+
 		</div>
 		<div class="text-block text-block--seal ">
 			<div class="seal">
@@ -64,14 +60,11 @@
 <div class="section section--why section--union section--mobile" id="why" style="background-image:url('<?= get_field('whyneedimg',$listTownTemplateVal); ?>');">
 	<div class="main-cont">
 		<div class="section-wrap">
-			<div class="section-call section-call--mid">
+			<div class="<? if(!in_array(get_the_ID(), array(595,1097))){?>section-call section-call--mid<? } ?>">
 				<div class="text-block">
-					<div class="section-title section-title--left">
-						<? if(get_the_ID()===14884){?>
-						Что это такое
-						<? }else{ ?>
-						Зачем это нужно
-						<? } ?>
+					<div class="section-title type--center">
+						<?= get_field('whyneedtitle',$listTownTemplateVal) ? get_field('whyneedtitle',$listTownTemplateVal) : 'Зачем это нужно'  ?>
+
 					</div>
 					<div class="box">
             <?= get_field('whyNeed',$listTownTemplateVal); ?>

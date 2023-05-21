@@ -62,6 +62,147 @@
 		</div>
 	</div>
 </div>
+
+<div class="psv-100 bg--fieldBackground sm__psv-48">
+	<div class="main-cont">
+		<h3 class="type--44 type--center mb-48">Реализованные нами объекты</h3>
+		<div class="g g-3 lg__g-2 md__g-1 gap-20">
+
+      <?
+      $exampleProjects = array(
+        array(
+          "type" => "Административно-офисное здание",
+          "location" => "г. Москва, ул. Днепропетровская",
+          "date" => "2015-2021",
+          "price" => "33 млн. руб.",
+        ),
+        array(
+          "type" => "Административно-офисное здание",
+          "location" => "г. Москва, Дмитровское шоссе",
+          "date" => "2015-2021",
+          "price" => "35 млн. руб.",
+        ),
+        array(
+          "type" => "Медицинская клиника",
+          "location" => "г. Москва, ул. Воронцовская",
+          "date" => "2015-2021",
+          "price" => "18 млн. руб.",
+        ),
+        array(
+          "type" => "Гаражный комплекс ",
+          "location" => "г. Москва, ул. Верхние Поля",
+          "date" => "2018-2021",
+          "price" => "7 млн. руб.",
+        ),
+         array(
+          "type" => "Административно-офисное здание",
+          "location" => "г. Москва, Красносельский район, ул. Сретенка",
+          "date" => "2017-2022",
+          "price" => "13 млн. руб.",
+        ),
+         array(
+          "type" => "Административно-офисное здание",
+          "location" => "г. Москва, ул. Новослободская",
+          "date" => "2017-2021",
+          "price" => "11 млн. руб.",
+        ),
+         array(
+          "type" => "Производственное здание",
+          "location" => "г. Москва, г. Зеленоград, площадь Шокина",
+          "date" => "2019-2022",
+          "price" => "9 млн. руб.",
+        ),
+        array(
+          "type" => "Административно-офисное здание",
+          "location" => "Московская обл., Богородский го, рп Обухово, ул. Молодежная",
+          "date" => "2018-2021",
+          "price" => "4 млн. руб.",
+        ),
+         array(
+          "type" => "Производственное здание",
+          "location" => "г. Москва, ул. Летчика Бабушкина",
+          "date" => "2018-2021",
+          "price" => "21 млн. руб.",
+        ),
+         array(
+          "type" => "Гостиница",
+          "location" => "г. Москва, ул. Большая Переяславская",
+          "date" => "2017-2021",
+          "price" => "7 млн. руб.",
+        ),
+         array(
+          "type" => "Спортивный комплекс",
+          "location" => "г. Москва, ул. Маршала Савицкого",
+          "date" => "2017-2021",
+          "price" => "3 млн. руб.",
+        ),
+         array(
+          "type" => "Спортивный комплекс",
+          "location" => "г. Москва, г. Московский, ул. Солнечная улица",
+          "date" => "2019-2022",
+          "price" => "28 млн. руб.",
+        ),
+         array(
+          "type" => "Административно-офисное здание",
+          "location" => "г. Москва, пер. Щипковский 1-й",
+          "date" => "2014-2022",
+          "price" => "57 млн. руб.",
+        ),
+         array(
+          "type" => "Административно-офисное здание",
+          "location" => "г. Москва, ул Профсоюзная",
+          "date" => "2019-2021",
+          "price" => "16 млн. руб.",
+        ),
+        array(
+          "type" => "Медицинская лаборатория",
+          "location" => "г. Москва, проезд Стрелецкий",
+          "date" => "2017-2021",
+          "price" => "3 млн. руб.",
+        ),
+        array(
+          "type" => "Гостиница",
+          "location" => "г. Москва, ул. Ижорская",
+          "date" => "2017-2021",
+          "price" => "5 млн. руб.",
+        ),
+      );
+      ?>
+      <? foreach ($exampleProjects as $exampleProjectsItem) { ?>
+			<div class="br-8 bg--white overflow bor bor--border f f-col ">
+				<div class="p-16 bg--mark f-grow-2 f f-col f-jcc">
+					<div class="type--center type--w700 type--white "><?= $exampleProjectsItem["type"] ?></div>
+					<div class="type--center type--white"><?= $exampleProjectsItem["location"] ?></div>
+				</div>
+				<div class="psh-16 psv-24">
+					<div class="f f-between">
+						<div class="w45 f">
+							<svg class="icon icon--lg icon--mark mr-16">
+								<use xlink:href="#law"></use>
+							</svg>
+							<div class="el">
+								<div class="type--14 type--w700 mb-4">Период исключения</div>
+								<div class="type--14"><?= $exampleProjectsItem["date"] ?></div>
+							</div>
+						</div>
+						<div class="w45 f">
+							<svg class="icon icon--lg icon--mark mr-16">
+								<use xlink:href="#interface"></use>
+							</svg>
+							<div class="el">
+								<div class="type--14 type--w700 mb-4">Величина экономии</div>
+								<div class="type--14"><?= $exampleProjectsItem["price"] ?></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+    <? } ?>
+		</div>
+	</div>
+</div>
+
+
 <!--Зачем это нужно-->
 <div class="section section--start section--survey" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/exception/exception-10.jpg');">
 	<div class="main-cont">

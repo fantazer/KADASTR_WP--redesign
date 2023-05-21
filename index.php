@@ -33,34 +33,52 @@
 
 	<!--category-->
 	<div class="main-cont" id="main">
-			<div class="type--center type--lgx type--w700 type--title mt-100 mb-64">Каталог наших услуг</div>
-			<div class="g g-2 gap-24 mb-100 sm__g-1">
-				<a class="bor bor--border p-48 f f-col br-8" href="/geodezicheskie-raboty/">
-					<div class="decorate bg--mark br-8 mb-48"></div>
-					<div class="type--md type--w700 type--title mb-24">Геодезические услуги</div>
-					<div class="type--main type--lh-1_6 mb-48">Геодезическое сопровождение строительства, исполнительная съемка, обмеры земельных участков и объектов капитального строительства, вынос в натуру, геодезические съемки.</div>
-					<div class="type--sm type--mark type--w700 mt-a">Подробнее</div>
-				</a>
-				<a class="bor bor--border p-48 f f-col br-8" href="/kadastrovy-e-raboty/">
-					<div class="decorate bg--mark br-8 mb-48"></div>
-					<div class="type--md type--w700 type--title mb-24">Кадастровые услуги</div>
-					<div class="type--main type--lh-1_6 mb-48">Постановка на кадастровый учет, учет изменений объектов недвижимости, графическое описание санитарно-защитной зоны.</div>
-					<div class="type--sm type--mark type--w700 mt-a">Подробнее</div>
-				</a>
-				<a class="bor bor--border p-48 f f-col br-8" href="/juridicheskie-uslugi/">
-					<div class="decorate bg--mark br-8 mb-48"></div>
-					<div class="type--md type--w700 type--title mb-24">Юридические услуги</div>
-					<div class="type--main type--lh-1_6 mb-48">Регистрация прав (представление интересов в Росреестре), оптимизация налогообложения, уведомления о строительстве/сносе, экспертизы.</div>
-					<div class="type--sm type--mark type--w700 mt-a">Подробнее</div>
-				</a>
-				<a class="bor bor--border p-48 f f-col br-8" href="/inzhenernye-izyskanija/">
-					<div class="decorate bg--mark br-8 mb-48"></div>
-					<div class="type--md type--w700 type--title mb-24">Инженерные изыскания для строительства</div>
-					<div class="type--main type--lh-1_6 mb-48">Геология, экология, топографическая съемка</div>
-					<div class="type--sm type--mark type--w700 mt-a">Подробнее</div>
-				</a>
-			</div>
+		<div class="type--center type--lgx type--w700 type--title mt-100 mb-64">Каталог наших услуг</div>
+		<div class="g g-2 gap-24 mb-100 sm__g-1">
+			<a class="bor bor--border p-48 f f-col br-8 pos-r" href="/geodezicheskie-raboty/">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/categoryimg/cat-geo.jpg" alt="" class="cat-img">
+				<svg class="icon--mark mb-24 icon--xl">
+					<use xlink:href="#total-station"></use>
+				</svg>
+				<div class="type--md type--w700 type--title mb-24">Геодезические услуги</div>
+				<div class="type--main type--lh-1_6 mb-48">Геодезическое сопровождение строительства, исполнительная съемка,
+					обмеры земельных участков и объектов капитального строительства, вынос в натуру, геодезические съемки.
+				</div>
+				<div class="type--sm type--mark type--w700 mt-a">Подробнее</div>
+			</a>
+			<a class="bor bor--border p-48 f f-col br-8 pos-r" href="/kadastrovy-e-raboty/">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/categoryimg/cat-cadastr-1.jpg" alt="" class="cat-img">
+				<svg class="icon--mark mb-24 icon--xl">
+					<use xlink:href="#design"></use>
+				</svg>
+				<div class="type--md type--w700 type--title mb-24">Кадастровые услуги</div>
+				<div class="type--main type--lh-1_6 mb-48">Постановка на кадастровый учет, учет изменений объектов недвижимости,
+					графическое описание санитарно-защитной зоны.
+				</div>
+				<div class="type--sm type--mark type--w700 mt-a">Подробнее</div>
+			</a>
+			<a class="bor bor--border p-48 f f-col br-8 pos-r" href="/juridicheskie-uslugi/">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/categoryimg/cat-jur.jpg" alt="" class="cat-img">
+				<svg class="icon--mark mb-24 icon--xl">
+					<use xlink:href="#gavel"></use>
+				</svg>
+				<div class="type--md type--w700 type--title mb-24">Юридические услуги</div>
+				<div class="type--main type--lh-1_6 mb-48">Регистрация прав (представление интересов в Росреестре), оптимизация
+					налогообложения, уведомления о строительстве/сносе, экспертизы.
+				</div>
+				<div class="type--sm type--mark type--w700 mt-a">Подробнее</div>
+			</a>
+			<a class="bor bor--border p-48 f f-col br-8 pos-r" href="/inzhenernye-izyskanija/">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/categoryimg/cat-ing.jpg" alt="" class="cat-img">
+				<svg class="icon--mark mb-24 icon--xl">
+					<use xlink:href="#topograf"></use>
+				</svg>
+				<div class="type--md type--w700 type--title mb-24">Инженерные изыскания для строительства</div>
+				<div class="type--main type--lh-1_6 mb-48">Геология, экология, топографическая съемка</div>
+				<div class="type--sm type--mark type--w700 mt-a">Подробнее</div>
+			</a>
 		</div>
+	</div>
 	<!--category ===end -->
 
 	<? include('module/advant.php'); ?>

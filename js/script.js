@@ -262,7 +262,7 @@ $(document).ready(function () {
 		initModal(currentModal);
 	});
 
-	$('.js-modal-close, .modal-hide').click(function () {
+	$('.js-modal-close,.modal-close, .modal-hide').click(function () {
 		closeModal();
 	});
 

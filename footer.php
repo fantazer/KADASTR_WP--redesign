@@ -62,7 +62,10 @@
 			<div class="g-10-12 md__g-9-12 sm__order-1 sm__g-1-12">
 				<img class="mb-24 sm__w60" src="<?= get_template_directory_uri(); ?>/img/logo.png" alt=""/>
 				<a href="tel:+7 (495) 514-84-13" class="type--mdx type--white type--w700 type--title mb-12 type-h--mark db">+7 (495) 514-84-13</a>
-				<a href="mailto:info@cgiku.ru" class="type--typeSecondary type--white type--w700 type--title sm__mb-24 type-h--mark db">info@cgiku.ru</a>
+				<a href="mailto:info@cgiku.ru" class="type--typeSecondary type--white type--w700 type--title mb-24 type-h--mark db">info@cgiku.ru</a>
+
+				<iframe src="https://yandex.ru/sprav/widget/rating-badge/110346017527?type=rating" height="50" frameborder="0" style="height:50px!important;width:150px;"></iframe>
+
 			</div>
 		</div>
 	</div>
